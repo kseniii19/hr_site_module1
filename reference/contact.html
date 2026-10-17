@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr"> 
+  <head>
+    <meta charset="utf-8">                 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Тектура — контакты</title> 
+    <link rel="icon" href="./img/favic.png" >
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="./css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="./js/js.js" charset="utf-8"></script>
+  </head>
+
+<body id="contact-page">
+
+    <header class="main-header">
+        <a href="index.html" class="logo">Тектура</a>
+
+        <a href="about.html" class="text-link text-about">
+            о бренде
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+
+        <a href="cataloge.html" class="text-link text-cataloge">
+            каталог
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+
+        <a href="lab.html" class="text-link text-lab">
+            лаборатория мероприятий
+            <img class="hover-lab-obvodka" src="./img/lab_obvodka.svg" alt="">
+        </a>
+
+        <a href="contact.html" class="text-link text-contact">
+            контакты
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+
+        <button class="burger-menu-btn" aria-label="Открыть меню">
+          <img src="./img/burger.svg" alt="Меню">
+        </button>
+    </header>
+
+    <div class="mobile-menu-panel">
+        <button class="close-menu-btn" aria-label="Закрыть меню">&times;</button>
+            <nav class="mobile-nav">
+                <a href="cataloge.html">Каталог</a>
+                <a href="about.html">О бренде</a>
+                <a href="lab.html">Мероприятия</a>
+                <a href="contact.html">Контакты</a>
+            </nav>
+    </div>  
+
+
+<main class="contact-wrap">
+    
+    <section class="contact-info">
+        <h1 class="contact-title">Контакты</h1>
+        
+        <div class="info-item">
+            <h3>Адрес:</h3>
+            <p>Москва, ул.Текстурная, д5</p>
+        </div>
+        
+        <div class="info-item">
+            <h3>Часы работы:</h3>
+            <p>Пн-Пт: 10:00 - 22:00<br>Сб-Вс: 10:00 - 20:00</p>
+        </div>
+        
+        <div class="info-item">
+            <h3>Телефон для связи:</h3>
+            <p>+7 (925) 000-00-00</p>
+        </div>
+        
+        <div class="info-item">
+            <h3>E-mail:</h3>
+            <p>tekture@gmail.com</p>
+        </div>
+
+        <div class="contact-map">
+            <img src="./img/contact_map.svg">
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <h2 class="form-title">Остались вопросы?<br>Напиши нам!</h2>
+        
+        <form id="contactForm" novalidate>
+            
+            <div class="form-row">
+                <div class="input-box">
+                    <input type="text" placeholder="Имя" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Фамилия" required>
+                </div>
+            </div>
+
+            <div class="input-box full-width">
+                <input type="text" placeholder="E-mail" required>
+            </div>
+
+            <div class="input-box full-width textarea-box">
+                <textarea placeholder="Задайте любой вопрос" required></textarea>
+            </div>
+
+            <div class="but_wrapper events_clean_dash btn-submit">
+                <button type="submit" class="svg_but">отправить</button>
+            </div>
+
+        </form>
+    </section>
+
+</main>
+
+<div class="toast-alert" id="contactToast">
+    Мы скоро вам ответим!
+</div>
+
+
+    <footer class="footer">
+  <div class="footer_container">
+    
+    <div class="footer_block footer_nav">
+      <div class="nav_col">
+        <a href="about.html" class="text_footer6">О бренде</a>
+        <a href="cataloge.html" class="text_footer7">Каталог</a>
+        <a href="lab.html" class="text_footer8">Мероприятия</a>
+      </div>
+      <div class="nav_col">
+        <a href="index.html" class="text_footer9">Главная</a>
+        <a href="contact.html" class="text_footer10">Контакты</a>
+      </div>
+    </div>
+
+    <div class="footer_block footer_address">
+      <p class="text_footer1">Адрес</p>
+      <p class="text_footer2">Москва, ул. Текстурная, д5</p>
+    </div>
+
+    <div class="footer_block footer_contacts">
+      <p class="text_footer3">Связаться с нами</p>
+      <p class="text_footer4">+7 (925) 000-00-00</p>
+      <p class="text_footer5">tekture@gmail.com</p>
+    </div>
+  </div>
+
+  <img class="footer_logo" src="./img/footer.svg" alt="ТЕКТУРА">
+</footer>
+    
+
+</body>
+</html>

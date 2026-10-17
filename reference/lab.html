@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr"> 
+<head>
+    <meta charset="utf-8">                 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Тектура — лаборатория</title> 
+    <link rel="icon" href="./img/favic.png">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="./css/style.css" rel="stylesheet" type="text/css"/> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/js.js" charset="utf-8"></script>
+</head>
+
+
+<body id="lab-page">
+
+    <header class="main-header">
+        <a href="index.html" class="logo">Тектура</a>
+
+        <a href="about.html" class="text-link text-about">
+            о бренде
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+
+        <a href="cataloge.html" class="text-link text-cataloge">
+            каталог
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+
+        <a href="lab.html" class="text-link text-lab">
+            лаборатория мероприятий
+            <img class="hover-lab-obvodka" src="./img/lab_obvodka.svg" alt="">
+        </a>
+
+        <a href="contact.html" class="text-link text-contact">
+            контакты
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+
+        <button class="burger-menu-btn" aria-label="Открыть меню">
+            <img src="./img/burger.svg" alt="Меню">
+        </button>
+
+    </header>
+
+
+<div class="mobile-menu-panel">
+    <button class="close-menu-btn" aria-label="Закрыть меню">&times;</button>
+        <nav class="mobile-nav">
+            <a href="cataloge.html">Каталог</a>
+            <a href="about.html">О бренде</a>
+            <a href="lab.html">Мероприятия</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+</div>
+
+
+<main>
+    <section class="carousel-section" id="events-carousel-block">
+        
+        <button class="lab-arrow lab-prev" aria-label="Назад">
+            <img src="./img/arrow_left.svg" alt="Назад">
+        </button>
+        <button class="lab-arrow lab-next" aria-label="Вперед">
+            <img src="./img/arrow_right.svg" alt="Вперед">
+        </button>
+
+        <div class="carousel-perspective-wrapper">
+
+            <div class="carousel-track">
+                
+                <a href="event.html?id=show" class="event-card">
+                    <span class="event-card-title">Показ новой коллекции</span>
+                    <div class="event-image-container">
+                        <img src="./img/pokaz.png" alt="Показ новой коллекции">
+                    </div>
+                </a>
+
+                <a href="event.html?id=master" class="event-card">
+                    <span class="event-card-title">Мастер-класс</span>
+                    <div class="event-image-container">
+                        <img src="./img/master.svg" alt="Мастер-класс">
+                    </div>
+                </a>
+
+                <a href="event.html?id=casting" class="event-card">
+                    <span class="event-card-title">Кастинг</span>
+                    <div class="event-image-container">
+                        <img src="./img/casting.png" alt="Кастинг">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+   <section class="section_lab_text">
+    <p class="big_lab_text">Больше, чем показы!</p>
+    <p class="small_lab_text">Наши мероприятия созданы для&nbsp;того, чтобы вы&nbsp;могли прочувствовать философию бренда вживую. Мы&nbsp;организуем тактильные выставки фактур, закрытые презентации и&nbsp;показы мод, где&nbsp;главная роль отдана осязанию. Здесь можно детально изучить природные рельефы и&nbsp;понять, как&nbsp;именно дикие стихии воплощаются в&nbsp;нашей одежде. Мы&nbsp;приглашаем вас&nbsp;на&nbsp;эти встречи за&nbsp;эмоциями: чтобы замедлиться и&nbsp;прикоснуться к&nbsp;сложным, неидеальным материалам.</p>
+   </section>
+
+<section class="section_three_events">
+    <div class="event-item">
+        <h2 class="header_event">Мастер-класс</h2>
+        <img class="img_event" src="./img/master.svg" alt="Мастер-класс">
+        <div class="but_wrapper events_clean_dash">
+            <button class="svg_but" data-id="master">подробнее</button>
+        </div>
+    </div>
+
+    <div class="event-item">
+        <h2 class="header_event">Показ коллекций</h2>
+        <img class="img_event" src="./img/pokaz.png" alt="Показ коллекций">
+        <div class="but_wrapper events_clean_dash">
+            <button class="svg_but" data-id="show">подробнее</button>
+        </div>  
+    </div>
+
+    <div class="event-item">
+        <h2 class="header_event">Кастинг</h2>
+        <img class="img_event" src="./img/casting.png" alt="Кастинг">
+        <div class="but_wrapper events_clean_dash">
+            <button class="svg_but" data-id="casting">подробнее</button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer_container">
+    
+    <div class="footer_block footer_nav">
+      <div class="nav_col">
+        <a href="about.html" class="text_footer6">О бренде</a>
+        <a href="cataloge.html" class="text_footer7">Каталог</a>
+        <a href="lab.html" class="text_footer8">Мероприятия</a>
+      </div>
+      <div class="nav_col">
+        <a href="index.html" class="text_footer9">Главная</a>
+        <a href="contact.html" class="text_footer10">Контакты</a>
+      </div>
+    </div>
+
+    <div class="footer_block footer_address">
+      <p class="text_footer1">Адрес</p>
+      <p class="text_footer2">Москва, ул. Текстурная, д5</p>
+    </div>
+
+    <div class="footer_block footer_contacts">
+      <p class="text_footer3">Связаться с нами</p>
+      <p class="text_footer4">+7 (925) 000-00-00</p>
+      <p class="text_footer5">tekture@gmail.com</p>
+    </div>
+  </div>
+
+  <img class="footer_logo" src="./img/footer.svg" alt="ТЕКТУРА">
+</footer>
+
+
+
+
+
+</body>
+</html>

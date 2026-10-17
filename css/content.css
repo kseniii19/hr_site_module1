@@ -1,0 +1,1255 @@
+html, body {
+    width: 100%;
+    overflow-x: clip;
+    font-family: "PT Root UI", Arial, sans-serif;
+    color: #191919;
+    background: #DBDBDB;
+}
+
+
+/* СЦЕНА С ЗУМОМ
+   Макет 1440×820 (room1.svg). Все слои позиционируются в % от сцены,
+   поэтому композиция масштабируется вместе с шириной окна.
+   Первый и второй экран лежат друг на друге, переход между ними — в js.js. */
+
+.zoom-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 820;
+    background: #DBDBDB;
+    overflow: hidden;
+}
+
+
+/* ПЕРВЫЙ ЭКРАН */
+
+/* Точка зума (240, 367 из 1440×820): при scale(3.293) вокруг неё
+   boy_with_box совпадает с ракурсом zoom_boy.svg */
+.first-screen {
+    position: absolute;
+    inset: 0;
+    transform-origin: 16.69% 44.82%;
+}
+
+.room {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Марк с коробкой: 593×748, прижат к низу сцены.
+   Цветок и стикер позиционируются в % от его размеров. */
+
+.character {
+    position: absolute;
+    left: 1.32%;
+    bottom: 0;
+    width: 41.18%;
+    aspect-ratio: 593 / 748;
+}
+
+.boy {
+    width: 100%;
+}
+
+/* Горшок статичен: низ чуть заходит за верхнюю грань коробки (y = 309 в boy_with_box), чтобы не было щели */
+.gorshok {
+    position: absolute;
+    left: 16.40%;
+    bottom: calc(100% - 310.5 / 748 * 100%);
+    width: 18.1%;
+}
+
+/* Зелень качается вокруг основания стебля, которое спрятано за горшком */
+.flower {
+    position: absolute;
+    left: 8.74%;
+    top: 17.15%;
+    width: 23.1%;
+    transform-origin: 50% 85%;
+    animation: flower-sway 4s ease-in-out infinite;
+}
+
+.sticker {
+    position: absolute;
+    left: 16.7%;
+    top: 44.9%;
+    width: 22.93%;
+    transform-origin: 50% 4%;
+    animation: sticker-flutter 3.2s ease-in-out infinite;
+}
+
+
+/* ОБЛАКА МЫСЛЕЙ: появляются от маленького к большому, исчезают в обратном порядке */
+
+.thought {
+    position: absolute;
+    opacity: 0;
+    animation-duration: 9s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.thought-small {
+    left: 31.8%;
+    top: 27.1%;
+    width: 3.26%;
+    animation-name: thought-small;
+}
+
+.thought-mid {
+    left: 35.8%;
+    top: 30.9%;
+    width: 5.07%;
+    animation-name: thought-mid;
+}
+
+.thought-big {
+    left: 40.8%;
+    top: 35.2%;
+    width: 7.57%;
+    animation-name: thought-big;
+}
+
+.thought-large {
+    left: 45.6%;
+    top: 41.6%;
+    width: 28.75%;
+    animation-name: thought-large;
+}
+
+
+/* ЗАГОЛОВОК */
+
+.first-screen-text {
+    position: absolute;
+    left: 56.6%;
+    top: 5%;
+}
+
+.first-screen-title {
+    font-family: "Philosopher", Georgia, serif;
+    font-weight: 700;
+    font-size: 8.26vw;
+    line-height: 0.78;
+    color: #000;
+}
+
+.first-screen-subtitle {
+    margin-top: 0.6vw;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 2.08vw;
+    line-height: 1.2;
+    color: #707070;
+}
+
+
+/* ВТОРОЙ ЭКРАН: крупный план бейджика.
+   Лежит поверх первого в полном размере; во время зума js.js уменьшает его
+   вокруг той же точки, поэтому картинки совпадают в каждом кадре.
+   zoom_boy.svg (1458×879) сдвинут на (-30, -33.5) относительно сцены 1440×820 */
+
+.second-screen {
+    position: absolute;
+    inset: 0;
+    transform-origin: 16.69% 44.82%;
+    opacity: 0;
+}
+
+.zoom-boy {
+    position: absolute;
+    left: -2.083%;
+    top: -4.085%;
+    width: 101.25%;
+    max-width: none;
+}
+
+/* Копия цветка и стикера первого экрана, увеличенная так же, как .first-screen в конце зума.
+   На zoom_boy_body.svg их нет; обрезает их край сцены */
+.zoom-details {
+    position: absolute;
+    inset: 0;
+    transform-origin: 16.69% 44.82%;
+    transform: scale(3.293);
+}
+
+/* Бейджик в zoom_boy.svg: x 728.75, y 321.95, 252×142, тёмная шапка 47 */
+.badge {
+    position: absolute;
+    left: 48.52%;
+    top: 35.16%;
+    width: 17.5%;
+    height: 17.32%;
+}
+
+.badge-name {
+    display: flex;
+    align-items: center;
+    height: 33.1%;
+    padding-left: 1.26vw;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.4vw;
+    line-height: 1;
+    color: #fff;
+}
+
+.badge-info {
+    padding: 0.69vw 0.9vw 0 1.26vw;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 0.97vw;
+    line-height: 1.3;
+    color: #191919;
+}
+
+.badge-info b {
+    font-weight: 700;
+}
+
+
+/* ЗАТЕМНЕНИЕ С НАДПИСЬЮ: после второго экрана и после четвёртого */
+
+/* Прозрачное затемнение лежит поверх экрана — не должно перехватывать клики */
+.blackout {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    opacity: 0;
+}
+
+/* Размер как у главного заголовка, в одну строку */
+.blackout-text {
+    font-family: "Philosopher", Georgia, serif;
+    font-weight: 700;
+    font-size: 8.26vw;
+    line-height: 1;
+    white-space: nowrap;
+    color: #fff;
+}
+
+
+/* ТРЕТИЙ ЭКРАН
+   Макет 1440×820 сцены, но room2.svg — 1430×796: кадр .third-frame занимает всю ширину,
+   а оставшаяся снизу полоска заливается цветом стола.
+   Все слои позиционируются в % от кадра 1430×796 (по third_screen.png). */
+
+.third-screen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #DBDBDB 95%, #C2C2C2 95%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.third-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1430 / 796;
+}
+
+.third-frame > img {
+    position: absolute;
+}
+
+.room2 {
+    inset: 0;
+    width: 100%;
+}
+
+.steam-1 { left: 29.24%; top: 73.44%; width: 0.909%; animation: steam 2.6s ease-in-out infinite; }
+.steam-2 { left: 30.08%; top: 71.36%; width: 0.699%; animation: steam 2.2s ease-in-out -0.7s infinite; }
+.steam-3 { left: 30.92%; top: 73.78%; width: 0.629%; animation: steam 2.8s ease-in-out -1.4s infinite; }
+.steam-4 { left: 32.14%; top: 76.32%; width: 0.559%; animation: steam 2.4s ease-in-out -0.4s infinite; }
+.steam-5 { left: 31.88%; top: 71.36%; width: 0.490%; animation: steam 2.5s ease-in-out -1.1s infinite; }
+
+/* Ноутбук отдельно от комнаты: выше Марка, но ниже его руки */
+.computer {
+    left: 38.25%;
+    top: 60.18%;
+    width: 34.06%;
+}
+
+.mark-body {
+    left: 58.46%;
+    top: 13.39%;
+    width: 32.94%;
+}
+
+/* Кисть «листает» тачпад: поворот вокруг запястья (правый край картинки) */
+.mark-hand {
+    left: 61.1%;
+    top: 77.9%;
+    width: 10.23%;
+    transform-origin: 100% 50%;
+    animation: hand-scroll 2.3s ease-in-out infinite;
+}
+
+.mark-label {
+    left: 86.06%;
+    top: 5.54%;
+    width: 10.28%;
+}
+
+.mark-arrow {
+    left: 80.99%;
+    top: 15.93%;
+    width: 7.34%;
+    animation: arrow-point 1.2s ease-in-out infinite;
+}
+
+
+/* ПЛАШКИ С ИСТОРИЕЙ
+   Ширина у всех 564, высота своя у каждой подложки: plashka1 / plashka_title2 — 289,
+   plashka_bg — 163, plashka2 — 195. Высоту слайда задаёт картинка,
+   текст и кнопки позиционируются в % от неё.
+   При скролле первая плашка плавно гаснет, а вторая проявляется на том же месте (js.js) */
+
+.story-card {
+    position: absolute;
+    left: 2.25%;
+    top: 4.05%;
+    width: 39.44%;
+}
+
+.story-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.story-slide-2 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.story-card-bg {
+    width: 100%;
+}
+
+.story-text {
+    position: absolute;
+    left: 4.72%;
+    top: 21%;
+    width: 88%;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.54vw;
+    line-height: 1.18;
+    color: #191919;
+}
+
+.story-text-lines {
+    white-space: nowrap;
+}
+
+/* plashka_bg 564×163: текст по центру по вертикали */
+.story-card-search .story-slide-2 .story-text {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* ЧЕТВЁРТЫЙ ЭКРАН
+   Кадр 1430×796 по fourth_screen.png, как на третьем экране */
+
+.fourth-screen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 820;
+    background: #DBDBDB;
+    overflow: hidden;
+}
+
+.fourth-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1430 / 796;
+}
+
+.room3 {
+    position: absolute;
+    left: 1.958%;
+    top: -0.377%;
+    width: 98.6%;
+    max-width: none;
+}
+
+/* Ноутбук 682×485; сообщения позиционируются в % от него */
+.chat-laptop {
+    position: absolute;
+    left: 17.62%;
+    top: 16.2%;
+    width: 47.69%;
+    aspect-ratio: 682 / 485;
+}
+
+.chat-laptop-img {
+    width: 100%;
+}
+
+/* Обрезка по экрану: слева с голубой панели (x 110), справа по краю экрана (x 569) */
+.chat-messages {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 16.57% 0 16.13%);
+}
+
+.message {
+    position: absolute;
+    opacity: 0;
+}
+
+.message-1 { left: 47.08%; top: 17.73%; width: 29.03%; }
+.message-2 { left: 39.87%; top: 26.7%;  width: 29.03%; }
+.message-3 { left: 47.08%; top: 38.52%; width: 29.33%; }
+.message-4 { left: 39.87%; top: 48.64%; width: 29.77%; }
+
+.story-card-offer {
+    left: 58.48%;
+    top: 3.6%;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.story-card-offer .story-text {
+    left: 4.36%;
+    top: 20%;
+}
+
+/* plashka2 564×195: текст сверху, «прочитать переписку» справа внизу */
+.story-card-offer .story-slide-2 .story-text {
+    top: 10.3%;
+}
+
+.read-chat-btn {
+    left: 46.8%;
+    top: 65.6%;
+}
+
+/* Красные кнопки на плашках (278×47) */
+.story-btn {
+    position: absolute;
+    width: 49.3%;
+    transition: transform 0.2s ease;
+}
+
+.story-btn img {
+    width: 100%;
+}
+
+.story-btn:hover,
+.story-btn:focus-visible {
+    transform: scale(1.04);
+}
+
+.story-card.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* ПЯТЫЙ ЭКРАН
+   Лежит внутри .fourth-screen поверх затемнения. Позиции в % от сцены 1440×820
+   (по fifth_screen.png, масштаб макета 1.175) */
+
+.fifth-screen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #DBDBDB 90%, #C2C2C2 90%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.room4 {
+    position: absolute;
+    left: 0;
+    top: 8.66%;
+    width: 99.93%;
+}
+
+.fifth-hint {
+    position: absolute;
+    left: 18.13%;
+    top: 6%;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2.08vw;
+    line-height: 1;
+    white-space: nowrap;
+    color: #191919;
+}
+
+/* При наведении герой немного увеличивается от ног (стоит на месте на полу) */
+.person {
+    display: block;
+    position: absolute;
+    transform-origin: 50% 100%;
+    transition: transform 0.3s ease;
+}
+
+.person:hover,
+.person:focus-visible {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.person-img {
+    position: relative;
+    width: 100%;
+}
+
+/* Обводка лежит под героем и проявляется при наведении */
+.person-stroke {
+    position: absolute;
+    max-width: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.person:hover .person-stroke,
+.person:focus-visible .person-stroke {
+    opacity: 1;
+}
+
+/* boy1 251×520, stroke1 282×539 */
+.person-boy { left: 14.65%; top: 24.39%; width: 17.43%; }
+.person-boy .person-stroke { left: -6.18%; top: -1.83%; width: 112.35%; }
+
+/* men2 323×535, stroke2 346×561 */
+.person-men { left: 34.17%; top: 22%; width: 22.43%; }
+.person-men .person-stroke { left: -3.56%; top: -2.43%; width: 107.12%; }
+
+/* girl3 287×521, stroke3 317×559 */
+.person-girl { left: 57.08%; top: 24.88%; width: 19.93%; }
+.person-girl .person-stroke { left: -5.23%; top: -3.65%; width: 110.45%; }
+
+/* Стрелки над героями пульсируют сверху вниз и всегда лежат поверх героев */
+.person-arrow {
+    position: absolute;
+    z-index: 2;
+    width: 3.75%;
+    pointer-events: none;
+    transition: translate 0.3s ease;
+    animation: arrow-pulse 1.2s ease-in-out infinite;
+}
+
+/* Когда герой увеличивается (5% от ног вверх ≈ 1.8vw), его стрелка поднимается вместе с ним.
+   Отдельное свойство translate, чтобы не мешать transform в анимации пульсации */
+.person-boy:hover ~ .person-arrow-boy,
+.person-boy:focus-visible ~ .person-arrow-boy,
+.person-men:hover ~ .person-arrow-men,
+.person-men:focus-visible ~ .person-arrow-men,
+.person-girl:hover ~ .person-arrow-girl,
+.person-girl:focus-visible ~ .person-arrow-girl {
+    translate: 0 -1.9vw;
+}
+
+.person-arrow-boy  { left: 19.51%; top: 17.4%; }
+.person-arrow-men  { left: 42%; top: 14.5%; animation-delay: -0.4s; }
+.person-arrow-girl { left: 60.97%; top: 17.8%; animation-delay: -0.8s; }
+
+
+/* ШЕСТОЙ ЭКРАН
+   Отдельная секция под четвёртой, скрыта до нажатия на men2.
+   room5.svg 1439×802 — стены и белая плашка, по six_screen.png (масштаб макета 1.0535).
+   Текст по центру плашки (центр плашки x ≈ 742 из 1440) */
+
+.six-screen {
+    display: none;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 820;
+    background: #DBDBDB;
+    overflow: hidden;
+}
+
+.candidate-screen.is-open {
+    display: block;
+}
+
+.room5 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 99.93%;
+}
+
+.six-text {
+    position: absolute;
+    left: 51.53%;
+    top: 35.8%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.six-title {
+    font-family: "Philosopher", Georgia, serif;
+    font-weight: 700;
+    font-size: 6.8vw;
+    line-height: 1;
+    color: #000;
+}
+
+.six-subtitle {
+    margin-top: 0.4vw;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.52vw;
+    line-height: 1.2;
+    color: #191919;
+}
+
+
+/* ЧЁРНАЯ ПЕЛЕНА ДЛЯ ПЕРЕХОДА «КАНДИДАТ 1» -> ПАВЕЛ: на шестом экране сгущается,
+   на седьмом сначала полностью чёрная и рассеивается (js.js) */
+
+.screen-fade {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.screen-fade-in {
+    opacity: 1;
+}
+
+
+/* СЕДЬМОЙ ЭКРАН: ПАВЕЛ
+   Кадр 1440×1816 (seven_screen.png, масштаб макета 0.8347): сверху room6 1440×1011,
+   ниже продолжается пол. Позиции в % от кадра; top — от высоты 1816 */
+
+.pavel-screen {
+    display: none;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 1816;
+    background: #DBDBDB;
+    overflow: hidden;
+}
+
+.pavel-screen > img,
+.pavel-wall-line {
+    position: absolute;
+}
+
+.room6 {
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.pavel-wall-line {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Сертификаты висят на гвозде и слегка покачиваются */
+.certificate {
+    transform-origin: 50% 0;
+    animation: certificate-swing 3.6s ease-in-out infinite;
+}
+
+.certificate-1 { left: 22.47%; top: 8.12%; width: 10.69%; }
+.certificate-2 { left: 34.53%; top: 7.98%; width: 7.57%; animation-duration: 3s; animation-delay: -1.2s; }
+
+/* Диск телефона 55×56 в точке (478, 451) room6, вращается вокруг центра (27.5, 28.5) */
+.phone-dial {
+    left: 33.19%;
+    top: 24.83%;
+    width: 3.82%;
+    transform-origin: 50% 50.9%;
+    animation: dial-spin 6s linear infinite;
+}
+
+/* Плашка 564×289 на месте плашки из room6 (848, 30) */
+.pavel-card {
+    position: absolute;
+    left: 58.89%;
+    top: 1.652%;
+    width: 39.17%;
+}
+
+.pavel-card .story-text {
+    left: 4.74%;
+    top: 21.8%;
+}
+
+.pavel-btn {
+    left: 46.63%;
+    top: 78.9%;
+}
+
+
+/* ПОП-АП «ПРИНЯТЬ РЕШЕНИЕ»
+   Белая плашка шириной 533 и минимальной высотой 189 (как plashka_yes_no.svg), скругление 25;
+   по центру окна. Высота растёт под текст. Размеры в vw: 1px макета = 100/1440 vw.
+   Показывается набор текстов того кандидата, чей data-candidate у поп-апа (js.js) */
+
+.decision-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+/* Закрытый поп-ап не должен ловить клики: его активный слой с visibility: visible
+   иначе перекрывает середину экрана, хоть и невидим */
+.decision-popup.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.decision-box {
+    position: relative;
+    display: grid;
+    width: 37.01vw;
+    min-height: 13.125vw;
+    border-radius: 1.74vw;
+    background: #fff;
+    transform: scale(0.95);
+    transition: transform 0.35s ease;
+}
+
+.decision-popup.is-open .decision-box {
+    transform: scale(1);
+}
+
+.decision-close {
+    position: absolute;
+    top: 1.05vw;
+    right: 1.26vw;
+    z-index: 1;
+    width: 1.67vw;
+    transition: transform 0.2s ease;
+}
+
+.decision-close img {
+    width: 100%;
+}
+
+.decision-close:hover,
+.decision-close:focus-visible {
+    transform: scale(1.15);
+}
+
+/* Набор кандидата и его три состояния лежат в одной ячейке сетки:
+   высота плашки = самое высокое состояние, при смене ничего не прыгает */
+.decision-set {
+    display: none;
+    grid-area: 1 / 1;
+}
+
+.decision-popup[data-candidate="pavel"] .decision-set[data-candidate="pavel"],
+.decision-popup[data-candidate="elena"] .decision-set[data-candidate="elena"],
+.decision-popup[data-candidate="mark"] .decision-set[data-candidate="mark"] {
+    display: grid;
+}
+
+.decision-view {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.decision-popup[data-state="ask"] .decision-ask,
+.decision-popup[data-state="yes"] .decision-result-yes,
+.decision-popup[data-state="no"] .decision-result-no {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Вопрос и кнопки по центру плашки по вертикали */
+.decision-ask {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.33vw;
+    padding: 1.5vw 0;
+}
+
+.decision-question {
+    text-align: center;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.39vw;
+    line-height: 1.2;
+    color: #191919;
+}
+
+.decision-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2.74vw;
+}
+
+/* Кнопки 136×58 */
+.decision-btn {
+    width: 9.44vw;
+    transition: transform 0.2s ease;
+}
+
+.decision-btn img {
+    width: 100%;
+}
+
+.decision-btn:hover,
+.decision-btn:focus-visible {
+    transform: scale(1.06);
+}
+
+.decision-result-yes,
+.decision-result-no {
+    padding: 0.92vw 1.78vw 1.4vw;
+}
+
+.decision-title {
+    text-align: center;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.46vw;
+    line-height: 1.2;
+    color: #191919;
+}
+
+.decision-text {
+    margin-top: 0.9vw;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.35vw;
+    line-height: 1.22;
+    color: #191919;
+}
+
+
+/* ЭКРАН С ПАЗЛАМИ
+   Кадр 1440×1257 по pazl_screen.png (масштаб макета 1.036), сразу под экраном Елены.
+   pazl.svg 1249×1018 сдвинут на (94, 188); тексты — в % от него */
+
+.pazl-screen {
+    display: none;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 1257;
+    background: #DBDBDB;
+    overflow: hidden;
+}
+
+.pazl {
+    position: absolute;
+    left: 6.53%;
+    top: 14.96%;
+    width: 86.74%;
+}
+
+.pazl-img {
+    width: 100%;
+}
+
+.pazl-text {
+    position: absolute;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.22vw;
+    line-height: 1.27;
+    white-space: nowrap;
+    color: #191919;
+}
+
+.pazl-text-1 { left: 23.54%; top: 9.98%; }   /* 64% */
+.pazl-text-2 { left: 23.7%;  top: 40.04%; }  /* 84% */
+.pazl-text-3 { left: 69.68%; top: 9.98%; }   /* на 20–30% */
+.pazl-text-4 { left: 78.25%; top: 73.97%; }  /* 4 из 10 */
+
+
+/* ЭКРАН МАРКА
+   room_boy.svg 1442×760 по boy_screen.png (масштаб макета 1.042), ниже — пол цвета стены */
+
+.boy-screen {
+    display: none;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 820;
+    background: #DBDBDB;
+    overflow: hidden;
+}
+
+.boy-screen > img {
+    position: absolute;
+}
+
+.room-boy {
+    left: 0;
+    top: 0;
+    width: 100.14%;
+    max-width: none;
+}
+
+/* Диплом висит на гвоздике и покачивается из стороны в сторону */
+.diplom {
+    left: 51.78%;
+    top: 13.8%;
+    width: 8.89%;
+    transform-origin: 48% 3%;
+    animation: diplom-swing 3.2s ease-in-out infinite;
+}
+
+/* Лапша свисает изо рта: подтягивается вверх и болтается, будто её едят */
+.lapsha {
+    left: 67.65%;
+    top: 46.82%;
+    width: 2.78%;
+    transform-origin: 50% 0;
+    animation: noodle-slurp 1.4s ease-in-out infinite;
+}
+
+/* Плашка 564×289 */
+.mark-card {
+    position: absolute;
+    left: 2.16%;
+    top: 3.87%;
+    width: 39.17%;
+}
+
+.mark-card .story-text {
+    left: 4%;
+    top: 19.4%;
+}
+
+.mark-btn {
+    left: 46.4%;
+    top: 78.7%;
+}
+
+
+/* ПОСЛЕДНИЙ ЭКРАН МАРКА И ФУТЕР
+   Кадр 1440×1817: сверху room_lasst_boy.svg 1440×1584, ниже продолжается пол.
+   footer.png начинается с y = 718 кадра (масштаб макета 1.043).
+   Рука boys_hand.svg 253×173 стоит в точке (309.66, 220.87) — ровно на месте руки из исходного файла.
+   top в % — от высоты 1817 */
+
+.boy-last-screen {
+    display: none;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 1817;
+    background: #DBDBDB;
+    overflow: hidden;
+}
+
+.boy-last-screen > img {
+    position: absolute;
+}
+
+.room-last-boy {
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+/* Рука чуть покачивается от плеча (левый край рукава), будто указывает на доску.
+   Угол маленький, чтобы край рукава не отходил от плеча */
+.boys-hand {
+    left: 21.5%;
+    top: 12.16%;
+    width: 17.57%;
+    transform-origin: 2.4% 59.5%;
+    animation: hand-point 2.4s ease-in-out infinite;
+}
+
+
+/* Пар от носков, как от кофе на третьем экране */
+.sock-steam {
+    animation: steam 2.4s ease-in-out infinite;
+}
+
+.sock-steam-1 { left: 81.76%; top: 66.42%; width: 0.972%; }
+.sock-steam-3 { left: 82.93%; top: 67.48%; width: 0.694%; animation-duration: 2.8s; animation-delay: -0.9s; }
+.sock-steam-6 { left: 83.8%;  top: 66.83%; width: 0.764%; animation-duration: 2.2s; animation-delay: -1.5s; }
+.sock-steam-4 { left: 56.33%; top: 86.71%; width: 1.111%; animation-delay: -0.5s; }
+.sock-steam-2 { left: 57.24%; top: 86.81%; width: 0.694%; animation-duration: 2.6s; animation-delay: -1.2s; }
+.sock-steam-5 { left: 58.33%; top: 87.3%;  width: 0.625%; animation-duration: 2.1s; animation-delay: -1.8s; }
+
+/* garbage.svg 1199×607 в точке (103.5, 1104); надписи — в % от неё */
+.garbage {
+    position: absolute;
+    left: 7.19%;
+    top: 60.76%;
+    width: 83.26%;
+}
+
+.garbage-img {
+    width: 100%;
+}
+
+.paper-text {
+    position: absolute;
+    transform-origin: 0 0;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.48vw;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: #191919;
+}
+
+.paper-text b {
+    font-weight: 700;
+}
+
+.paper-text-author {
+    left: 8.8%;
+    top: 14.8%;
+    transform: rotate(-22deg);
+}
+
+.paper-text-curator {
+    left: 26.71%;
+    top: 11.28%;
+    transform: rotate(24deg);
+}
+
+/* Бегущая строка внизу */
+.footer-marquee {
+    position: absolute;
+    left: 0;
+    bottom: 0.6vw;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 24s linear infinite;
+}
+
+.marquee-track span {
+    padding-right: 1.6vw;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 2.4vw;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: #191919;
+}
+
+
+/* СТИКЕРЫ СО СТАТИСТИКОЙ (низ экрана Павла)
+   Позиция стикера — в % от кадра 1440×1816, текст — в % от стикера.
+   Текст поворачивается от своего левого верхнего угла на угол верхнего края листка */
+
+.stick {
+    position: absolute;
+}
+
+.stick img {
+    width: 100%;
+}
+
+.stick-text {
+    position: absolute;
+    transform-origin: 0 0;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.5vw;
+    line-height: 1.05;
+    white-space: nowrap;
+    color: #191919;
+}
+
+/* stick1 251×244, «48 %», наклон +3.7° */
+.stick-1 { left: 10.63%; top: 79.63%; width: 17.43%; }
+.stick-1 .stick-text { left: 10.4%; top: 30.7%; transform: rotate(3.7deg); }
+
+/* stick2 312×296, «Каждый 4-ый», наклон +21° */
+.stick-2 { left: 29.7%; top: 61.67%; width: 21.67%; }
+.stick-2 .stick-text { left: 18.4%; top: 24.3%; transform: rotate(21deg); }
+
+/* stick3 316×303, «33%», наклон −24° */
+.stick-3 { left: 58.65%; top: 79.49%; width: 21.94%; }
+.stick-3 .stick-text { left: 11.4%; top: 47.5%; transform: rotate(-24deg); }
+
+/* stick4 264×271, «7,9 из 10», наклон −7.5° */
+.stick-4 { left: 69.72%; top: 58.37%; width: 18.33%; }
+.stick-4 .stick-text { left: 9.8%; top: 36%; transform: rotate(-7.5deg); }
+
+
+/* ЭКРАН ЕЛЕНЫ
+   room8.svg 1440×950 по eight_screen.png (масштаб макета 1.1444); стена — фон секции */
+
+.elena-screen {
+    display: none;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 950;
+    background: #DBDBDB;
+    overflow: hidden;
+}
+
+.room8 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+/* Плашка 564×289 */
+.elena-card {
+    position: absolute;
+    left: 58.92%;
+    top: 3.4%;
+    width: 39.17%;
+}
+
+.elena-card .story-text {
+    left: 4.49%;
+    top: 20%;
+}
+
+.elena-btn {
+    left: 47.1%;
+    top: 79.5%;
+}
+
+
+/* АНИМАЦИИ */
+
+@keyframes flower-sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+@keyframes sticker-flutter {
+    0%, 100% { transform: rotate(0deg) skewX(0deg); }
+    20% { transform: rotate(3deg) skewX(-1deg); }
+    45% { transform: rotate(-2deg) skewX(1deg); }
+    70% { transform: rotate(2.5deg) skewX(-0.5deg); }
+    85% { transform: rotate(-1deg) skewX(0.5deg); }
+}
+
+/* Цикл 9s: быстрое появление 0–20%, все видны 20–70%, исчезновение 70–94%, пустая пауза до 100% */
+@keyframes thought-small {
+    0% { opacity: 0; }
+    5%, 88% { opacity: 1; }
+    94%, 100% { opacity: 0; }
+}
+
+@keyframes thought-mid {
+    0%, 5% { opacity: 0; }
+    10%, 82% { opacity: 1; }
+    88%, 100% { opacity: 0; }
+}
+
+@keyframes thought-big {
+    0%, 10% { opacity: 0; }
+    15%, 76% { opacity: 1; }
+    82%, 100% { opacity: 0; }
+}
+
+@keyframes thought-large {
+    0%, 15% { opacity: 0; }
+    20%, 70% { opacity: 1; }
+    76%, 100% { opacity: 0; }
+}
+
+@keyframes steam {
+    0%, 100% { transform: translateY(0); opacity: 0.9; }
+    50% { transform: translateY(-25%); opacity: 0.4; }
+}
+
+/* Указывает на Марка: из верхнего правого угла вниз-влево и обратно */
+@keyframes arrow-point {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-8%, 7%); }
+}
+
+@keyframes hand-scroll {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-1.2%, 0.8%) rotate(-0.8deg); }
+    50% { transform: translate(0.4%, 0) rotate(0deg); }
+    75% { transform: translate(-0.8%, 1%) rotate(-0.5deg); }
+}
+
+@keyframes certificate-swing {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+/* Дорожка из 6 одинаковых строк: сдвиг на половину — бесшовный цикл */
+@keyframes marquee {
+    to { transform: translateX(-50%); }
+}
+
+@keyframes hand-point {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-1.5deg); }
+}
+
+@keyframes diplom-swing {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+@keyframes noodle-slurp {
+    0%, 100% { transform: translateY(0) scaleY(1) skewX(0deg); }
+    30% { transform: translateY(-1%) scaleY(0.98) skewX(4deg); }
+    60% { transform: translateY(0.5%) scaleY(1.005) skewX(-3deg); }
+    80% { transform: translateY(0) scaleY(0.995) skewX(2deg); }
+}
+
+@keyframes dial-spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes arrow-pulse {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(35%); opacity: 0.5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track,
+    .sock-steam,
+    .boys-hand,
+    .diplom,
+    .lapsha,
+    .certificate,
+    .phone-dial,
+    .person-arrow,
+    .steam,
+    .mark-hand,
+    .mark-arrow,
+    .flower,
+    .sticker {
+        animation: none;
+    }
+
+    .thought {
+        animation: none;
+        opacity: 1;
+    }
+}

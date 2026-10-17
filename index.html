@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мы с вами свяжемся!</title>
+  <link href="./css/style.css" rel="stylesheet" type="text/css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./js.js" charset="utf-8"></script>
+</head>
+
+<body id="main-page">
+
+<section class="zoom-stage">
+<div class="first-screen">
+    <img class="room" src="./img/room1.svg" alt="">
+
+    <div class="character">
+        <img class="boy" src="./img/boy_with_box.svg" alt="Марк с коробкой вещей">
+        <img class="flower" src="./img/flower.svg" alt="">
+        <img class="gorshok" src="./img/gorshok.svg" alt="">
+        <img class="sticker" src="./img/sticker1.svg" alt="Стикер «Уволен»">
+    </div>
+
+    <img class="thought thought-small" src="./img/small_round.svg" alt="">
+    <img class="thought thought-mid" src="./img/mid_round.svg" alt="">
+    <img class="thought thought-big" src="./img/big_round.svg" alt="">
+    <img class="thought thought-large" src="./img/large_round_with_text.svg" alt="Почему меня не хотят брать на работу?">
+
+    <div class="first-screen-text">
+        <h1 class="first-screen-title">Мы с вами<br>свяжемся!</h1>
+        <p class="first-screen-subtitle">История о том, как Марк искал работу</p>
+    </div>
+</div>
+
+<div class="second-screen">
+    <img class="zoom-boy" src="./img/zoom_boy_body.svg" alt="">
+
+    <!-- Те же цветок, горшок и стикер, что на первом экране, увеличенные до ракурса zoom_boy.
+         Анимации стартуют одновременно с первым экраном, поэтому движение продолжается без скачка -->
+    <div class="zoom-details">
+        <div class="character">
+            <img class="flower" src="./img/flower.svg" alt="">
+            <img class="gorshok" src="./img/gorshok.svg" alt="">
+            <img class="sticker" src="./img/sticker1.svg" alt="">
+        </div>
+    </div>
+
+    <div class="badge">
+        <p class="badge-name">Марк, 23 года</p>
+        <p class="badge-info">
+            Junior Frontend-разработчик<br>
+            <b>Опыт:</b> 1 год<br>
+            <b>Статус:</b> Уволен после сокращения штата
+        </p>
+    </div>
+</div>
+
+<div class="blackout">
+    <p class="blackout-text">Спустя 2 месяца...</p>
+</div>
+
+<div class="third-screen">
+    <div class="third-frame">
+        <img class="room2" src="./img/room2.svg" alt="">
+
+        <img class="steam steam-1" src="./img/par1.svg" alt="">
+        <img class="steam steam-2" src="./img/par2.svg" alt="">
+        <img class="steam steam-3" src="./img/par3.svg" alt="">
+        <img class="steam steam-4" src="./img/par4.svg" alt="">
+        <img class="steam steam-5" src="./img/par5.svg" alt="">
+
+        <!-- Порядок: Марк, поверх него ноутбук, поверх ноутбука рука -->
+        <img class="mark-body" src="./img/mark_without_hand.svg" alt="Марк за ноутбуком">
+        <img class="computer" src="./img/computer.svg" alt="">
+        <img class="mark-hand" src="./img/marks_hand.svg" alt="">
+        <img class="mark-label" src="./img/mark.svg" alt="">
+        <img class="mark-arrow" src="./img/strelka_mark.svg" alt="">
+
+        <!-- При скролле вторая плашка плавно сменяет первую на том же месте (js.js) -->
+        <div class="story-card story-card-search">
+            <div class="story-slide story-slide-1">
+                <img class="story-card-bg" src="./img/plashka1.svg" alt="«Затянувшийся поиск»">
+                <!-- Переносы строк как в third_screen.png -->
+                <p class="story-text story-text-lines">
+                    Это Марк, и его уволили 2 месяца назад из-<br>за сокращения штата.<br>
+                    С тех пор он отправил больше сотни откликов,<br>
+                    но в ответ получал только дежурные фразы<br>
+                    о сохранении резюме в резерве и молчаливые<br>
+                    отказы. Герой уже начал сомневаться<br>
+                    в собственных силах и навыках...
+                </p>
+            </div>
+
+            <div class="story-slide story-slide-2">
+                <img class="story-card-bg" src="./img/plashka_bg.svg" alt="">
+                <p class="story-text">
+                    Но сегодня утром на почту пришло долгожданное приглашение на очное. Марк тут же открыл ноутбук, чтобы написать подруге...
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ЧЕТВЁРТЫЙ ЭКРАН: идёт сразу за третьим, переход обычным скроллом -->
+<section class="fourth-screen">
+    <div class="fourth-frame">
+        <img class="room3" src="./img/room3.svg" alt="">
+
+        <div class="chat-laptop">
+            <img class="chat-laptop-img" src="./img/computer_without_messages.svg" alt="Ноутбук с открытой перепиской">
+
+            <!-- Окно, в котором видны сообщения: от голубой панели слева до правого края экрана -->
+            <div class="chat-messages">
+                <img class="message message-right message-1" src="./img/mes1.svg" alt="Привет. Мне наконец-то ответили, завтра в 11:00 очный собес!">
+                <img class="message message-left message-2" src="./img/mes2.svg" alt="Отличная новость! Поздравляю, не зря столько времени потратил.">
+                <img class="message message-right message-3" src="./img/mes3.svg" alt="Да, позиция всего одна, я уже повторил что-то к тесту. Надеюсь все получится.">
+                <img class="message message-left message-4" src="./img/mes4.svg" alt="Удачи завтра, напиши потом, как все прошло!">
+            </div>
+        </div>
+
+        <!-- При скролле вторая плашка плавно сменяет первую на том же месте (js.js) -->
+        <div class="story-card story-card-offer">
+            <div class="story-slide story-slide-1">
+                <img class="story-card-bg" src="./img/plashka_title2.svg" alt="«Шанс на оффер»">
+                <!-- Переносы строк как в fourth_screen.png -->
+                <p class="story-text story-text-lines">
+                    После сотен шаблонных отказов кажется,<br>
+                    что приглашение на очную встречу —<br>
+                    это уже половина успеха. Марк берет с собой<br>
+                    распечатанное резюме, повторяет речь<br>
+                    и на следующий день приезжает в офис<br>
+                    компании.
+                </p>
+            </div>
+
+            <div class="story-slide story-slide-2">
+                <img class="story-card-bg" src="./img/plashka2.svg" alt="">
+                <p class="story-text">
+                    Однако у дверей переговорной выясняется, что на одну эту позицию претендует не он один.
+                </p>
+                <button class="story-btn read-chat-btn" type="button">
+                    <img src="./img/button1.svg" alt="Прочитать переписку">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="blackout">
+        <p class="blackout-text">На следующий день:</p>
+    </div>
+
+    <!-- ПЯТЫЙ ЭКРАН: проявляется из темноты в конце закрепления четвёртого -->
+    <div class="fifth-screen">
+        <img class="room4" src="./img/room4.svg" alt="">
+
+        <p class="fifth-hint">Нажмите на персонажа, чтобы узнать о нем больше</p>
+
+        <!-- При наведении вокруг героя появляется белая обводка -->
+        <a class="person person-boy candidate-link" href="#candidate-3" aria-label="Марк — кандидат 3">
+            <img class="person-stroke" src="./img/stroke1.svg" alt="">
+            <img class="person-img" src="./img/boy1.svg" alt="">
+        </a>
+        <a class="person person-men candidate-link" href="#candidate-1" aria-label="Мужчина в костюме — кандидат 1">
+            <img class="person-stroke" src="./img/stroke2.svg" alt="">
+            <img class="person-img" src="./img/men2.svg" alt="">
+        </a>
+        <a class="person person-girl candidate-link" href="#candidate-2" aria-label="Девушка в зелёном пиджаке — кандидат 2">
+            <img class="person-stroke" src="./img/stroke3.svg" alt="">
+            <img class="person-img" src="./img/girl3.svg" alt="">
+        </a>
+
+        <img class="person-arrow person-arrow-boy" src="./img/up_arrow.svg" alt="">
+        <img class="person-arrow person-arrow-men" src="./img/up_arrow.svg" alt="">
+        <img class="person-arrow person-arrow-girl" src="./img/up_arrow.svg" alt="">
+    </div>
+</section>
+
+<!-- ШЕСТОЙ И СЕДЬМОЙ ЭКРАНЫ: скрыты, пока не нажат men2; по нажатию страница прокручивается
+     к шестому, как по якорю (js.js) -->
+<section class="six-screen candidate-screen candidate-1-screen" id="candidate-1">
+    <img class="room5" src="./img/room5.svg" alt="">
+    <div class="six-text">
+        <h2 class="six-title">Кандидат 1</h2>
+        <p class="six-subtitle">Специалист с 10-летним стажем</p>
+    </div>
+
+    <!-- Затемнение при скролле к экрану с Павлом (js.js) -->
+    <div class="screen-fade"></div>
+</section>
+
+<!-- СЕДЬМОЙ ЭКРАН: Павел, длиннее обычного (кадр 1440×1816 по seven_screen.png) -->
+<section class="pavel-screen candidate-screen">
+    <!-- room6_bg.svg — копия room6.svg без плашки с текстом/кнопкой и без диска телефона -->
+    <img class="room6" src="./img/room6_bg.svg" alt="Павел за столом говорит по телефону">
+
+    <!-- Продолжение линии угла стены ниже room6 -->
+    <svg class="pavel-wall-line" viewBox="0 0 1440 1816" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M91 1009L0 1262" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+
+    <img class="certificate certificate-1" src="./img/sertificat1.svg" alt="">
+    <img class="certificate certificate-2" src="./img/sertificat2.svg" alt="">
+    <img class="phone-dial" src="./img/circle_phone.svg" alt="">
+
+    <div class="pavel-card">
+        <img class="story-card-bg" src="./img/plashka_pavel.svg" alt="Павел, 54 года">
+        <p class="story-text story-text-lines pavel-text">
+            Претендует на позицию ведущего<br>
+            аналитика данных после 10 лет<br>
+            руководства в IT. Компании отказывают<br>
+            из-за избыточной квалификации,<br>
+            опасаясь потери мотивации на линейной<br>
+            роли.
+        </p>
+        <button class="story-btn pavel-btn decision-open" type="button" data-candidate="pavel">
+            <img src="./img/button_pavel.svg" alt="Принять решение">
+        </button>
+    </div>
+
+    <!-- Стикеры со статистикой на полу. Заголовки нарисованы в svg,
+         основной текст наклонён под угол самого стикера -->
+    <div class="stick stick-2">
+        <img src="./img/stick2.svg" alt="Каждый 4-ый">
+        <p class="stick-text">соискатель в России<br>получает отказ из-<br>за «слишком высокой<br>квалификации»</p>
+    </div>
+    <div class="stick stick-4">
+        <img src="./img/stick4.svg" alt="7,9 из 10">
+        <p class="stick-text">оценка сложности<br>поиска работы<br>для кандидатов<br>старше 50 лет —<br>максимум на рынке.</p>
+    </div>
+    <div class="stick stick-1">
+        <img src="./img/stick1.svg" alt="48%">
+        <p class="stick-text">специалистов 50+<br>не видят для себя<br>вакансий, а 13%<br>скрывают возраст<br>в резюме.</p>
+    </div>
+    <div class="stick stick-3">
+        <img src="./img/stick3.svg" alt="33%">
+        <p class="stick-text">начальников боятся<br>брать сотрудников<br>старше себя<br>или с руководящим<br>опытом</p>
+    </div>
+
+    <!-- Экран въезжает тёмным и высветляется при скролле (js.js) -->
+    <div class="screen-fade screen-fade-in pavel-fade-in"></div>
+
+    <!-- Затемнение в конце экрана — переход к «Кандидату 2» (js.js) -->
+    <div class="screen-fade pavel-fade-out"></div>
+</section>
+
+<!-- ВОСЬМОЙ ЭКРАН: «Кандидат 2», такой же, как «Кандидат 1»; въезжает тёмным и высветляется (js.js) -->
+<section class="six-screen candidate-screen candidate-2-screen" id="candidate-2">
+    <img class="room5" src="./img/room5.svg" alt="">
+    <div class="six-text">
+        <h2 class="six-title">Кандидат 2</h2>
+        <p class="six-subtitle">Специалист после длительного перерыва</p>
+    </div>
+
+    <!-- Въезжает тёмным, высветляется, затем снова темнеет перед экраном Елены (js.js) -->
+    <div class="screen-fade screen-fade-in"></div>
+</section>
+
+<!-- ДЕВЯТЫЙ ЭКРАН: Елена (кадр 1440×950 по eight_screen.png); въезжает тёмным и высветляется (js.js) -->
+<section class="elena-screen candidate-screen">
+    <img class="room8" src="./img/room8.svg" alt="Елена сидит на полу у стиральной машины">
+
+    <div class="elena-card">
+        <img class="story-card-bg" src="./img/plashka_elena.svg" alt="Елена, 36 лет">
+        <!-- Переносы строк как в eight_screen.png -->
+        <p class="story-text story-text-lines">
+            Планирует выйти в IT на начальную<br>
+            позицию после трех лет декрета. При этом<br>
+            работодатели настороженно относятся к<br>
+            перерывам в стаже и опасаются<br>
+            внезапных больничных у кандидата с<br>
+            маленьким ребенком.
+        </p>
+        <button class="story-btn elena-btn decision-open" type="button" data-candidate="elena">
+            <img src="./img/button_pavel.svg" alt="Принять решение">
+        </button>
+    </div>
+
+    <div class="screen-fade screen-fade-in"></div>
+</section>
+
+<!-- ЭКРАН С ПАЗЛАМИ: продолжение пола под экраном Елены (кадр 1440×1257 по pazl_screen.png).
+     Заголовки нарисованы в pazl.svg, основной текст — поверх своих кусочков -->
+<section class="pazl-screen candidate-screen">
+    <div class="pazl">
+        <img class="pazl-img" src="./img/pazl.svg" alt="Пазлы со статистикой о женщинах после декрета">
+
+        <p class="pazl-text pazl-text-1">
+            женщин, которые<br>
+            находились или находятся<br>
+            в декрете, проходили<br>
+            различные<br>
+            образовательные курсы<br>
+            и программы,<br>
+            чтобы сменить профессию<br>
+            после выхода на работу.
+        </p>
+        <p class="pazl-text pazl-text-2">
+            мам после декрета ищут<br>
+            работу исключительно<br>
+            с гибким графиком<br>
+            или удаленкой,<br>
+            но на стартовых позициях<br>
+            такие условия предлагают<br>
+            редко.
+        </p>
+        <p class="pazl-text pazl-text-3">
+            ниже зарплатные<br>
+            предложения получают<br>
+            женщины при выходе<br>
+            из декрета на новое место<br>
+            по сравнению<br>
+            с кандидатами<br>
+            без перерыва в стаже<br>
+            на той же стартовой роли.
+        </p>
+        <p class="pazl-text pazl-text-4">
+            женщин после<br>
+            окончания декрета не<br>
+            возвращаются на старое<br>
+            место, а вынуждены<br>
+            искать работу в новой<br>
+            компании.
+        </p>
+    </div>
+
+    <!-- Затемнение в конце экрана — переход к «Кандидату 3» (js.js) -->
+    <div class="screen-fade pazl-fade-out"></div>
+</section>
+
+<!-- «Кандидат 3»: въезжает тёмным и высветляется (js.js) -->
+<section class="six-screen candidate-screen candidate-3-screen" id="candidate-3">
+    <img class="room5" src="./img/room5.svg" alt="">
+    <div class="six-text">
+        <h2 class="six-title">Кандидат 3</h2>
+        <p class="six-subtitle">Начинающий специалист с годом стажа</p>
+    </div>
+
+    <!-- Въезжает тёмным, высветляется, затем снова темнеет перед экраном Марка (js.js) -->
+    <div class="screen-fade screen-fade-in"></div>
+</section>
+
+<!-- ЭКРАН МАРКА (кадр 1440×820 по boy_screen.png); въезжает тёмным и высветляется (js.js) -->
+<section class="boy-screen candidate-screen">
+    <img class="room-boy" src="./img/room_boy.svg" alt="Марк сидит на матрасе с ноутбуком и ест лапшу">
+
+    <img class="diplom" src="./img/diplom.svg" alt="">
+    <img class="lapsha" src="./img/lapsha.svg" alt="">
+
+    <div class="mark-card">
+        <img class="story-card-bg" src="./img/plashka_mark.svg" alt="Марк, 23 года">
+        <!-- Переносы строк как в boy_screen.png -->
+        <p class="story-text story-text-lines">
+            Фронтенд-разработчик с опытом<br>
+            коммерческой работы один год, попавший под<br>
+            сокращение штата. Даже на базовые позиции<br>
+            компании формально требуют стаж от трех лет<br>
+            и отсекают резюме новичков автоматическими<br>
+            фильтрами.
+        </p>
+        <button class="story-btn mark-btn decision-open" type="button" data-candidate="mark">
+            <img src="./img/button_pavel.svg" alt="Принять решение">
+        </button>
+    </div>
+
+    <div class="screen-fade screen-fade-in"></div>
+</section>
+
+<!-- ПОСЛЕДНИЙ ЭКРАН МАРКА И ФУТЕР: у доски, ниже на полу коробка и вещи, внизу бегущая строка
+     (кадр 1440×1817 по boy_last_screen.png и footer.png) -->
+<section class="boy-last-screen candidate-screen">
+    <!-- room_last_boy_bg.svg — копия room_lasst_boy.svg без руки с маркером: рука отдельным слоем -->
+    <img class="room-last-boy" src="./img/room_last_boy_bg.svg" alt="Марк у доски с графиками">
+    <img class="boys-hand" src="./img/boys_hand.svg" alt="">
+
+    <!-- Пар от носков: лежит под вещами, низ струек уходит за носок -->
+    <img class="sock-steam sock-steam-1" src="./img/fu1.svg" alt="">
+    <img class="sock-steam sock-steam-3" src="./img/fu3.svg" alt="">
+    <img class="sock-steam sock-steam-6" src="./img/fu6.svg" alt="">
+    <img class="sock-steam sock-steam-4" src="./img/fu4.svg" alt="">
+    <img class="sock-steam sock-steam-2" src="./img/fu2.svg" alt="">
+    <img class="sock-steam sock-steam-5" src="./img/fu5.svg" alt="">
+
+    <div class="garbage">
+        <img class="garbage-img" src="./img/garbage.svg" alt="Коробка с бумагами, носки, тетрадь и рюкзак на полу">
+        <!-- Надписи на листах из коробки, наклонены под листы -->
+        <p class="paper-text paper-text-author"><b>автор:</b><br>Завгородняя<br>Ксения</p>
+        <p class="paper-text paper-text-curator"><b>куратор:</b><br>Селезенева<br>Наталья</p>
+    </div>
+
+    <footer class="footer-marquee" aria-label="фух, у меня точно не будет работы!">
+        <!-- Строка повторена дважды: сдвиг на половину даёт бесшовный повтор -->
+        <div class="marquee-track" aria-hidden="true">
+            <span>фух, у меня точно не будет работы!</span>
+            <span>фух, у меня точно не будет работы!</span>
+            <span>фух, у меня точно не будет работы!</span>
+            <span>фух, у меня точно не будет работы!</span>
+            <span>фух, у меня точно не будет работы!</span>
+            <span>фух, у меня точно не будет работы!</span>
+        </div>
+    </footer>
+</section>
+
+<!-- ПОП-АП «ПРИНЯТЬ РЕШЕНИЕ»: открывается кнопкой на плашке кандидата (data-candidate).
+     Внутри — свой набор текстов на каждого кандидата: вопрос, «да», «нет».
+     Закрывается крестиком, кликом вне плашки или Esc (js.js) -->
+<div class="decision-popup" data-candidate="pavel" data-state="ask" aria-hidden="true">
+    <div class="decision-box" role="dialog" aria-modal="true" aria-label="Решение по кандидату">
+        <button class="decision-close" type="button" aria-label="Закрыть">
+            <img src="./img/cross.svg" alt="">
+        </button>
+
+        <div class="decision-set" data-candidate="pavel">
+            <div class="decision-view decision-ask">
+                <p class="decision-question">Готовы ли вы взять Павла в команду?</p>
+                <div class="decision-buttons">
+                    <button class="decision-btn decision-yes" type="button">
+                        <img src="./img/but_yes.svg" alt="Да">
+                    </button>
+                    <button class="decision-btn decision-no" type="button">
+                        <img src="./img/but_no.svg" alt="Нет">
+                    </button>
+                </div>
+            </div>
+
+            <div class="decision-view decision-result-yes">
+                <p class="decision-title">Поздравляем!</p>
+                <p class="decision-text">
+                    Вы наняли сильного эксперта! Все страхи руководства оказались напрасными. Павел быстро исправил старые ошибки в системе, наладил аналитику и стал отличным наставником для молодых коллег.
+                </p>
+            </div>
+
+            <div class="decision-view decision-result-no">
+                <p class="decision-title">Вы ошиблись!</p>
+                <p class="decision-text">
+                    Опасения не оправдали себя и вместо решения задач компания потратила бюджет на затянувшийся поиск, пока подходящий профи ушёл к конкурентам.
+                </p>
+            </div>
+        </div>
+
+        <div class="decision-set" data-candidate="mark">
+            <div class="decision-view decision-ask">
+                <p class="decision-question">Готовы ли вы взять Марка в команду?</p>
+                <div class="decision-buttons">
+                    <button class="decision-btn decision-yes" type="button">
+                        <img src="./img/but_yes.svg" alt="Да">
+                    </button>
+                    <button class="decision-btn decision-no" type="button">
+                        <img src="./img/but_no.svg" alt="Нет">
+                    </button>
+                </div>
+            </div>
+
+            <div class="decision-view decision-result-yes">
+                <p class="decision-title">Поздравляем!</p>
+                <p class="decision-text">
+                    У кандидата есть все необходимые навыки для старта и желание развиваться. Команда получила надежные рабочие руки без переплаты за формальные строчки в резюме.
+                </p>
+            </div>
+
+            <div class="decision-view decision-result-no">
+                <p class="decision-title">Вы ошиблись!</p>
+                <p class="decision-text">
+                    Автоматический фильтр не пропустил резюме просто потому, что в графе опыта стоял 1 год вместо 2 лет. До человека отклик даже не дошел, и компания упустила кандидата с реальными навыками из-за формальной галочки в настройках бота.
+                </p>
+            </div>
+        </div>
+
+        <div class="decision-set" data-candidate="elena">
+            <div class="decision-view decision-ask">
+                <p class="decision-question">Готовы ли вы взять Елену в команду?</p>
+                <div class="decision-buttons">
+                    <button class="decision-btn decision-yes" type="button">
+                        <img src="./img/but_yes.svg" alt="Да">
+                    </button>
+                    <button class="decision-btn decision-no" type="button">
+                        <img src="./img/but_no.svg" alt="Нет">
+                    </button>
+                </div>
+            </div>
+
+            <div class="decision-view decision-result-yes">
+                <p class="decision-title">Поздравляем!</p>
+                <p class="decision-text">
+                    Страх работодателя перед декретным перерывом не подтвердился. Во время паузы Елена прошла профильные курсы и освоила необходимые навыки, а за счёт высокой самоорганизации быстро влилась в работу. Команда получила мотивированного и надёжного специалиста.
+                </p>
+            </div>
+
+            <div class="decision-view decision-result-no">
+                <p class="decision-title">Вы ошиблись!</p>
+                <p class="decision-text">
+                    В компании посчитали, что после декрета сотрудника придётся учить с нуля. В итоге команда лишилась специалиста, чья дисциплина и мотивация были выше, чем у многих кандидатов без пауз в карьере.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+/* Брейкпоинты как в reference: телефон до 450px, планшет 451–1365px, десктоп от 1366px.
+   Первый экран масштабируется пропорционально (vw и %), отдельные правила пока не нужны. */
+
+@media screen and (min-width: 1px) and (max-width: 450px) {
+
+}
+
+@media screen and (min-width: 451px) and (max-width: 1365px) /* планшет */ {
+
+}

@@ -1,0 +1,2986 @@
+
+
+@media screen and (min-width: 1px) and (max-width: 450px) {
+    
+
+    .main-header .text-link {
+        display: none !important;
+    }
+
+
+    .main-header {
+        height: 14vw; 
+        padding: 0 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        box-sizing: border-box;
+        background-color: #ffffff;
+    }
+    
+    .logo {
+        font-size: 6.5vw;
+        margin-left: 0;
+    }
+
+    .burger-menu-btn {
+        display: block;
+        width: 7vw;  
+        height: auto;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 101;
+    }
+
+    .burger-menu-btn img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+    }
+    
+    .mobile-menu-panel {
+        display: flex !important; 
+        position: fixed;
+        top: 0;
+        right: -70vw; 
+        width: 70vw;  
+        height: 80vw;
+        height: 100dvh;
+        background-color: #191919; 
+        z-index: 99999 !important; 
+        padding: 20vw 8vw;
+        box-sizing: border-box;
+        flex-direction: column;
+        transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        overflow-y: auto; 
+    }
+
+    .mobile-menu-panel.is-open {
+        right: 0; 
+    }
+
+
+    .close-menu-btn {
+        position: absolute;
+        top: 4.5vw;
+        right: 5vw;
+        font-size: 12vw;
+        color: #ffffff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 8vw;
+        margin-top: 15vw;
+    }
+
+    .mobile-nav a {
+        font-family: "CoFo Sans", sans-serif;
+        color: #ffffff;
+        font-size: 8vw; 
+        text-decoration: none;
+        font-weight: normal;
+    }
+
+    
+    .section1 {
+        height: 100vh; 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding-top: 0vw; 
+    }
+
+    .tectura_head {
+        position: relative;
+        width: 86vw;
+        height: auto;
+        top: 11vw;
+        left: 0;
+        transform: none;
+        z-index: 10;
+    }
+
+    .strelka1, .strelka2, .strelka3, .strelka4, .strelka5, .strelka6 {
+        display: none;
+    }
+
+    .video {
+        position: relative;
+        width: 86vw;
+        height: 65vw;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin-top: 6vw; 
+        z-index: 1;
+        border-radius: 4px; 
+    }
+
+    .video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+
+
+
+
+
+    #main-page .section2 {
+        height: auto;
+        min-height: auto;
+        padding: 12vw 5vw 15vw 5vw; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        justify-content: flex-start;
+        box-sizing: border-box;
+        overflow: visible;
+        position: relative;
+    }
+
+    #main-page .author_photo_block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        width: 100%;
+        margin-bottom: 6vw;
+        position: relative;
+        z-index: 2;
+    }
+
+    #main-page .foto_author {
+        position: relative;
+        width: 65vw;
+        height: 85vw;
+        margin-top: 0;
+        margin-left: 12vw; 
+    }
+
+    #main-page .foto_author img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    #main-page .author_name_wrapper {
+        text-align: left;
+        margin-top: 3vw; 
+        width: 100%;
+    }
+
+    #main-page .author_name {
+        position: relative;
+        top: -1.5vw;
+        left: 12vw;
+        font-size: 4vw;
+        font-weight: 500;
+        color: #000;
+        margin: 0; 
+        line-height: 1.2;
+    }
+
+    #main-page .author_name2 {
+        display: none;
+    }
+
+
+    #main-page .run_wrapper {
+        position: absolute;
+        top: -3vw; 
+        left: -5vw; 
+        width: 100vw;
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 1;
+    }
+    
+    #main-page .run_text {
+        font-size: 15vw; 
+    }
+
+    #main-page .author_text {
+        position: relative;
+        margin-top: 4vw; 
+        margin-left: 0;
+        width: 90vw; 
+        font-size: 4.2vw; 
+        line-height: 1.3;
+        text-align: left;
+        color: #191919;
+        margin-bottom: 8vw; 
+        z-index: 3;
+    }
+
+    #main-page .events_clean_dash.button_about.btn-about {
+        position: relative;
+        margin-top: -3vw;
+        margin-left: 0; 
+        margin-right: auto; 
+        width: 65vw;
+        height: 12vw; 
+        border: none;
+        z-index: 3;
+    }
+
+    #main-page .events_clean_dash.button_about.btn-about .svg_but {
+        font-size: 4.5vw; 
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+    #main-page .section3 {
+        height: auto;
+        min-height: auto;
+        width: 100%;
+        padding: 15vw 5vw 15vw 5vw; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin-bottom: 10vw; 
+    }
+
+    #main-page .text_sec3_container {
+        width: 85vw; 
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5vw; 
+        margin-top: 0;
+        transform: none; 
+    }
+
+    #main-page .quote-text {
+        font-size: 5.5vw;
+        line-height: 1.3;
+        color: #191919;
+        font-weight: normal;
+        margin: 0; 
+    }
+
+    #main-page .text_sec3_mark {
+        font-size: 10vw;
+        font-weight: bold;
+        color: #191919;
+        line-height: normal; 
+        margin: 0; 
+    }
+
+
+
+
+    #main-page .section4 {
+        height: auto;
+        width: 100%;
+        position: relative;
+        overflow: visible;
+        top: 0; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 10vw 5vw 20vw 5vw;
+        box-sizing: border-box;
+    }
+
+    #main-page .header_collection {
+        position: relative;
+        width: 100%;
+        margin-bottom: 5vw;
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 10vw; 
+    }
+
+    #main-page .collection_text {
+        position: relative;
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 10vw; 
+        color: black;
+        margin: 0;
+    }
+
+    #main-page .sand_collection,
+    #main-page .forest_collection,
+    #main-page .stone_collection {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 18vw; 
+    }
+
+    #main-page .sand_photo,
+    #main-page .forest_photo,
+    #main-page .stone_photo {
+        position: relative;
+        width: 90vw; 
+        height: 60vw; 
+        margin-left: 0;
+        margin-top: 0;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 4vw;
+    }
+
+    #main-page .sand_text,
+    #main-page .forest_text,
+    #main-page .stone_text {
+        position: relative;
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 6vw; 
+        color: #000;
+        margin: 0 0 0vw 0;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    #main-page .small_sand_text,
+    #main-page .small_forest_text,
+    #main-page .small_stone_text {
+        position: relative;
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 3.8vw;
+        line-height: 1.4;
+        color: #666666;
+        margin: 0 0 3vw 0;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    #main-page .events_clean_dash.sand_button,
+    #main-page .events_clean_dash.forest_button,
+    #main-page .events_clean_dash.stone_button {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+        margin-left: 0;
+        width: 90vw; 
+        height: 12vw;
+        background-color: transparent;
+        border: none; 
+        border-radius: 0; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    #main-page .events_clean_dash.sand_button .svg_but,
+    #main-page .events_clean_dash.forest_button .svg_but,
+    #main-page .events_clean_dash.stone_button .svg_but {
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 4.5vw; 
+        font-weight: 400;
+        color: #000000; 
+        background: none;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+
+
+
+
+
+
+
+    #main-page .horizontal-gallery {
+        height: auto;          
+        padding: 10vw 0 18vw 0; 
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    #main-page .header-gallery {
+        font-size: 10vw;
+        margin: 0 0 6vw 5vw;
+        align-self: flex-start;
+        width: 100%;
+    }
+
+    #main-page .gallery-track {
+        display: flex;
+        gap: 20vw; 
+        width: max-content;
+        margin-top: 2vw;
+        margin-bottom: 8vw;
+        padding: 0 5vw; 
+        will-change: transform;
+    }
+
+    #main-page .gallery-item {
+        width: 75vw; 
+        height: 110vw;
+        flex-shrink: 0;
+    }
+
+    #main-page .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    #main-page .gallery-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 52%; 
+        transform: translateY(-50%);
+        width: 10vw; 
+        height: 10vw;
+        background: none; 
+        border: none;
+        cursor: pointer;
+        z-index: 60;
+        padding: 0;
+    }
+
+    #main-page .gallery-arrow img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    #main-page .arrow-prev {
+        left: 1vw;
+        top: 80vw;
+    }
+
+    #main-page .arrow-next {
+        right: 1vw;
+        top: 80vw;
+    }
+
+    #main-page .gallery-arrow:active {
+        transform: translateY(-50%) scale(0.85);
+    }
+
+    #main-page .events_clean_dash.gallery_main_btn {
+        position: relative;
+        bottom: 0;   
+        left: 0;
+        margin-top: 1vw;
+        margin-left: 0;
+        width: 90vw; 
+        height: 12vw; 
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main-page .events_clean_dash.gallery_main_btn .svg_but {
+        font-size: 4.5vw; 
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+    #main-page .footer {
+        background-color: #191919;
+        width: 100%;
+        height: auto; 
+        margin-top: 15vw;
+        padding: 12vw 6vw 10vw 6vw; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+
+
+    #main-page .footer_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 10vw 4vw; 
+        width: 100%;
+        margin-bottom: 12vw; 
+    }
+
+    #main-page .footer_block,
+    #main-page .footer_block p,
+    #main-page .footer_block a {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0;
+        text-decoration: none;
+        font-family: "CoFo Sans", sans-serif;
+    }
+
+    #main-page .footer_nav {
+        grid-column: 1 / span 2; 
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #main-page .nav_col {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw; 
+        width: 45%;
+    }
+
+    #main-page .footer_nav a {
+        font-size: 4vw;
+        color: #ffffff;
+        font-weight: normal;
+        line-height: 1.2;
+    }
+
+
+    #main-page .text_footer1,
+    #main-page .text_footer3 {
+        font-size: 4vw;
+        color: #ffffff;
+        margin-bottom: 2vw; 
+    }
+
+    #main-page .text_footer2,
+    #main-page .text_footer4,
+    #main-page .text_footer5 {
+        font-size: 4vw;
+        line-height: 1.4; 
+        color: #ffffff;
+        font-weight: normal;
+    }
+    
+    #main-page .text_footer4 {
+        margin-bottom: 2vw; 
+    }
+
+    #main-page .footer_logo {
+        position: relative;
+        margin-top: 12vw;
+        margin-left: 0;
+        width: 88vw; 
+        height: auto;
+        object-fit: contain;
+        align-self: flex-start;
+    }
+
+
+
+
+
+    
+    .about-page .burger-menu-btn {
+        display: block;
+        width: 7vw;  
+        height: auto;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 101;
+    }
+
+    .about-page .burger-menu-btn img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+    }
+
+    
+    #about-page .mobile-menu-panel {
+        display: flex !important; 
+        position: fixed;
+        top: 0;
+        right: -70vw; 
+        width: 70vw;  
+        height: 80vw;
+        height: 100dvh; 
+        background-color: #191919; 
+        z-index: 99999 !important; 
+        padding: 20vw 8vw;
+        box-sizing: border-box;
+        flex-direction: column;
+        transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        overflow-y: auto; 
+    }
+
+    #about-page .mobile-menu-panel.is-open {
+        right: 0; 
+    }
+
+
+    #about-page .close-menu-btn {
+        position: absolute;
+        top: 4.5vw;
+        right: 5vw;
+        font-size: 12vw;
+        color: #ffffff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    #about-page .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 8vw;
+        margin-top: 15vw;
+    }
+
+    #about-page .mobile-nav a {
+        font-family: "CoFo Sans", sans-serif;
+        color: #ffffff;
+        font-size: 8vw; 
+        text-decoration: none;
+        font-weight: normal;
+    }
+
+
+    #about-page .section1_1 {
+        height: auto;
+        padding: 6vw 5vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        margin-top: 16vw; 
+    }
+
+    #about-page .header_about {
+        position: relative;
+        font-size: 8.5vw; 
+        line-height: 1.3;
+        text-align: center;
+        margin: 0 0 6vw 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    #about-page .panoram {
+        position: relative;
+        width: 90vw;
+        height: 50vw; 
+        margin-top: 0;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    #about-page .section1_2 {
+        height: auto;
+        padding: 6vw 5vw 10vw 5vw;
+        display: flex;
+        flex-direction: column;
+        gap: 6vw; 
+        box-sizing: border-box;
+    }
+
+    #about-page .text_about1,
+    #about-page .text_about2 {
+        position: relative;
+        width: 90vw; 
+        font-size: 4.6vw; 
+        line-height: 1.3; 
+        margin: 0;
+        left: 0;
+        top: 0;
+        text-align: left;
+    }
+
+
+
+    #about-page .section1_3 {
+        padding-top: 10vw;
+        padding-bottom: 5vw; 
+        height: auto;
+    }
+
+    #about-page .cards_wrapper {
+        width: 90vw; 
+    }
+
+    #about-page .card_content {
+        padding: 5vw 4vw; 
+    }
+
+    #about-page .card_top_row {
+        font-size: 5vw; 
+    }
+
+    #about-page .card_hidden_content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about-page .setka_dizayner {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #about-page .levaya_kolonka {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 6vw;
+    }
+
+    #about-page .levaya_kolonka h2 {
+        font-size: 5.5vw; 
+        margin-bottom: 3vw;
+    }
+
+    #about-page .levaya_kolonka p {
+        font-size: 3.8vw; 
+        line-height: 1.3;
+        margin-bottom: 4vw;
+    }
+
+    #about-page .mesto_dlya_foto {
+        display: block;
+        width: 100%; 
+        height: 65vw; 
+        margin: 5vw 0 0 0;
+        border-radius: 4px;
+        overflow: hidden;
+        border: none; 
+    }
+
+    #about-page .mesto_dlya_foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #about-page .setka_koncepciya {
+        display: block;
+        margin-top: 4vw;
+    }
+
+    #about-page .setka_koncepciya p {
+        width: 100%;
+        font-size: 3.8vw;
+        line-height: 1.3;
+    }
+
+    #about-page .setka_otzivy {
+        display: flex;
+        flex-direction: column;
+        gap: 6vw; 
+        margin-top: 4vw;
+        height: auto;
+    }
+
+    #about-page .otzyv {
+        position: relative; 
+        width: 100%;
+        font-size: 3.8vw;
+        line-height: 1.4;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    #about-page .otzyv span {
+        margin-top: 2vw;
+        display: block;
+    }
+
+    #about-page .events_clean_dash.btn-card-buy {
+        position: relative;
+        margin: 6vw auto 0 auto;
+        width: 90vw; 
+        height: 12vw;
+        border: none;
+        left: auto;
+        bottom: auto;
+        display: flex;
+    }
+
+    #about-page .events_clean_dash.btn-card-buy .svg_but {
+        font-size: 4.5vw; 
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+
+
+    
+    #about-page .footer {
+        background-color: #191919;
+        width: 100%;
+        height: auto; 
+        margin-top: 15vw;
+        padding: 12vw 6vw 10vw 6vw; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+
+
+    #about-page .footer_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 10vw 4vw; 
+        width: 100%;
+        margin-bottom: 12vw; 
+    }
+
+    #about-page .footer_block,
+    #about-page .footer_block p,
+    #about-page .footer_block a {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0;
+        text-decoration: none;
+        font-family: "CoFo Sans", sans-serif;
+    }
+
+    #about-page .footer_nav {
+        grid-column: 1 / span 2; 
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #about-page .nav_col {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw; 
+        width: 45%;
+    }
+
+    #about-page .footer_nav a {
+        font-size: 4vw;
+        color: #ffffff;
+        font-weight: normal;
+        line-height: 1.2;
+    }
+
+
+    #about-page .text_footer1,
+    #about-page .text_footer3 {
+        font-size: 4vw;
+        color: #ffffff;
+        margin-bottom: 2vw; 
+    }
+
+    #about-page .text_footer2,
+    #about-page .text_footer4,
+    #about-page .text_footer5 {
+        font-size: 4vw;
+        line-height: 1.4; 
+        color: #ffffff;
+        font-weight: normal;
+    }
+    
+    #about-page .text_footer4 {
+        margin-bottom: 2vw; 
+    }
+
+    #about-page .footer_logo {
+        position: relative;
+        margin-top: 12vw;
+        margin-left: 0;
+        width: 88vw; 
+        height: auto;
+        object-fit: contain;
+        align-self: flex-start;
+    }
+
+
+
+
+
+
+
+
+
+
+    .section1_1 {
+        width: 100%;
+        height: 54vw;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header_about {
+        display: inline-block;
+        font-size: 4vw; 
+        color: #000;
+        font-family: "CoFo Sans", sans-serif;
+        width: 100%;
+        position: absolute;
+        margin-left: 20vw;
+        margin-top: 9vw;
+    }
+
+    .panoram {
+        width: 100%;
+        height: 30vw;
+        position: absolute;
+        margin-top: 20vw;
+    }
+
+    .section1_2 {
+        width: 100%;
+        height: 20vw;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .text_about1 {
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 1.7vw;
+        width: 50vw;
+        position: absolute;
+        margin-top: 1vw;
+        margin-left: 2.2vw;
+    }
+
+    .text_about2 {
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 1.7vw;
+        width: 50vw;
+        position: absolute;
+        margin-top: 12vw;
+        margin-left: 2.2vw;
+    }
+
+
+
+    .section1_3 {
+        position: relative;
+        width: 100%;
+        height: auto; 
+        min-height: auto; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background: #fff;
+        padding-top: 15vw; 
+        box-sizing: border-box;
+    }
+
+    .cards_wrapper {
+        width: 90vw; 
+        margin-top: 0; 
+        margin-bottom: 0;
+    }
+
+    .card_button {
+        position: relative; 
+        bottom: auto;
+        left: auto;
+        transform: none;
+        width: 90vw; 
+        height: auto; 
+        margin-top: 6vw; 
+        margin-bottom: 5vw; 
+        z-index: 30;
+        transition: transform 0.2s ease; 
+    }
+
+    .card_button img { width: 100%; height: auto; object-fit: contain; display: block; }
+    .card_button:active { transform: scale(0.95); }
+    .card_top_row { font-size: 3.5vw; font-weight: bold; }
+    .levaya_kolonka h2 { font-size: 3.5vw; margin-bottom: 2vw; }
+    .levaya_kolonka p, .setka_koncepciya p, .otzyv { font-size: 2.2vw; line-height: 1.4; }
+    .setka_koncepciya p { width: 85%; }
+    .setka_otzivy { position: relative; width: 100%; height: 100%; }
+    .otzyv_1 { top: 1vw; right: 0; width: 45%; }  
+    .otzyv_2 { top: 14vw; left: 0; width: 45%; }   
+    .otzyv_3 { bottom: 1vw; left: 20vw; width: 50%; }
+
+
+    
+     .footer {
+        background-color: #191919;
+        width: 100%;
+        height: auto; 
+        margin-top: 15vw;
+        padding: 12vw 6vw 10vw 6vw; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+
+     .footer_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 10vw 4vw; 
+        width: 100%;
+        margin-bottom: 12vw; 
+    }
+
+     .footer_block,
+     .footer_block p,
+     .footer_block a {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0;
+        text-decoration: none;
+        font-family: "CoFo Sans", sans-serif;
+    }
+
+     .footer_nav {
+        grid-column: 1 / span 2; 
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nav_col {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw; 
+        width: 45%;
+    }
+
+    .footer_nav a {
+        font-size: 4vw;
+        color: #ffffff;
+        font-weight: normal;
+        line-height: 1.2;
+    }
+
+
+     .text_footer1,
+     .text_footer3 {
+        font-size: 4vw;
+        color: #ffffff;
+        margin-bottom: 2vw; 
+    }
+
+    .text_footer2,
+    .text_footer4,
+    .text_footer5 {
+        font-size: 4vw;
+        line-height: 1.4; 
+        color: #ffffff;
+        font-weight: normal;
+    }
+    
+    .text_footer4 {
+        margin-bottom: 2vw; 
+    }
+
+     .footer_logo {
+        position: relative;
+        margin-top: 12vw;
+        margin-left: 0;
+        width: 88vw; 
+        height: auto;
+        object-fit: contain;
+        align-self: flex-start;
+    }
+
+
+
+
+
+
+
+
+    
+
+
+
+    #cataloge-page .section2_1 {
+        display: none;
+    }
+
+    #cataloge-page .collection_canvas1,
+    #cataloge-page .collection_canvas2,
+    #cataloge-page .collection_canvas3 {
+        position: relative;
+        height: auto; 
+        padding: 22vw 5vw 12vw 5vw;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        width: 100%;
+    }
+
+
+    #cataloge-page .col_header {
+        position: relative;
+        top: 5vw;
+        left: auto;
+        font-size: 11vw; 
+        font-weight: 500;
+        margin: 0 0 10vw 0; 
+        width: 100%;
+        text-align: left;
+    }
+
+    #cataloge-page .product_card {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 14vw; 
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    #cataloge-page .product_card:last-of-type {
+        margin-bottom: 0;
+    }
+
+
+
+    #cataloge-page .foto1_1,
+    #cataloge-page .foto2_1,
+    #cataloge-page .foto3_1 {
+        width: 90vw;
+        align-self: center;
+    }
+
+    #cataloge-page .foto1_1 .product_img_mask,
+    #cataloge-page .foto2_1 .product_img_mask,
+    #cataloge-page .foto3_1 .product_img_mask {
+        height: 75vw;
+    }
+
+    #cataloge-page .foto1_2,
+    #cataloge-page .foto2_2,
+    #cataloge-page .foto3_2 {
+        width: 60vw;
+        align-self: flex-end;
+    }
+
+    #cataloge-page .foto1_2 .product_img_mask,
+    #cataloge-page .foto2_2 .product_img_mask,
+    #cataloge-page .foto3_2 .product_img_mask {
+        height: 60vw;
+    }
+
+    #cataloge-page .foto1_3,
+    #cataloge-page .foto2_3,
+    #cataloge-page .foto3_3 {
+        width: 60vw;
+        align-self: flex-start;
+    }
+
+    #cataloge-page .foto1_3 .product_img_mask,
+    #cataloge-page .foto2_3 .product_img_mask,
+    #cataloge-page .foto3_3 .product_img_mask {
+        height: 60vw;
+    }
+
+    #cataloge-page .foto1_4,
+    #cataloge-page .foto2_4 {
+        width: 90vw;
+        align-self: center;
+    }
+
+    #cataloge-page .foto1_4 .product_img_mask,
+    #cataloge-page .foto2_4 .product_img_mask {
+        height: 75vw;
+    }
+
+
+    #cataloge-page .product_img_mask {
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    #cataloge-page .product_img_mask img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #cataloge-page .product_meta {
+        margin-top: 3vw;
+        font-size: 4.4vw; 
+        font-weight: 400;
+        color: #000000;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1vw;
+    }
+
+    #cataloge-page .events_clean_dash.product_buy_btn {
+        position: relative;
+        margin-top: 4vw;
+        margin-left: 0;
+        width: 100%; 
+        height: 12vw; 
+        border: none !important;
+        background: transparent;
+        display: flex;
+        padding: 0;
+    }
+
+    #cataloge-page .events_clean_dash.product_buy_btn::before,
+    #cataloge-page .events_clean_dash.product_buy_btn::after,
+    #cataloge-page .events_clean_dash.product_buy_btn .svg_but::before,
+    #cataloge-page .events_clean_dash.product_buy_btn .svg_but::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    #cataloge-page .events_clean_dash.product_buy_btn .svg_but {
+        font-size: 4.4vw; 
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        background-color: transparent; 
+        color: #000000; 
+        border: 1px dashed #000000; 
+        border-radius: 0; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-transform: none;
+        box-sizing: border-box;
+    }
+
+
+    #cataloge-page .footer {
+        background-color: #191919;
+        width: 100%;
+        height: auto; 
+        margin-top: 10vw; 
+        padding: 12vw 6vw 10vw 6vw; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    
+    #cataloge-page .footer_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 10vw 4vw; 
+        width: 100%;
+        margin-bottom: 12vw; 
+    }
+    
+    #cataloge-page .footer_block,
+    #cataloge-page .footer_block p,
+    #cataloge-page .footer_block a {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0;
+        text-decoration: none;
+        font-family: "CoFo Sans", sans-serif;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    #cataloge-page .product_main_section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 22vw 5vw 8vw 5vw;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        align-items: center;
+    }
+
+    #cataloge-page .product_view_left {
+        width: 90vw;
+    }
+
+    #cataloge-page .product_main_img_box {
+        width: 100%;
+        height: 90vw;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    #cataloge-page .product_main_img_box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #cataloge-page .product_view_right {
+        width: 90vw;
+        padding-top: 4vw;
+    }
+
+    #cataloge-page .dynamic_product_title {
+        font-size: 5.5vw; 
+        font-weight: 500;
+        margin: 0 0 2vw 0;
+    }
+
+   
+    #cataloge-page .dynamic_product_price {
+        display: none; 
+    }
+
+   
+    #cataloge-page .sizes_wrapper {
+        margin-bottom: 6vw;
+        width: 100%;
+    }
+
+    #cataloge-page .dynamic_sizes_box {
+        display: flex;
+        align-items: center;
+        gap: 3vw; 
+        margin-left: 0;
+        margin-top: 2vw;
+    }
+
+   
+    #cataloge-page .size_item_btn {
+        font-size: 4.4vw; 
+        color: #000000;
+        width: 9vw;
+        height: 9vw;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        background: transparent;
+    }
+
+  
+    #cataloge-page .size_item_btn.active_size {
+        border-color: #000000;
+        border-radius: 50%;
+    }
+
+    #cataloge-page .events_clean_dash.btn-add-cart {
+        position: relative;
+        margin-top: 4vw; 
+        width: 100%; 
+        height: 12vw;
+        border: none !important;
+        background: transparent !important;
+        display: flex;
+        padding: 0;
+        top: -7vw;
+    }
+
+    #cataloge-page .events_clean_dash.btn-add-cart::before,
+    #cataloge-page .events_clean_dash.btn-add-cart::after,
+    #cataloge-page .events_clean_dash.btn-add-cart .svg_but::before,
+    #cataloge-page .events_clean_dash.btn-add-cart .svg_but::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    #cataloge-page .events_clean_dash.btn-add-cart .svg_but {
+        font-size: 4.4vw; 
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        background-color: transparent !important; 
+        color: #000000 !important;
+        border: 1px dashed #000000 !important;
+        border-radius: 0px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-transform: none;
+        box-sizing: border-box;
+    }
+
+    #cataloge-page .related_grid {
+        display: flex;
+        justify-content: space-between; 
+        width: 100%;
+        gap: 2.5vw;
+    }
+
+    #cataloge-page .related_card {
+        display: flex;
+        flex-direction: column;
+        width: 28.5vw;
+    }
+
+    #cataloge-page .related_img_box {
+        width: 100%;
+        height: 28.5vw; 
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    #cataloge-page .related_img_box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #cataloge-page .related_title {
+        font-size: 6vw; 
+        margin: 1vw 0;
+        text-align: left;
+    }
+
+
+    #cataloge-page .related_product_title {
+        font-size: 4vw; 
+        margin: 1vw 0;
+        text-align: left;
+    }
+
+
+    #cataloge-page .related_buy_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; 
+        height: 9vw; 
+        background-color: transparent !important; 
+        background: none !important;
+        color: #000000 !important;
+        border: 1px dashed #000000 !important;
+        border-radius: 0px !important; 
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 3.8vw;
+        margin-top: 1.5vw;
+        box-sizing: border-box;
+        transform: none !important; 
+        transition: none !important;
+    }
+
+    #cataloge-page .related_buy_btn:hover,
+    #cataloge-page .related_buy_btn:active {
+        transform: none !important;
+        background-color: transparent !important;
+        color: #000000 !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    #lab-page .carousel-section,
+    #lab-page #events-carousel-block,
+    #lab-page .lab-arrow,
+    #lab-page .lab-prev,
+    #lab-page .lab-next {
+        display: none;
+    }
+
+    
+    #lab-page .section_lab_text {
+        height: auto;
+        padding: 22vw 5vw 3vw 5vw; 
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    #lab-page .big_lab_text {
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 8.5vw; 
+        font-weight: 500;
+        margin: 0 0 4vw 0;
+        left: auto;
+        top: auto;
+    }
+
+    #lab-page .small_lab_text {
+        width: 98%; 
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 4vw; 
+        line-height: 1.3;
+        margin: 0;
+        left: auto;
+        top: auto;
+    }
+
+    #lab-page .section_three_events {
+        width: 100%;
+        padding: 0 5vw 12vw 5vw;
+        display: flex;
+        flex-direction: column;
+        gap: 12vw; 
+        box-sizing: border-box;
+        margin-top: 8vw;
+    }
+
+    #lab-page .event-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #lab-page .header_event {
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 8.5vw; 
+        font-weight: 500;
+        margin: 0 0 4vw 0;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    #lab-page .img_event {
+        width: 100%; 
+        height: 52vw; 
+        object-fit: cover;
+        border-radius: 4px;
+        margin-left: 0;
+    }
+
+    #lab-page .events_clean_dash {
+        position: relative;
+        margin-top: 4vw;
+        margin-left: 0; 
+        width: 100%; 
+        height: 12vw; 
+        border: none !important;
+        background: transparent !important;
+        display: flex;
+        padding: 0;
+        overflow: visible;
+    }
+
+    #lab-page .events_clean_dash::before,
+    #lab-page .events_clean_dash::after,
+    #lab-page .events_clean_dash .svg_but::before,
+    #lab-page .events_clean_dash .svg_but::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    #lab-page .events_clean_dash .svg_but {
+        position: relative;
+        font-size: 4.4vw; 
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 100%; 
+        background-color: transparent !important;
+        color: #000000 !important;
+        border: 1px dashed #000000 !important;
+        border-radius: 0px !important; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-transform: none;
+        box-sizing: border-box;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    #lab-page .events_clean_dash:hover .svg_but,
+    #lab-page .events_clean_dash:active .svg_but {
+        color: #000000 !important;
+        background-color: transparent !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+#event-page .event_detail_container {
+        width: 100%;
+        height: auto; 
+        padding: 22vw 5vw 12vw 5vw;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    #event-page .dynamic_event_title {
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 8.5vw; 
+        font-weight: 500;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0 0 8vw 0;
+        text-align: left;
+    }
+
+    #event-page .event_floor_1, 
+    #event-page .event_floor_2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+        box-sizing: border-box;
+    }
+
+    #event-page .event_floor_1 {
+        flex-direction: column-reverse; 
+    }
+
+    #event-page .floor_text_block {
+        width: 100% !important;
+        margin: 6vw 0 8vw 0 !important;
+        padding: 0 !important;
+    }
+
+    #event-page .floor_text_block p {
+        font-family: "CoFo Sans", sans-serif;
+        font-size: 4vw; 
+        line-height: 1.3;
+        color: #000000;
+        margin: 0;
+    }
+
+    #event-page .event_floor_2 .side_action {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        margin-right: 0 !important;
+    }
+
+    #event-page .img_main_right {
+        width: 100% !important;
+        height: 54vw !important;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    #event-page .img_square_left {
+        width: 100% !important;
+        height: 85vw !important;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    #event-page .floor_img_block img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #event-page .section_floor_3,
+    #event-page .img_wide_bottom {
+        display: none !important;
+    }
+
+    #event-page .events_clean_dash.event_page_btn {
+        position: relative;
+        margin-top: 5vw;
+        margin-left: 0;
+        width: 100%; 
+        height: 12vw;
+        border: none !important;
+        background: transparent !important;
+        display: flex;
+        padding: 0;
+        overflow: visible;
+        align-self: center;
+    }
+
+    /* Полностью очищаем десктопные рамки и шторки */
+    #event-page .events_clean_dash.event_page_btn::before,
+    #event-page .events_clean_dash.event_page_btn::after,
+    #event-page .events_clean_dash.event_page_btn .svg_but::before,
+    #event-page .events_clean_dash.event_page_btn .svg_but::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    #event-page .events_clean_dash.event_page_btn .svg_but {
+        position: relative;
+        font-size: 4.4vw; 
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        color: #000000;
+        border: 1px dashed #000000;
+        border-radius: 0px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-transform: none;
+        box-sizing: border-box;
+        transform: none;
+        transition: none;
+    }
+
+    
+
+.modal-overlay {
+        padding: 4vw;
+        box-sizing: border-box;
+    }
+
+    .modal-window {
+        width: 100%;
+        height: auto;
+        max-height: 90vh; 
+        overflow-y: auto; 
+        padding: 14vw 6vw 8vw 6vw; 
+        border-radius: 0px;
+    }
+
+    .modal-close {
+        top: 4vw;
+        right: 5vw;
+        font-size: 8vw; 
+    }
+
+    .modal-form {
+        gap: 6vw; 
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 6vw;
+    }
+
+    .input-wrapper, 
+    .input-wrapper.full-width {
+        width: 100% !important;
+        height: 12vw;
+    }
+
+    .input-wrapper input {
+        font-size: 4vw;
+        padding: 0 4vw;
+    }
+
+    .select-title {
+        font-size: 4.4vw;
+        margin-bottom: 3vw;
+        font-weight: 500;
+    }
+
+    .select-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2vw;
+        width: 100%;
+    }
+
+    .select-option-btn {
+        font-size: 3.8vw;
+        padding: 2.5vw 0;
+        text-align: center;
+        border-width: 1px;
+    }
+
+    .modal-submit-wrapper {
+        width: 100%; 
+        height: 12vw;
+        margin-top: 2vw;
+        align-self: center;
+        overflow: visible; 
+    }
+
+    .modal-submit-wrapper::before,
+    .modal-submit-wrapper::after,
+    .modal-submit-wrapper .svg_but::before,
+    .modal-submit-wrapper .svg_but::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    .modal-submit-wrapper .svg_but {
+        font-size: 4.4vw;
+        color: #000000 !important;
+        background-color: transparent !important;
+        border: 1px dashed #000000 !important;
+        border-radius: 0px !important;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .modal-submit-wrapper:hover .svg_but,
+    .modal-submit-wrapper:active .svg_but {
+        color: #000000 !important;
+        background-color: transparent !important;
+    }
+
+    #contact-page .contact-wrap {
+        width: 100%;
+        min-height: auto;
+        padding: 22vw 5vw 12vw 5vw;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column; 
+        background-color: #ffffff;
+    }
+
+    #contact-page .contact-info {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6vw 4vw;
+        margin-top: 0;
+    }
+
+    #contact-page .contact-title {
+        grid-column: 1 / span 2;
+        font-size: 11vw;
+        font-weight: 500;
+        margin: 0 0 4vw 0;
+    }
+
+    #contact-page .info-item {
+        margin-bottom: 0;
+    }
+
+    #contact-page .info-item h3 {
+        font-size: 4.2vw;
+        font-weight: bold;
+        margin-bottom: 1.5vw;
+    }
+
+    #contact-page .info-item p {
+        font-size: 3.6vw;
+        line-height: 1.4;
+    }
+
+    #contact-page .contact-map {
+        display: none !important;
+    }
+
+    #contact-page .contact-form {
+        width: 100%;
+        padding-top: 12vw; 
+    }
+
+    #contact-page .form-title {
+        font-size: 10vw;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0 0 6vw 0;
+    }
+
+    #contact-page .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 4vw; 
+        margin-top: 0;
+    }
+
+    #contact-page .form-row {
+        flex-direction: column;
+        gap: 4vw;
+    }
+
+    #contact-page .input-box {
+        width: 100% !important;
+        height: 12vw; 
+        border-radius: 0px;
+    }
+
+    #contact-page .input-box.textarea-box {
+        height: 35vw; 
+    }
+
+    #contact-page .input-box input,
+    #contact-page .input-box textarea {
+        font-size: 4vw;
+        padding: 0 4vw;
+    }
+
+    #contact-page .input-box textarea {
+        padding: 3.5vw 4vw;
+    }
+
+    #contact-page .btn-submit {
+        position: relative;
+        margin-top: 2vw;
+        width: 100% !important; 
+        height: 12vw !important;
+        border: none !important;
+        background: transparent !important;
+        display: flex;
+        padding: 0;
+        overflow: visible;
+    }
+
+    #contact-page .btn-submit::before,
+    #contact-page .btn-submit::after,
+    #contact-page .btn-submit .svg_but::before,
+    #contact-page .btn-submit .svg_but::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    #contact-page .btn-submit .svg_but {
+        position: relative;
+        font-size: 4.4vw !important;
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        background-color: transparent !important;
+        color: #000000 !important;
+        border: 1px dashed #000000 !important;
+        border-radius: 0px !important; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-transform: none;
+        box-sizing: border-box;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    #contact-page .btn-submit:hover .svg_but,
+    #contact-page .btn-submit:active .svg_but {
+        color: #000000 !important;
+        background-color: transparent !important;
+    }
+
+    #contact-page .toast-alert {
+        font-size: 4.4vw;
+        padding: 5vw 8vw;
+        width: 80vw;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .section404_1 {
+        width: 100%;
+        min-height: auto; 
+        padding-top: 25vw; 
+        margin-left: 0;
+        gap: 3vw; 
+    }
+
+    .four1, .zero, .four2 {
+        width: 26vw;
+        height: 36vw;
+        margin-top: 0;
+    }
+
+    .section404_1 [class^="box_strelka_"] {
+        display: none !important;
+    }
+
+    .section404_2 {
+        width: 100%;
+        padding: 0 5vw 12vw 5vw;
+        gap: 6vw;              
+        margin-top: 8vw;
+        box-sizing: border-box;
+    }
+
+    .not_found {
+        font-size: 6vw;       
+        margin: 0;             
+        width: 100%;
+        text-align: center;
+    }
+
+    .events_clean_dash.btn-back-404 {
+        position: relative;
+        margin: 0; 
+        width: 100%; 
+        height: 12vw;         
+        border: none !important;
+        background: transparent !important;
+        display: flex;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .events_clean_dash.btn-back-404::before,
+    .events_clean_dash.btn-back-404::after,
+    .events_clean_dash.btn-back-404 .svg_but::before,
+    .events_clean_dash.btn-back-404 .svg_but::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    .events_clean_dash.btn-back-404 .svg_but {
+        font-size: 4.4vw; 
+        font-family: "CoFo Sans", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        background-color: transparent !important; 
+        color: #000000 !important;
+        border: 1px dashed #000000 !important;
+        border-radius: 0px !important; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-transform: none;
+        box-sizing: border-box;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .events_clean_dash.btn-back-404:hover .svg_but,
+    .events_clean_dash.btn-back-404:active .svg_but {
+        color: #000000 !important;
+        background-color: transparent !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 451px) and (max-width: 1365px) /* аипад */ {
+
+
+
+.author_name {
+    position: absolute; 
+    top: 56vw;       
+    left: 5vw;         
+    font-size: 2.4vw;
+    width: 20vw;        
+    color: black;         
+}
+
+.author_name2 {
+    position: absolute;
+    top: 59.5vw;       
+    left: 5.2vw;
+    font-size: 2vw;     
+    width: 20vw;
+    color: rgb(23, 23, 23);
+}
+
+.author_text {
+    font-size: 2vw;
+    width: 50vw;
+    position: absolute;
+    margin-top: 36.5vw;
+    margin-left: 40vw;
+}
+
+.button_about.btn-about {
+    position: absolute;
+    margin-top: 54vw;
+    margin-left: 73vw;
+    width: 16vw;
+    height: 4vw; 
+    border: none;
+    text-decoration: none;
+}
+
+.button_about.btn-about .svg_but {
+    font-size: 1.6vw;
+    font-family: "CoFo Sans", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-decoration: none;
+}
+
+.button_author {
+    display: none;
+}
+
+.button_author {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+.section4 {
+    width: 100%;
+    height: 120vw;
+    position: relative;
+    overflow: hidden;
+    top: -15vw;
+}
+
+.collection_text {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 10vw;
+    color: black;
+    position: absolute;
+    margin-top: 5vw;
+    margin-left: 1vw;
+}
+
+.forest_collection {
+    width: 48vw;
+    height: 48vw;
+    position: absolute;
+}
+
+.forest_photo {
+    width: 48vw;
+    height: 36vw;
+    position: absolute;
+    margin-left: 50vw;
+    margin-top: 20vw;
+}
+
+.forest_text {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 3.5vw;
+    position: absolute;
+    margin-top: 56.5vw;
+    margin-left: 50.5vw;
+    width: 30vw;
+}
+
+.small_forest_text {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 1.8vw;
+    position: absolute;
+    margin-top: 60.7vw;
+    margin-left: 50.6vw;
+    width: 30vw;
+}
+
+.events_clean_dash.forest_button {
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+    width: 15vw;    
+    height: 4vw;    
+    border: none;
+    text-decoration: none;
+    top: 58vw;
+    left: 82.7vw;
+}
+
+.events_clean_dash.forest_button:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+.events_clean_dash.forest_button .svg_but {
+    font-size: 1.6vw;
+    font-family: "CoFo Sans", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sand_collection {
+    width: 48vw;
+    height: 56vw;
+    position: absolute;
+}
+
+.sand_photo {
+    width: 48vw;
+    height: 52vw;
+    position: absolute;
+    margin-left: 1vw;
+    margin-top: 35vw;
+}
+
+.sand_text {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 3.5vw;
+    position: absolute;
+    margin-left: 1vw;
+    margin-top: 87.5vw;
+    width: 30vw;
+}
+
+.small_sand_text {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 1.8vw;
+    position: absolute;
+    margin-left: 1.2vw;
+    margin-top: 91.8vw;
+    width: 30vw;
+}
+
+.events_clean_dash.sand_button {
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+    width: 15vw;    
+    height: 4vw;    
+    border: none;
+    text-decoration: none;
+    top: 89.1vw;
+    left: 33.8vw;
+}
+
+.events_clean_dash.sand_button:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+.events_clean_dash.sand_button .svg_but {
+    font-size: 1.6vw;
+    font-family: "CoFo Sans", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.stone_collection {
+    width: 48vw;
+    height: 56vw;
+    position: absolute;
+}
+
+.stone_photo {
+    width: 48vw;
+    height: 36vw;
+    position: absolute;
+    margin-left: 50vw;
+    margin-top: 75vw;
+}
+
+.stone_text {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 3.5vw;
+    position: absolute;
+    margin-left: 50.2vw;
+    margin-top: 111.7vw;
+    width: 30vw;
+}
+
+.small_stone_text {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 1.8vw;
+    position: absolute;
+    margin-left: 50.3vw;
+    margin-top: 116.2vw;
+    width: 30vw;
+}
+
+.events_clean_dash.stone_button {
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+    width: 15vw;    
+    height: 4vw;    
+    border: none;
+    text-decoration: none;
+    top: 113.4vw;
+    left: 82.7vw;
+}
+
+.events_clean_dash.stone_button:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+.events_clean_dash.stone_button .svg_but {
+    font-size: 1.6vw;
+    font-family: "CoFo Sans", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.text_about1{
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 2.3vw;
+    width: 65vw;
+    position: absolute;
+    margin-top: 1vw;
+    margin-left: 2.2vw;
+}
+
+.text_about2{
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 2.3vw;
+    width: 68vw;
+    position: absolute;
+    margin-top: 14vw;
+    margin-left: 2.2vw;
+}
+
+
+
+
+.section1_3 {
+    position: relative;
+    width: 100%;
+    height: auto; 
+    min-height: 100vh; 
+    font-family: "CoFo Sans", sans-serif;
+    color: #000; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;  
+    padding-top: 15vw; 
+    box-sizing: border-box;
+}
+
+.cards_wrapper {
+    width: 75vw; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 0; 
+    z-index: 20;
+    position: relative;
+}
+
+
+.info_card {
+    border: 1px solid #fff; 
+    background: #191919;      
+    color: #fff;        
+    margin-bottom: -1px; 
+    overflow: hidden;   
+    position: relative;  
+}
+
+.card_content {
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.card_top_row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 3.5vw;
+}
+
+.card_hidden_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 0;        
+    opacity: 0;       
+    overflow: hidden; 
+}
+
+.setka_dizayner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -2vw;
+}
+
+.levaya_kolonka {
+    width: 65%; 
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.4vw;
+    margin-top: 4.5vw;
+}
+
+.levaya_kolonka h2 {
+    font-size: 2.5vw;
+    font-weight: normal;
+    margin: 0 0 1.5vw 0;
+}
+
+.levaya_kolonka p {
+    font-size: 2vw;
+    line-height: 1.3;
+    margin: 0 0 1.2vw 0;
+}
+
+.mesto_dlya_foto {
+    width: 30%;
+    height: 80%; 
+    margin-top: 10vw;
+}
+
+.setka_koncepciya {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end;   
+}
+
+.setka_koncepciya p {
+    width: 75%; 
+    font-size: 2vw;
+    line-height: 1.3;
+}
+
+.setka_otzivy {
+    position: relative;
+    height: 100%;
+}
+
+.otzyv {
+    position: absolute; 
+    width: 45%;         
+    font-size: 2vw;
+    line-height: 1.3;
+}
+
+.otzyv p { 
+    margin: 0 0 0.5vw 0; 
+}
+
+.otzyv span { 
+    display: block; 
+    text-align: right; 
+    opacity: 0.8; 
+}
+
+.otzyv_1 { 
+    top: 4vw; 
+    right: 3vw; 
+}  
+
+.otzyv_2 { 
+    top: 20vw; 
+    left: 2vw; 
+}   
+
+.otzyv_3 { 
+    bottom: 5vw; 
+    left: 27vw; 
+} 
+
+.events_clean_dash.btn-card-buy {
+    display: block;
+    position: relative;
+    margin-top: 6vw; 
+    margin-bottom: 8vw; 
+    margin-left: 0;
+    width: 24vw;
+    height: 4.5vw; 
+    border: none;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.events_clean_dash.btn-card-buy,
+.events_clean_dash.btn-card-buy:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+.events_clean_dash.btn-card-buy .svg_but {
+    font-size: 2vw;
+    font-family: "CoFo Sans", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.col_header {
+    position: absolute;
+    top: 6vw;
+    left: 1vw;
+    margin: 0;
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 10vw; 
+    color: #000;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.product_meta {
+    display: flex;
+    justify-content: space-between; 
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 2.3vw; 
+    color: #000;
+    margin-top: 0.5vw; 
+}
+
+
+.related_product_title {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 2.8vw;
+    color: #000;
+    margin: 1.2vw 0;
+}
+
+
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.carousel-section {
+    display: none;
+}
+
+.carousel-perspective-wrapper {
+    display: none;
+}
+
+.carousel-track {
+     display: none;
+}
+
+.event-card {
+     display: none;
+}
+
+
+.event-card-title {
+    display: none; 
+}
+
+.event-image-container {
+     display: none;
+}
+
+.target-event-section {
+    display: none;
+}
+
+
+
+.section_lab_text{
+    width: 100%;
+    height: 35vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.big_lab_text{
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 6vw;
+    font-weight: normal;
+    color: #000;
+    margin-top: 8vw;
+    margin-left: 1vw;
+}
+
+.small_lab_text{
+    width: 80vw;
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 2.3vw;
+    font-weight: normal;
+    color: #000;
+    margin-top: -5vw;
+    margin-left: 1.5vw;
+}
+
+
+
+
+.event_detail_container {
+    width: 100%;
+    height: 115vw;
+    padding: 12vw 4vw 8vw 4vw; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.dynamic_event_title {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 5.5vw;
+    font-weight: normal;
+    color: #000000;
+    margin: 0 0 5vw 0; /* Никаких минусов, аккуратный отступ вниз */
+    text-align: left;
+}
+
+.event_floor_1, .event_floor_2, .section_floor_3 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin-bottom: 6vw;
+}
+
+/* Общие базовые стили для текстов */
+.floor_text_block {
+    font-family: "CoFo Sans", sans-serif;
+    font-weight: normal;
+    color: #000000;
+    line-height: 1.4;
+}
+
+/* Общие правила для картинок */
+.floor_img_block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- ЭТАЖ 1: Текст 44vw слева, Картинка 40vw справа --- */
+.event_floor_1 .floor_text_block {
+    width: 47vw;
+    font-size: 2vw;
+    padding-right: 2vw;
+}
+.img_main_right {
+    width: 40vw;
+    height: 35vw;
+}
+
+/* --- ЭТАЖ 2: Квадрат 26vw слева, Текст + Кнопка 54vw справа --- */
+.img_square_left {
+    width: 26vw;
+    height: 26vw; /* Чистый пропорциональный квадрат */
+}
+
+/* Цепляемся за класс side_action, чтобы заставить блок строиться в колонку */
+.event_floor_2 .side_action {
+    width: 57vw;
+    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4vw; 
+}
+
+.event_floor_2 .side_action p {
+    margin: 0;
+}
+
+
+
+
+
+.contact-wrap {
+    width: 100%;
+    max-width: 100vw;
+    min-height: 70vw; 
+    padding: 12vw 2vw 2vw 1vw; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
+.contact-info {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: -1vw;
+}
+
+.contact-title {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 5.5vw;
+    font-weight: normal;
+    color: #000000;
+    margin: 0 0 3vw 0;
+}
+
+.info-item {
+    font-family: "CoFo Sans", sans-serif;
+    margin-bottom: 2vw;
+}
+
+.info-item h3 {
+    font-size: 2.5vw;
+    font-weight: normal;
+    margin: 0 0 0.4vw 0;
+    color: #000000;
+}
+
+.info-item p {
+    font-size: 2vw;
+    line-height: 1.4;
+    margin: 0;
+    color: #000000;
+}
+
+.contact-map {
+    width: 30vw;
+    height: 20vw;
+    background-color: #9b9b9b; 
+    margin-top: 4.5vw;
+    position: relative;
+    flex-shrink: 0; 
+}
+
+.contact-map::before,
+.contact-map::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top right, transparent calc(50% - 1px), #000000 50%, transparent calc(50% + 1px));
+    pointer-events: none;
+}
+.contact-map::after {
+    background: linear-gradient(to top left, transparent calc(50% - 1px), #000000 50%, transparent calc(50% + 1px));
+}
+
+.contact-form {
+    width: 48vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 11vw; 
+}
+
+.form-title {
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 5vw;
+    font-weight: normal;
+    line-height: 1.15;
+    color: #000000;
+    margin: 0 0 -2vw 0;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vw;
+    margin-top: 5vw;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* ИСПРАВЛЕНО: Глубокий темный цвет #191919 для блоков */
+.input-box {
+    width: 48%;
+    height: 4.5vw;
+    box-sizing: border-box;
+    background-color: #191919; 
+}
+
+.input-box.full-width {
+    width: 100%;
+}
+
+.input-box.textarea-box {
+    height: 15vw; 
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 1.5vw;
+    box-sizing: border-box;
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 1.5vw;
+    color: #ffffff; /* Текст, который вводит пользователь — белый для контраста */
+}
+
+.input-box textarea {
+    padding: 1.5vw;
+    resize: none; 
+}
+
+/* ИСПРАВЛЕНО: Серый аккуратный цвет для подсказок (placeholder) */
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+    color: #6a6a6a; 
+}
+
+/* --------------------------------------------------- */
+/* ИСПРАВЛЕНО: КНОПКА ОТПРАВИТЬ СТАЛА КОМПАКТНЕЕ       */
+/* --------------------------------------------------- */
+.btn-submit {
+    margin-left: 0 !important; /* Убрали огромный сдвиг вправо */
+    margin-top: 1vw;
+    width: 16vw !important;    /* Уменьшили общую ширину кнопки (было 24vw) */
+    height: 4vw !important;    /* Сделали её чуть более изящной по высоте */
+}
+
+.btn-submit .svg_but {
+    font-size: 1.6vw !important; /* Немного уменьшили шрифт под новый размер */
+    margin-left: -3.9vw;
+    margin-top: -0.34vw;
+}
+
+/* Всплывающее уведомление */
+.toast-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "CoFo Sans", sans-serif;
+    font-size: 2vw;
+    padding: 3vw 5vw;
+    border: 0.12vw solid #000000; 
+    box-shadow: 0 1vw 3vw rgba(0,0,0,0.15);
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.toast-alert.is-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+   
+
+   

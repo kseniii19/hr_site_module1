@@ -1,0 +1,43 @@
+@keyframes run_text_author {
+    0% { transform: translateX(0);}
+    100% { transform: translateX(-50%);}
+}
+
+
+@keyframes strelka_move1 {
+    0% { transform: translateY(0);}
+    50% {transform: translateY(-2vw);}
+    100% { transform: translateY(0);}
+}
+
+
+@keyframes strelka_move2 {
+    0% { transform: translateX(0);}
+    50% { transform: translateX(3vw);}
+    100% { transform: translateX(0);}
+}
+
+@keyframes strelka_move3 {
+    0% { transform: translateX(0);}
+    50% { transform: translateX(3vw);}
+    100% { transform: translateX(0);}
+}
+
+@keyframes strelka_move4 {
+    0% { transform: translate(0, 0);}
+    50% { transform: translate(-2vw, -1vw);}
+    100% { transform: translate(0, 0);}
+}
+
+@keyframes strelka_move5 {
+    0% { transform: translateX(0);}
+    50% { transform: translateX(3vw);}
+    100% { transform: translateX(0);}
+}
+
+
+@keyframes strelka_move6 {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-4vw);}
+    100% { transform: translateY(0);}
+}

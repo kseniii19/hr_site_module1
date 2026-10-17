@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr"> 
+<head>
+    <meta charset="utf-8">                 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Тектура — каталог</title> 
+    <link rel="icon" href="./img/favic.png">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="./css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/js.js" charset="utf-8"></script>
+</head>
+
+<body id="cataloge-page">
+
+    <header class="main-header">
+        <a href="index.html" class="logo">Тектура</a>
+
+        <a href="about.html" class="text-link text-about">
+            о бренде
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+
+        <a href="cataloge.html" class="text-link text-cataloge">
+            каталог
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+
+        <a href="lab.html" class="text-link text-lab">
+            лаборатория мероприятий
+            <img class="hover-lab-obvodka" src="./img/lab_obvodka.svg" alt="">
+        </a>
+
+        <a href="contact.html" class="text-link text-contact">
+            контакты
+            <img class="hover-obvodka" src="./img/obvodka2.svg" alt="">
+        </a>
+    
+           <button class="burger-menu-btn" aria-label="Открыть меню">
+             <img src="./img/burger.svg" alt="Меню">
+            </button>
+
+    </header>
+
+    <div class="mobile-menu-panel">
+            <button class="close-menu-btn" aria-label="Закрыть меню">&times;</button>
+            <nav class="mobile-nav">
+                <a href="cataloge.html">Каталог</a>
+                <a href="about.html">О бренде</a>
+                <a href="lab.html">Мероприятия</a>
+                <a href="contact.html">Контакты</a>
+            </nav>
+        </div>
+
+
+
+
+
+   <main class="product_main_section">
+        
+        <div class="product_view_left">
+            <div class="product_main_img_box">
+                <img class="dynamic_product_img" src="" alt="Фото товара">
+            </div>
+        </div>
+
+        <div class="product_view_right">
+            <h1 class="dynamic_product_title">Загрузка...</h1>
+            <div class="dynamic_product_price">0 руб</div>
+
+            <div class="sizes_wrapper">
+                <div class="dynamic_sizes_box">
+                    </div>
+            </div>
+
+            <a href="404.html" class="but_wrapper events_clean_dash btn-add-cart">
+                <button class="svg_but">в корзину</button>
+            </a>
+        </div>
+
+    </main>
+
+    <section class="related_products_section">
+        <h2 class="related_title">Вам может понравиться:</h2>
+        
+        <div class="related_grid">
+            
+            <div class="related_card">
+                <div class="related_img_box">
+                    <img src="./img/foto1_3.svg" alt="Свитер">
+                </div>
+                <span class="related_product_title">Свитер</span>
+                <a href="product.html?id=dune_sviter" class="related_buy_btn">Купить</a>
+            </div>
+
+            <div class="related_card">
+                <div class="related_img_box">
+                    <img src="./img/foto1_2.svg" alt="Джинсы">
+                </div>
+                <span class="related_product_title">Джинсы</span>
+                <a href="product.html?id=dune_dzhinsy" class="related_buy_btn">Купить</a>
+            </div>
+
+            <div class="related_card">
+                <div class="related_img_box">
+                    <img src="./img/foto1_1.svg" alt="Юбка">
+                </div>
+                <span class="related_product_title">Юбка</span>
+                <a href="product.html?id=dune_yubka" class="related_buy_btn">Купить</a>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+  <div class="footer_container">
+    
+    <div class="footer_block footer_nav">
+      <div class="nav_col">
+        <a href="about.html" class="text_footer6">О бренде</a>
+        <a href="cataloge.html" class="text_footer7">Каталог</a>
+        <a href="lab.html" class="text_footer8">Мероприятия</a>
+      </div>
+      <div class="nav_col">
+        <a href="index.html" class="text_footer9">Главная</a>
+        <a href="contact.html" class="text_footer10">Контакты</a>
+      </div>
+    </div>
+
+    <div class="footer_block footer_address">
+      <p class="text_footer1">Адрес</p>
+      <p class="text_footer2">Москва, ул. Текстурная, д5</p>
+    </div>
+
+    <div class="footer_block footer_contacts">
+      <p class="text_footer3">Связаться с нами</p>
+      <p class="text_footer4">+7 (925) 000-00-00</p>
+      <p class="text_footer5">tekture@gmail.com</p>
+    </div>
+  </div>
+
+  <img class="footer_logo" src="./img/footer.svg" alt="ТЕКТУРА">
+</footer>
+
+
+
+    <script src="./js/js.js" charset="utf-8"></script>
+</body>
+</html>
