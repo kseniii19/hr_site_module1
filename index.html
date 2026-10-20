@@ -15,6 +15,9 @@
 <section class="zoom-stage">
 <div class="first-screen">
     <img class="room" src="./img/room1.svg" alt="">
+    <!-- Комната и Марк для телефона: цветок и стикер уже нарисованы в boy1_adaptive.svg -->
+    <img class="room-mobile" src="./img/adaptive_room1.svg" alt="">
+    <img class="boy-mobile" src="./img/boy1_adaptive.svg" alt="Марк с коробкой вещей">
 
     <div class="character">
         <img class="boy" src="./img/boy_with_box.svg" alt="Марк с коробкой вещей">
@@ -78,10 +81,15 @@
         <img class="mark-label" src="./img/mark.svg" alt="">
         <img class="mark-arrow" src="./img/strelka_mark.svg" alt="">
 
+        <!-- Телефон: Марк за столом с ноутбуком и чашкой одной картинкой, стрелка с другой стороны -->
+        <img class="boy3-mobile" src="./img/adaptive_boy3.svg" alt="Марк за ноутбуком">
+        <img class="arrow-mobile" src="./img/adaptive_marks_arrow.svg" alt="">
+
         <!-- При скролле вторая плашка плавно сменяет первую на том же месте (js.js) -->
         <div class="story-card story-card-search">
             <div class="story-slide story-slide-1">
                 <img class="story-card-bg" src="./img/plashka1.svg" alt="«Затянувшийся поиск»">
+                <img class="story-card-mobile-bg" src="./img/adaptive_plashka1.svg" alt="«Затянувшийся поиск»">
                 <!-- Переносы строк как в third_screen.png -->
                 <p class="story-text story-text-lines">
                     Это Марк, и его уволили 2 месяца назад из-<br>за сокращения штата.<br>
@@ -95,8 +103,12 @@
 
             <div class="story-slide story-slide-2">
                 <img class="story-card-bg" src="./img/plashka_bg.svg" alt="">
-                <p class="story-text">
+                <img class="story-card-mobile-bg" src="./img/adaptive_plashka_small.svg" alt="">
+                <p class="story-text story-text-desktop">
                     Но сегодня утром на почту пришло долгожданное приглашение на очное. Марк тут же открыл ноутбук, чтобы написать подруге...
+                </p>
+                <p class="story-text story-text-mobile">
+                    Но сегодня утром на почту пришло долгожданное приглашение на очное. Марк тут же открывает ноутбук, чтобы написать подруге.
                 </p>
             </div>
         </div>
@@ -108,9 +120,12 @@
 <section class="fourth-screen">
     <div class="fourth-frame">
         <img class="room3" src="./img/room3.svg" alt="">
+        <!-- Телефон: стол без стены, ноутбук ниже; после «прочитать переписку» оба исчезают -->
+        <img class="table-mobile" src="./img/adaptive_table.svg" alt="">
 
         <div class="chat-laptop">
             <img class="chat-laptop-img" src="./img/computer_without_messages.svg" alt="Ноутбук с открытой перепиской">
+            <img class="chat-laptop-mobile" src="./img/adaptive_comp.svg" alt="Ноутбук с открытой перепиской">
 
             <!-- Окно, в котором видны сообщения: от голубой панели слева до правого края экрана -->
             <div class="chat-messages">
@@ -138,14 +153,19 @@
 
             <div class="story-slide story-slide-2">
                 <img class="story-card-bg" src="./img/plashka2.svg" alt="">
+                <img class="story-card-mobile-bg" src="./img/adaptive_plashka_small.svg" alt="">
                 <p class="story-text">
                     Однако у дверей переговорной выясняется, что на одну эту позицию претендует не он один.
                 </p>
                 <button class="story-btn read-chat-btn" type="button">
                     <img src="./img/button1.svg" alt="Прочитать переписку">
+                    <img class="story-btn-mobile-img" src="./img/adaptive_button1.svg" alt="Прочитать переписку">
                 </button>
             </div>
         </div>
+
+        <!-- Телефон: подсказка сверху появляется после «прочитать переписку» -->
+        <p class="chat-hint">листай вниз</p>
     </div>
 
     <div class="blackout">
@@ -155,6 +175,8 @@
     <!-- ПЯТЫЙ ЭКРАН: проявляется из темноты в конце закрепления четвёртого -->
     <div class="fifth-screen">
         <img class="room4" src="./img/room4.svg" alt="">
+        <!-- Телефон: комната вместе с героями одной картинкой, поверх неё невидимые зоны нажатия -->
+        <img class="room4-mobile" src="./img/adaptive_six_screen.svg" alt="">
 
         <p class="fifth-hint">Нажмите на персонажа, чтобы узнать о нем больше</p>
 
@@ -175,6 +197,11 @@
         <img class="person-arrow person-arrow-boy" src="./img/up_arrow.svg" alt="">
         <img class="person-arrow person-arrow-men" src="./img/up_arrow.svg" alt="">
         <img class="person-arrow person-arrow-girl" src="./img/up_arrow.svg" alt="">
+
+        <!-- Телефон: стрелки крупнее -->
+        <img class="person-arrow-mobile person-arrow-mobile-boy" src="./img/adaptive_arrow1.svg" alt="">
+        <img class="person-arrow-mobile person-arrow-mobile-men" src="./img/adaptive_arrow1.svg" alt="">
+        <img class="person-arrow-mobile person-arrow-mobile-girl" src="./img/adaptive_arrow1.svg" alt="">
     </div>
 </section>
 
@@ -182,6 +209,7 @@
      к шестому, как по якорю (js.js) -->
 <section class="six-screen candidate-screen candidate-1-screen" id="candidate-1">
     <img class="room5" src="./img/room5.svg" alt="">
+    <img class="room5-mobile" src="./img/adaptive_7screen.svg" alt="">
     <div class="six-text">
         <h2 class="six-title">Кандидат 1</h2>
         <p class="six-subtitle">Специалист с 10-летним стажем</p>
@@ -200,6 +228,10 @@
     <svg class="pavel-wall-line" viewBox="0 0 1440 1816" preserveAspectRatio="none" aria-hidden="true">
         <path d="M91 1009L0 1262" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
     </svg>
+    <!-- Телефон: та же линия для кадра 430×2210 -->
+    <svg class="pavel-wall-line-mobile" viewBox="0 0 430 2210" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M22.5 590L0 656" stroke="black" stroke-width="0.84" stroke-linecap="round"/>
+    </svg>
 
     <img class="certificate certificate-1" src="./img/sertificat1.svg" alt="">
     <img class="certificate certificate-2" src="./img/sertificat2.svg" alt="">
@@ -207,6 +239,7 @@
 
     <div class="pavel-card">
         <img class="story-card-bg" src="./img/plashka_pavel.svg" alt="Павел, 54 года">
+        <img class="story-card-mobile-bg" src="./img/plashka8.svg" alt="Павел, 54 года">
         <p class="story-text story-text-lines pavel-text">
             Претендует на позицию ведущего<br>
             аналитика данных после 10 лет<br>
@@ -217,6 +250,7 @@
         </p>
         <button class="story-btn pavel-btn decision-open" type="button" data-candidate="pavel">
             <img src="./img/button_pavel.svg" alt="Принять решение">
+            <img class="story-btn-mobile-img" src="./img/adaptive_button_decision.svg" alt="Принять решение">
         </button>
     </div>
 
@@ -249,6 +283,7 @@
 <!-- ВОСЬМОЙ ЭКРАН: «Кандидат 2», такой же, как «Кандидат 1»; въезжает тёмным и высветляется (js.js) -->
 <section class="six-screen candidate-screen candidate-2-screen" id="candidate-2">
     <img class="room5" src="./img/room5.svg" alt="">
+    <img class="room5-mobile" src="./img/adaptive_7screen.svg" alt="">
     <div class="six-text">
         <h2 class="six-title">Кандидат 2</h2>
         <p class="six-subtitle">Специалист после длительного перерыва</p>
@@ -333,6 +368,7 @@
 <!-- «Кандидат 3»: въезжает тёмным и высветляется (js.js) -->
 <section class="six-screen candidate-screen candidate-3-screen" id="candidate-3">
     <img class="room5" src="./img/room5.svg" alt="">
+    <img class="room5-mobile" src="./img/adaptive_7screen.svg" alt="">
     <div class="six-text">
         <h2 class="six-title">Кандидат 3</h2>
         <p class="six-subtitle">Начинающий специалист с годом стажа</p>
@@ -374,6 +410,12 @@
     <!-- room_last_boy_bg.svg — копия room_lasst_boy.svg без руки с маркером: рука отдельным слоем -->
     <img class="room-last-boy" src="./img/room_last_boy_bg.svg" alt="Марк у доски с графиками">
     <img class="boys-hand" src="./img/boys_hand.svg" alt="">
+
+    <!-- Цифры на доске: заголовки одной картинкой, подписи текстом -->
+    <img class="numbers-doska" src="./img/numbers_doska.svg" alt="до 10%, 50+, в 3 раза">
+    <p class="doska-text doska-text-1">IT вакансий открыты<br>для специалистов<br>без опыта.</p>
+    <p class="doska-text doska-text-2">человек в среднем<br>претендуют на одно<br>место джуниора</p>
+    <p class="doska-text doska-text-3">чаще работодатели<br>стали указывать опыт<br>от 3 лет как<br>обязательный фильтр</p>
 
     <!-- Пар от носков: лежит под вещами, низ струек уходит за носок -->
     <img class="sock-steam sock-steam-1" src="./img/fu1.svg" alt="">
@@ -418,9 +460,11 @@
                 <div class="decision-buttons">
                     <button class="decision-btn decision-yes" type="button">
                         <img src="./img/but_yes.svg" alt="Да">
+                        <img class="decision-btn-mobile" src="./img/adapitive_yes.svg" alt="Да">
                     </button>
                     <button class="decision-btn decision-no" type="button">
                         <img src="./img/but_no.svg" alt="Нет">
+                        <img class="decision-btn-mobile" src="./img/adaptive_no.svg" alt="Нет">
                     </button>
                 </div>
             </div>
@@ -446,9 +490,11 @@
                 <div class="decision-buttons">
                     <button class="decision-btn decision-yes" type="button">
                         <img src="./img/but_yes.svg" alt="Да">
+                        <img class="decision-btn-mobile" src="./img/adapitive_yes.svg" alt="Да">
                     </button>
                     <button class="decision-btn decision-no" type="button">
                         <img src="./img/but_no.svg" alt="Нет">
+                        <img class="decision-btn-mobile" src="./img/adaptive_no.svg" alt="Нет">
                     </button>
                 </div>
             </div>
@@ -474,9 +520,11 @@
                 <div class="decision-buttons">
                     <button class="decision-btn decision-yes" type="button">
                         <img src="./img/but_yes.svg" alt="Да">
+                        <img class="decision-btn-mobile" src="./img/adapitive_yes.svg" alt="Да">
                     </button>
                     <button class="decision-btn decision-no" type="button">
                         <img src="./img/but_no.svg" alt="Нет">
+                        <img class="decision-btn-mobile" src="./img/adaptive_no.svg" alt="Нет">
                     </button>
                 </div>
             </div>
@@ -497,6 +545,9 @@
         </div>
     </div>
 </div>
+
+<!-- Телефон: затемнение всей страницы при переходе от героя к экрану кандидата (js.js) -->
+<div class="page-fade"></div>
 
 </body>
 </html>

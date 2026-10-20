@@ -7,102 +7,149 @@ window.addEventListener("load", () => {
 
     const stage = document.querySelector(".zoom-stage");
     if (stage) {
-        // Во сколько раз Марк на zoom_boy.svg крупнее, чем на boy_with_box.svg
-        const ZOOM = 3.293;
-        const zoomEase = "power2.inOut";
+        let mm = gsap.matchMedia();
 
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: stage,
-                start: "top top",
-                end: "+=680%",
-                pin: true,
-                scrub: 1
-            }
+        // десктоп и планшет: зум в бейджик, затем затемнение
+        mm.add("(min-width: 451px)", () => {
+            // Во сколько раз Марк на zoom_boy.svg крупнее, чем на boy_with_box.svg
+            const ZOOM = 3.293;
+            const zoomEase = "power2.inOut";
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: stage,
+                    start: "top top",
+                    end: "+=680%",
+                    pin: true,
+                    scrub: 1
+                }
+            });
+
+            // Фон комнаты, заголовок и облака уходят в начале зума
+            tl.to([".room", ".room-mobile", ".first-screen-text", ".thought"], {
+                opacity: 0,
+                duration: 0.3,
+                ease: "none"
+            }, 0);
+
+            tl.to(".first-screen", {
+                scale: ZOOM,
+                duration: 1,
+                ease: zoomEase
+            }, 0);
+
+            // Второй экран всё время совпадает с первым: в начале он уменьшен в ZOOM раз
+            // вокруг той же точки и растёт с тем же ease, поэтому подмена картинки не видна
+            tl.fromTo(".second-screen", {
+                scale: 1 / ZOOM
+            }, {
+                scale: 1,
+                duration: 1,
+                ease: zoomEase
+            }, 0);
+
+            tl.to(".second-screen", {
+                opacity: 1,
+                duration: 0.3,
+                ease: "power1.inOut"
+            }, 0.65);
+
+            // Убираем первый экран, когда второй уже почти непрозрачен,
+            // чтобы его более толстые линии не выглядывали из-под zoom_boy
+            tl.to([".first-screen .character", ".boy-mobile"], {
+                opacity: 0,
+                duration: 0.15,
+                ease: "none"
+            }, 0.85);
+
+            tl.from(".badge", {
+                opacity: 0,
+                duration: 0.2,
+                ease: "none"
+            }, 0.9);
+
+
+            // 2. ЗАТЕМНЕНИЕ И НАДПИСЬ «СПУСТЯ 2 МЕСЯЦА...»
+            // Пауза 1.1–1.5, чтобы успеть прочитать бейджик
+
+            tl.to(".zoom-stage .blackout", {
+                opacity: 1,
+                duration: 0.35,
+                ease: "power1.inOut"
+            }, 1.5);
+
+            tl.from(".zoom-stage .blackout-text", {
+                opacity: 0,
+                y: "2vw",
+                duration: 0.3,
+                ease: "power2.out"
+            }, 1.85);
+
+
+
+            // 3. ПРОЯВЛЕНИЕ ТРЕТЬЕГО ЭКРАНА ИЗ ТЕМНОТЫ
+            // Надпись успевает постоять 2.15–2.4, затем уходит, и экран светлеет
+
+            tl.to(".zoom-stage .blackout-text", {
+                opacity: 0,
+                duration: 0.25,
+                ease: "none"
+            }, 2.4);
+
+            tl.to(".third-screen", {
+                autoAlpha: 1,
+                duration: 0.45,
+                ease: "power1.inOut"
+            }, 2.6);
+
+            // Первая плашка стоит, потом её плавно сменяет вторая
+            addSlideChange(tl, ".story-card-search", 3.4);
+
+            // Небольшой запас, чтобы вторая плашка постояла до конца закрепления
+            tl.to({}, { duration: 0.3 });
         });
 
-        // Фон комнаты, заголовок и облака уходят в начале зума
-        tl.to([".room", ".first-screen-text", ".thought"], {
-            opacity: 0,
-            duration: 0.3,
-            ease: "none"
-        }, 0);
+        // телефон: зума и второго экрана нет, после первого экрана сразу затемнение
+        mm.add("(max-width: 450px)", () => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: stage,
+                    start: "top top",
+                    end: "+=460%",
+                    pin: true,
+                    scrub: 1
+                }
+            });
 
-        tl.to(".first-screen", {
-            scale: ZOOM,
-            duration: 1,
-            ease: zoomEase
-        }, 0);
+            tl.to(".zoom-stage .blackout", {
+                opacity: 1,
+                duration: 0.35,
+                ease: "power1.inOut"
+            }, 0.2);
 
-        // Второй экран всё время совпадает с первым: в начале он уменьшен в ZOOM раз
-        // вокруг той же точки и растёт с тем же ease, поэтому подмена картинки не видна
-        tl.fromTo(".second-screen", {
-            scale: 1 / ZOOM
-        }, {
-            scale: 1,
-            duration: 1,
-            ease: zoomEase
-        }, 0);
+            tl.from(".zoom-stage .blackout-text", {
+                opacity: 0,
+                y: "2vw",
+                duration: 0.3,
+                ease: "power2.out"
+            }, 0.55);
 
-        tl.to(".second-screen", {
-            opacity: 1,
-            duration: 0.3,
-            ease: "power1.inOut"
-        }, 0.65);
+            tl.to(".zoom-stage .blackout-text", {
+                opacity: 0,
+                duration: 0.25,
+                ease: "none"
+            }, 1.1);
 
-        // Убираем первый экран, когда второй уже почти непрозрачен,
-        // чтобы его более толстые линии не выглядывали из-под zoom_boy
-        tl.to(".first-screen .character", {
-            opacity: 0,
-            duration: 0.15,
-            ease: "none"
-        }, 0.85);
+            tl.to(".third-screen", {
+                autoAlpha: 1,
+                duration: 0.45,
+                ease: "power1.inOut"
+            }, 1.3);
 
-        tl.from(".badge", {
-            opacity: 0,
-            duration: 0.2,
-            ease: "none"
-        }, 0.9);
+            addSlideChange(tl, ".story-card-search", 2.1);
 
-
-        // 2. ЗАТЕМНЕНИЕ И НАДПИСЬ «СПУСТЯ 2 МЕСЯЦА...»
-        // Пауза 1.1–1.5, чтобы успеть прочитать бейджик
-
-        tl.to(".zoom-stage .blackout", {
-            opacity: 1,
-            duration: 0.35,
-            ease: "power1.inOut"
-        }, 1.5);
-
-        tl.from(".zoom-stage .blackout-text", {
-            opacity: 0,
-            y: "2vw",
-            duration: 0.3,
-            ease: "power2.out"
-        }, 1.85);
-
-
-
-        // 3. ПРОЯВЛЕНИЕ ТРЕТЬЕГО ЭКРАНА ИЗ ТЕМНОТЫ
-        // Надпись успевает постоять 2.15–2.4, затем уходит, и экран светлеет
-
-        tl.to(".zoom-stage .blackout-text", {
-            opacity: 0,
-            duration: 0.25,
-            ease: "none"
-        }, 2.4);
-
-        tl.to(".third-screen", {
-            autoAlpha: 1,
-            duration: 0.45,
-            ease: "power1.inOut"
-        }, 2.6);
-
-        // Первая плашка стоит, потом её плавно сменяет вторая
-        addSlideChange(tl, ".story-card-search", 3.4);
-
-        // Небольшой запас, чтобы вторая плашка постояла до конца закрепления
-        tl.to({}, { duration: 0.3 });
+            tl.to({}, { duration: 0.3 });
+        });
     }
 
 
@@ -121,14 +168,21 @@ window.addEventListener("load", () => {
 
         addSlideChange(fourthTl, ".story-card-offer", 0.3);
 
-        // Ноутбук подъезжает к центру и немного увеличивается
-        fourthTl.to(".chat-laptop", {
-            xPercent: 18,
-            yPercent: 6,
-            scale: 1.25,
-            duration: 1,
-            ease: "power2.inOut"
-        }, CARD_PART);
+        // Ноутбук подъезжает к центру и немного увеличивается.
+        // На телефоне ноутбук исчезает по нажатию на кнопку, и сообщения выезжают прямо из краёв экрана
+        const isPhone = window.matchMedia("(max-width: 450px)").matches;
+
+        if (isPhone) {
+            fourthTl.to({}, { duration: 0.3 }, CARD_PART);
+        } else {
+            fourthTl.to(".chat-laptop", {
+                xPercent: 18,
+                yPercent: 6,
+                scale: 1.25,
+                duration: 1,
+                ease: "power2.inOut"
+            }, CARD_PART);
+        }
 
         // Правые сообщения выезжают из-за правого края экрана,
         // левые — из-за левого края голубой панели
@@ -193,6 +247,8 @@ window.addEventListener("load", () => {
         if (readChatBtn) {
             readChatBtn.addEventListener("click", () => {
                 readChatBtn.closest(".story-card").classList.add("is-hidden");
+                // по этому классу на телефоне исчезают ноутбук и стол и появляется «листай вниз»
+                fourthScreen.classList.add("is-chat-open");
                 chatOpen = true;
                 // Закрепление удлиняется, и скролл дальше ведёт переписку
                 ScrollTrigger.refresh();
@@ -213,6 +269,25 @@ window.addEventListener("load", () => {
             ScrollTrigger.refresh();
 
             const target = document.querySelector(link.getAttribute("href"));
+            const pageFade = document.querySelector(".page-fade");
+
+            // на телефоне экран темнеет, страница переходит к кандидату и высветляется
+            if (pageFade && window.matchMedia("(max-width: 450px)").matches) {
+                gsap.to(pageFade, {
+                    autoAlpha: 1,
+                    duration: 0.4,
+                    ease: "power1.inOut",
+                    onComplete: () => {
+                        window.scrollTo({
+                            top: target.getBoundingClientRect().top + window.scrollY,
+                            behavior: "instant"
+                        });
+                        gsap.to(pageFade, { autoAlpha: 0, duration: 0.6, delay: 0.15, ease: "power1.inOut" });
+                    }
+                });
+                return;
+            }
+
             window.scrollTo({
                 top: target.getBoundingClientRect().top + window.scrollY,
                 behavior: "smooth"

@@ -3,6 +3,511 @@
 
 @media screen and (min-width: 1px) and (max-width: 450px) {
 
+    /* ПЕРВЫЙ ЭКРАН: макет 430×846 (adaptive_room1.svg), всё в % от сцены */
+
+    .zoom-stage {
+        aspect-ratio: 430 / 846;
+    }
+
+    .room,
+    .first-screen .character,
+    .thought {
+        display: none;
+    }
+
+    .room-mobile {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* boy1_adaptive.svg 395×495 в точке (18, 355) */
+    .boy-mobile {
+        display: block;
+        position: absolute;
+        left: 4.19%;
+        top: 41.96%;
+        width: 91.86%;
+    }
+
+    .first-screen-text {
+        left: 7.6%;
+        top: 1.8%;
+    }
+
+    .first-screen-title {
+        font-size: 18vw;
+    }
+
+    .first-screen-subtitle {
+        margin-top: 2vw;
+        font-size: 4.85vw;
+    }
+
+
+    /* Второго экрана (зум в бейджик) на телефоне нет */
+    .second-screen {
+        display: none;
+    }
+
+
+    /* ЗАТЕМНЕНИЕ «СПУСТЯ 2 МЕСЯЦА...» (adaptive_2screen): на всю высоту экрана, надпись по центру */
+
+    .blackout-text {
+        font-size: 11.5vw;
+        text-transform: lowercase;
+    }
+
+
+    /* ТРЕТИЙ ЭКРАН (adaptive_3screen): плашка сверху, Марк за столом прижат к низу сцены 430×846 */
+
+    .third-screen {
+        background: #DBDBDB;
+    }
+
+    .third-frame {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    .room2,
+    .steam,
+    .computer,
+    .mark-body,
+    .mark-hand,
+    .mark-arrow,
+    .story-card-search .story-card-bg,
+    .story-text-desktop {
+        display: none;
+    }
+
+    /* adaptive_boy3.svg 424×325 */
+    .boy3-mobile {
+        display: block;
+        left: 1.07%;
+        bottom: 0;
+        width: 98.6%;
+    }
+
+    /* Надпись «Марк» меньше и слева, стрелка показывает на Марка */
+    .mark-label {
+        left: 9.3%;
+        top: 48.9%;
+        width: 24.7%;
+    }
+
+    .arrow-mobile {
+        display: block;
+        left: 22.7%;
+        top: 55.7%;
+        width: 21.6%;
+        animation: arrow-point-mobile 1.2s ease-in-out infinite;
+    }
+
+    /* Плашки 371×190 и 371×124 */
+    .story-card-search {
+        left: 6.63%;
+        top: 3.83%;
+        width: 86.28%;
+    }
+
+    .story-card-search .story-card-mobile-bg {
+        display: block;
+        width: 100%;
+    }
+
+    .story-card-search .story-text {
+        left: 3.53%;
+        top: 24.5%;
+        width: 93%;
+        font-size: 3.2vw;
+        line-height: 1.35;
+    }
+
+    .story-card-search .story-text-mobile {
+        display: block;
+    }
+
+    .story-card-search .story-slide-2 .story-text {
+        top: 50%;
+    }
+
+
+    /* ЧЕТВЁРТЫЙ ЭКРАН (adaptive_4screen): плашка сверху, ноутбук на столе внизу, стены нет.
+       После «прочитать переписку» стол и ноутбук исчезают, сверху «листай вниз»,
+       а сообщения при скролле выезжают из-за краёв экрана */
+
+    .fourth-screen {
+        aspect-ratio: 430 / 846;
+    }
+
+    .fourth-frame {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    .room3 {
+        display: none;
+    }
+
+    /* adaptive_table.svg 430×140 у нижнего края, на нём adaptive_comp.svg 316×222 */
+    .table-mobile {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* Ноутбук-контейнер на весь экран: сообщения позиционируются в % от экрана */
+    .chat-laptop {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    .chat-laptop-img {
+        display: none;
+    }
+
+    .chat-laptop-mobile {
+        display: block;
+        position: absolute;
+        left: 17.9%;
+        top: 64.4%;
+        width: 73.49%;
+    }
+
+    .table-mobile,
+    .chat-laptop-mobile {
+        transition: opacity 0.5s ease;
+    }
+
+    .fourth-screen.is-chat-open .table-mobile,
+    .fourth-screen.is-chat-open .chat-laptop-mobile {
+        opacity: 0;
+    }
+
+    /* Сообщения крупно, на всю ширину экрана; выезжают из-за его краёв */
+    .chat-messages {
+        clip-path: none;
+    }
+
+    /* Пузырь mes1/mes3 #D9D9D9 почти как фон, поэтому вне ноутбука его чуть затемняем */
+    .message-right {
+        left: 16%;
+        width: 80%;
+        filter: brightness(0.88);
+    }
+
+    .message-left {
+        left: 4%;
+        width: 80%;
+    }
+
+    .message-1 { top: 22%; }
+    .message-2 { top: 32%; }
+    .message-3 { top: 42%; }
+    .message-4 { top: 52%; }
+
+    .story-card-offer {
+        left: 6.63%;
+        top: 3.83%;
+        width: 86.28%;
+    }
+
+    /* Первая плашка — plashka_title2 с заголовком «Шанс на оффер», вторая — маленькая, как на третьем экране */
+    .story-card-offer .story-slide-2 .story-card-bg,
+    .read-chat-btn img {
+        display: none;
+    }
+
+    .story-card-offer .story-card-mobile-bg,
+    .read-chat-btn .story-btn-mobile-img {
+        display: block;
+        width: 100%;
+    }
+
+    .story-card-offer .story-text {
+        font-size: 3.2vw;
+        line-height: 1.35;
+    }
+
+    .story-card-offer .story-slide-2 .story-text {
+        left: 3.53%;
+        top: 9%;
+        width: 93%;
+    }
+
+    /* adaptive_button1 342×43 */
+    .read-chat-btn {
+        left: 10%;
+        top: 56%;
+        width: 80%;
+    }
+
+    .chat-hint {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 8%;
+        width: 100%;
+        font-family: "PT Root UI", Arial, sans-serif;
+        font-weight: 500;
+        font-size: 5vw;
+        text-align: center;
+        color: #191919;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s;
+    }
+
+    .fourth-screen.is-chat-open .chat-hint {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ЗАТЕМНЕНИЕ «НА СЛЕДУЮЩИЙ ДЕНЬ» после переписки: надпись по центру в две строки */
+
+    .fourth-screen .blackout-text {
+        white-space: normal;
+        text-align: center;
+        line-height: 1.1;
+    }
+
+
+    /* ПЯТЫЙ ЭКРАН (adaptive_6screen): комната с героями adaptive_six_screen.svg 430×240
+       в середине сцены 430×846, под ней пол. Обводки нет, герои — невидимые зоны нажатия */
+
+    .fifth-screen {
+        background: linear-gradient(to bottom, #DBDBDB 67%, #C2C2C2 67%);
+    }
+
+    .room4,
+    .person-img,
+    .person-stroke,
+    .person-arrow {
+        display: none;
+    }
+
+    .room4-mobile {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 43.1%;
+        width: 100%;
+    }
+
+    .fifth-hint {
+        left: 8%;
+        top: 32.6%;
+        width: 84%;
+        font-size: 5.4vw;
+        line-height: 1.2;
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Зоны нажатия по контурам героев на картинке; без увеличения */
+    .person,
+    .person:hover,
+    .person:focus-visible {
+        transform: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .person-boy  { left: 6.5%;  top: 48.1%; width: 19.1%; height: 20.1%; }
+    .person-men  { left: 27.9%; top: 47.4%; width: 24.7%; height: 20.9%; }
+    .person-girl { left: 53.5%; top: 48.1%; width: 22.3%; height: 20.6%; }
+
+    /* adaptive_arrow1.svg 39×25, пульсируют вверх-вниз как на десктопе */
+    .person-arrow-mobile {
+        display: block;
+        position: absolute;
+        width: 9.07%;
+        pointer-events: none;
+        animation: arrow-pulse 1.2s ease-in-out infinite;
+    }
+
+    .person-arrow-mobile-boy  { left: 9.8%;  top: 44.4%; }
+    .person-arrow-mobile-men  { left: 34.8%; top: 43.8%; animation-delay: -0.4s; }
+    .person-arrow-mobile-girl { left: 56.4%; top: 44.7%; animation-delay: -0.8s; }
+
+    /* ЭКРАНЫ «КАНДИДАТ N» (adaptive_7screen.svg 430×850): надпись по центру белой плашки */
+
+    .six-screen {
+        aspect-ratio: 430 / 850;
+    }
+
+    .room5 {
+        display: none;
+    }
+
+    .room5-mobile {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .six-text {
+        left: 50%;
+        top: 44.2%;
+        transform: translate(-50%, -50%);
+    }
+
+    .six-title {
+        font-size: 12vw;
+    }
+
+    .six-subtitle {
+        margin-top: 2vw;
+        font-size: 4.4vw;
+    }
+
+    /* ЭКРАН ПАВЛА (adaptive_8screen): длинный кадр 430×2210. Сверху плашка plashka8,
+       под ней комната room6_bg (масштаб 0.3347, чуть шире экрана), ниже стикеры друг под другом */
+
+    .pavel-screen {
+        aspect-ratio: 430 / 2210;
+    }
+
+    .room6 {
+        left: -1.63%;
+        top: 11.4%;
+        width: 112.1%;
+        max-width: none;
+    }
+
+    .pavel-wall-line {
+        display: none;
+    }
+
+    .pavel-wall-line-mobile {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .certificate-1 { left: 23.6%; top: 13.64%; width: 12%; }
+    .certificate-2 { left: 37.1%; top: 13.6%; width: 8.49%; }
+
+    .phone-dial {
+        left: 35.6%;
+        top: 18.24%;
+        width: 4.28%;
+    }
+
+    /* plashka8 371×190 */
+    .pavel-card {
+        left: 6.63%;
+        top: 1.43%;
+        width: 86.28%;
+    }
+
+    .pavel-card .story-card-bg,
+    .pavel-btn img {
+        display: none;
+    }
+
+    .pavel-card .story-card-mobile-bg,
+    .pavel-btn .story-btn-mobile-img {
+        display: block;
+        width: 100%;
+    }
+
+    .pavel-card .story-text {
+        left: 3.53%;
+        top: 24.5%;
+        width: 93%;
+        font-size: 3.2vw;
+        line-height: 1.35;
+        white-space: normal;
+    }
+
+    .pavel-card .story-text br {
+        display: none;
+    }
+
+    /* adaptive_button_decision 342×42 */
+    .pavel-btn {
+        left: 3.9%;
+        top: 70.3%;
+        width: 92.2%;
+    }
+
+    /* Стикеры по центру друг под другом, в 2.815 раза крупнее десктопных */
+    .stick-text {
+        font-size: 4.22vw;
+    }
+
+    .stick-2 { left: 19.5%;  top: 29.8%;  width: 61%; }
+    .stick-1 { left: 25.45%; top: 44.75%; width: 49.1%; }
+    .stick-3 { left: 19.1%;  top: 60.95%; width: 61.8%; }
+    .stick-4 { left: 24.2%;  top: 78.1%;  width: 51.6%; }
+
+
+    /* ПОП-АП «ПРИНЯТЬ РЕШЕНИЕ» (choose_screen): белая плашка 400×142 как adaptive_choose_plashka,
+       кнопки adaptive_yes / adaptive_no */
+
+    .decision-box {
+        width: 93vw;
+        min-height: 33vw;
+        border-radius: 4.36vw;
+    }
+
+    .decision-close {
+        top: 3vw;
+        right: 3.2vw;
+        width: 5.2vw;
+    }
+
+    .decision-ask {
+        gap: 4.6vw;
+        padding: 9vw 0 6vw;
+    }
+
+    .decision-question {
+        font-size: 4.4vw;
+    }
+
+    .decision-buttons {
+        gap: 7vw;
+    }
+
+    .decision-btn img {
+        display: none;
+    }
+
+    .decision-btn .decision-btn-mobile {
+        display: block;
+    }
+
+    /* adaptive_yes 119×50, adaptive_no 115×49 */
+    .decision-yes { width: 27.67vw; }
+    .decision-no { width: 26.74vw; }
+
+    .decision-result-yes,
+    .decision-result-no {
+        padding: 6vw 6vw 6vw;
+    }
+
+    .decision-title {
+        font-size: 5vw;
+    }
+
+    .decision-text {
+        margin-top: 2.5vw;
+        font-size: 4vw;
+        line-height: 1.3;
+    }
 }
 
 @media screen and (min-width: 451px) and (max-width: 1365px) /* планшет */ {

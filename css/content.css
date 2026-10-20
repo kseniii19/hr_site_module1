@@ -38,6 +38,12 @@ html, body {
     height: 100%;
 }
 
+/* Мобильные комната и Марк, показываются только в adaptive.css */
+.room-mobile,
+.boy-mobile {
+    display: none;
+}
+
 
 /* Марк с коробкой: 593×748, прижат к низу сцены.
    Цветок и стикер позиционируются в % от его размеров. */
@@ -305,6 +311,23 @@ html, body {
     top: 15.93%;
     width: 7.34%;
     animation: arrow-point 1.2s ease-in-out infinite;
+}
+
+/* Мобильные Марк, стрелка, подложки плашек и текст, показываются только в adaptive.css */
+.boy3-mobile,
+.arrow-mobile,
+.story-card-mobile-bg,
+.story-text-mobile,
+.story-btn-mobile-img,
+.chat-hint,
+.table-mobile,
+.chat-laptop-mobile,
+.room4-mobile,
+.person-arrow-mobile,
+.room5-mobile,
+.pavel-wall-line-mobile,
+.decision-btn-mobile {
+    display: none;
 }
 
 
@@ -610,6 +633,18 @@ html, body {
     font-size: 1.52vw;
     line-height: 1.2;
     color: #191919;
+}
+
+
+/* Затемнение всей страницы при переходе от героя к кандидату (на телефоне, js.js) */
+.page-fade {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: #000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 
@@ -981,6 +1016,26 @@ html, body {
     animation: hand-point 2.4s ease-in-out infinite;
 }
 
+/* Цифры на доске: numbers_doska.svg 277×263 стоит в точке (678, 75.6), масштаб 1.115 */
+.numbers-doska {
+    left: 47.08%;
+    top: 4.16%;
+    width: 21.44%;
+}
+
+.doska-text {
+    position: absolute;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.13vw;
+    line-height: 1.15;
+    white-space: nowrap;
+    color: #191919;
+}
+
+.doska-text-1 { left: 47.22%; top: 6.7%; }
+.doska-text-2 { left: 64%; top: 15.25%; }
+.doska-text-3 { left: 47.78%; top: 21.1%; }
 
 /* Пар от носков, как от кофе на третьем экране */
 .sock-steam {
@@ -1028,8 +1083,8 @@ html, body {
 }
 
 .paper-text-curator {
-    left: 26.71%;
-    top: 11.28%;
+    left: 27.2%;
+    top: 14.28%;
     transform: rotate(24deg);
 }
 
@@ -1188,6 +1243,12 @@ html, body {
     50% { transform: translate(-8%, 7%); }
 }
 
+/* Мобильная стрелка смотрит вправо-вниз, поэтому качается в другую сторону */
+@keyframes arrow-point-mobile {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(8%, 7%); }
+}
+
 @keyframes hand-scroll {
     0%, 100% { transform: translate(0, 0) rotate(0deg); }
     25% { transform: translate(-1.2%, 0.8%) rotate(-0.8deg); }
@@ -1240,6 +1301,7 @@ html, body {
     .certificate,
     .phone-dial,
     .person-arrow,
+    .person-arrow-mobile,
     .steam,
     .mark-hand,
     .mark-arrow,
