@@ -326,7 +326,15 @@ html, body {
 .person-arrow-mobile,
 .room5-mobile,
 .pavel-wall-line-mobile,
-.decision-btn-mobile {
+.decision-btn-mobile,
+.room10-mobile,
+.pazl-mobile,
+.room-boy-mobile,
+.diplom-mobile,
+.lapsha-mobile,
+.boy-wall-line-mobile,
+.big-doska-mobile,
+.podval-mobile {
     display: none;
 }
 
@@ -1298,6 +1306,8 @@ html, body {
     .boys-hand,
     .diplom,
     .lapsha,
+    .diplom-mobile,
+    .lapsha-mobile,
     .certificate,
     .phone-dial,
     .person-arrow,

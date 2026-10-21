@@ -405,7 +405,7 @@
         width: 4.28%;
     }
 
-    /* plashka8 371×190 */
+    /* plashka8 371×190 (у Елены adaptive_plashka10 того же размера) */
     .pavel-card {
         left: 6.63%;
         top: 1.43%;
@@ -413,17 +413,27 @@
     }
 
     .pavel-card .story-card-bg,
-    .pavel-btn img {
+    .pavel-btn img,
+    .elena-card .story-card-bg,
+    .elena-btn img,
+    .mark-card .story-card-bg,
+    .mark-btn img {
         display: none;
     }
 
     .pavel-card .story-card-mobile-bg,
-    .pavel-btn .story-btn-mobile-img {
+    .pavel-btn .story-btn-mobile-img,
+    .elena-card .story-card-mobile-bg,
+    .elena-btn .story-btn-mobile-img,
+    .mark-card .story-card-mobile-bg,
+    .mark-btn .story-btn-mobile-img {
         display: block;
         width: 100%;
     }
 
-    .pavel-card .story-text {
+    .pavel-card .story-text,
+    .elena-card .story-text,
+    .mark-card .story-text {
         left: 3.53%;
         top: 24.5%;
         width: 93%;
@@ -432,12 +442,16 @@
         white-space: normal;
     }
 
-    .pavel-card .story-text br {
+    .pavel-card .story-text br,
+    .elena-card .story-text br,
+    .mark-card .story-text br {
         display: none;
     }
 
     /* adaptive_button_decision 342×42 */
-    .pavel-btn {
+    .pavel-btn,
+    .elena-btn,
+    .mark-btn {
         left: 3.9%;
         top: 70.3%;
         width: 92.2%;
@@ -507,6 +521,226 @@
         margin-top: 2.5vw;
         font-size: 4vw;
         line-height: 1.3;
+    }
+
+    /* ЭКРАН ЕЛЕНЫ (adaptive_10screen): кадр 430×650, сверху плашка, под ней adaptive_room10 430×427 */
+
+    .elena-screen {
+        aspect-ratio: 430 / 650;
+    }
+
+    .room8 {
+        display: none;
+    }
+
+    .room10-mobile {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 30.8%;
+        width: 100%;
+    }
+
+    .elena-card {
+        left: 6.63%;
+        top: 1.54%;
+        width: 86.28%;
+    }
+
+    /* Текст Елены в пять строк — чуть плотнее, кнопка ниже */
+    .elena-card .story-text {
+        line-height: 1.25;
+    }
+
+    .elena-btn {
+        top: 74%;
+    }
+
+
+    /* ПАЗЛЫ (кадр 430×1700): кусочки 332×312 (68% ширины) по центру друг под другом,
+       тексты в % от кадра, переносятся сами */
+
+    .pazl-screen {
+        aspect-ratio: 430 / 1700;
+    }
+
+    .pazl {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .pazl-img {
+        display: none;
+    }
+
+    .pazl-mobile {
+        display: block;
+        position: absolute;
+        left: 16%;
+        width: 68%;
+    }
+
+    .pazl-mobile-1 { top: 21%; }
+    .pazl-mobile-2 { top: 39%; }
+    .pazl-mobile-3 { top: 57%; }
+    .pazl-mobile-4 { top: 75%; }
+
+    .pazl-text {
+        width: 45%;
+        font-size: 3.13vw;
+        line-height: 1.25;
+        white-space: normal;
+    }
+
+    .pazl-text br {
+        display: none;
+    }
+
+    .pazl-text-4 { left: 28.5%; top: 27.34%; }  /* 4 из 10 */
+    .pazl-text-1 { left: 28.5%; top: 45.26%; }  /* 64% */
+    .pazl-text-3 { left: 28.5%; top: 63.08%; }  /* на 20–30% */
+    .pazl-text-2 { left: 30.1%; top: 81.16%; }  /* 84% */
+
+    /* ЭКРАН МАРКА (adaptive_boy_screen): кадр 430×810, сверху adaptive_last_plashka 371×201,
+       внизу adaptive_last_room 430×345; диплом и лапша отдельными слоями с анимациями десктопа */
+
+    .boy-screen {
+        aspect-ratio: 430 / 810;
+    }
+
+    .room-boy,
+    .diplom,
+    .lapsha {
+        display: none;
+    }
+
+    .room-boy-mobile {
+        display: block;
+        left: 0;
+        top: 46.42%;
+        width: 100%;
+    }
+
+    .boy-wall-line-mobile {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* adaptive_diplom 61×62 висит на гвоздике */
+    .diplom-mobile {
+        display: block;
+        left: 32%;
+        top: 41.6%;
+        width: 14.19%;
+        transform-origin: 50% 3%;
+        animation: diplom-swing 3.2s ease-in-out infinite;
+    }
+
+    /* adaptive_lapsha 18×49 свисает изо рта в коробку */
+    .lapsha-mobile {
+        display: block;
+        left: 59.8%;
+        top: 67.28%;
+        width: 4.19%;
+        transform-origin: 50% 0;
+        animation: noodle-slurp 1.4s ease-in-out infinite;
+    }
+
+    .mark-card {
+        left: 6.63%;
+        top: 3.95%;
+        width: 86.28%;
+    }
+
+    .mark-card .story-text {
+        top: 22%;
+        line-height: 1.25;
+    }
+
+    .mark-btn {
+        top: 75%;
+    }
+
+    /* ПОСЛЕДНИЙ ЭКРАН: кадр 430×870. Сверху big_doska 385×361 без Марка, цифры и подписи
+       поверх неё как на десктопе; ниже adaptive_podval (adaptive_podvval.png) и крупная бегущая строка */
+
+    .boy-last-screen {
+        aspect-ratio: 430 / 870;
+    }
+
+
+    .room-last-boy,
+    .boys-hand {
+        display: none;
+    }
+
+    .big-doska-mobile {
+        display: block;
+        left: 5.23%;
+        top: 6.9%;
+        width: 89.53%;
+    }
+
+    /* numbers_doska 277×263 шириной 126 */
+    .numbers-doska {
+        left: 40.49%;
+        top: 8.48%;
+        width: 29.3%;
+    }
+
+    .doska-text {
+        font-size: 1.9vw;
+    }
+
+    .doska-text-1 { left: 40.67%; top: 10.64%; }
+    .doska-text-2 { left: 63.6%;  top: 17.94%; }
+    .doska-text-3 { left: 41.42%; top: 22.92%; }
+
+    /* adaptive_podval 402×266; надписи на листах — в % от неё, наклонены под листы */
+    .garbage {
+        left: 4.19%;
+        top: 62.07%;
+        width: 93.49%;
+    }
+
+    .garbage-img,
+    .sock-steam {
+        display: none;
+    }
+
+    .podval-mobile {
+        display: block;
+        width: 100%;
+    }
+
+    .paper-text {
+        font-size: 2.45vw;
+    }
+
+    .paper-text-author {
+        left: 13.8%;
+        top: 13.8%;
+    }
+
+    .paper-text-curator {
+        left: 37.3%;
+        top: 13.7%;
+        transform: rotate(14deg);
+    }
+
+    /* Бегущая строка крупно, чтобы читалась с телефона */
+    .footer-marquee {
+        bottom: 2vw;
+    }
+
+    .marquee-track span {
+        padding-right: 4vw;
+        font-size: 6.5vw;
     }
 }
 
