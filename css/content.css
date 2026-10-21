@@ -319,7 +319,6 @@ html, body {
 .story-card-mobile-bg,
 .story-text-mobile,
 .story-btn-mobile-img,
-.chat-hint,
 .table-mobile,
 .chat-laptop-mobile,
 .room4-mobile,
@@ -362,6 +361,18 @@ html, body {
 .story-slide-2 {
     opacity: 0;
     visibility: hidden;
+}
+
+/* Вторая (маленькая) плашка появляется ниже первой и чуть в стороне:
+   на третьем экране правее, на четвёртом чуть левее — совсем немного заходит на серую рамку ноутбука */
+.story-card-search .story-slide-2 {
+    top: 8vw;
+    left: 5vw;
+}
+
+.story-card-offer .story-slide-2 {
+    top: 8vw;
+    left: -0.6vw;
 }
 
 .story-card-bg {
@@ -441,6 +452,28 @@ html, body {
 .message {
     position: absolute;
     opacity: 0;
+}
+
+/* «листай вниз!» над ноутбуком приглушённым серым: появляется по кнопке «прочитать переписку» */
+.chat-hint {
+    position: absolute;
+    left: 0;
+    top: -4.2vw;
+    width: 100%;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.8vw;
+    line-height: 1;
+    text-align: center;
+    color: #6E6E6E;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.fourth-screen.is-chat-open .chat-hint {
+    opacity: 1;
+    visibility: visible;
 }
 
 .message-1 { left: 47.08%; top: 17.73%; width: 29.03%; }

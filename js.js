@@ -260,6 +260,9 @@ window.addEventListener("load", () => {
     // 5. НАЖАТИЕ НА ГЕРОЯ: ОТКРЫВАЕМ ЭКРАНЫ КАНДИДАТОВ И ПЛАВНО ПРОКРУЧИВАЕМ
     // К НУЖНОМУ, КАК ПО ЯКОРЮ: men2 -> «Кандидат 1», girl3 -> «Кандидат 2», boy1 -> «Кандидат 3»
 
+    // таймлайны «Кандидата 2» и «Кандидата 3», которые въезжают чёрными (заполняются в блоке 6)
+    const candidateFades = new Map();
+
     document.querySelectorAll(".candidate-link").forEach((link) => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
@@ -271,6 +274,23 @@ window.addEventListener("load", () => {
             const target = document.querySelector(link.getAttribute("href"));
             const pageFade = document.querySelector(".page-fade");
 
+            // экран, который въезжает чёрным, открываем посередине закрепления — там он уже высветлен
+            const holdTl = candidateFades.get(target);
+            let top = target.getBoundingClientRect().top + window.scrollY;
+            if (holdTl) {
+                const st = holdTl.scrollTrigger;
+                top = st.start + (st.end - st.start) * 0.5;
+            }
+
+            // по приходу сразу доводим высветление до конца, без догоняющего scrub
+            const showOpened = () => {
+                if (!holdTl) return;
+                ScrollTrigger.update();
+                const scrubTween = holdTl.scrollTrigger.getTween();
+                if (scrubTween) scrubTween.progress(1);
+                holdTl.progress(holdTl.scrollTrigger.progress);
+            };
+
             // на телефоне экран темнеет, страница переходит к кандидату и высветляется
             if (pageFade && window.matchMedia("(max-width: 450px)").matches) {
                 gsap.to(pageFade, {
@@ -278,20 +298,26 @@ window.addEventListener("load", () => {
                     duration: 0.4,
                     ease: "power1.inOut",
                     onComplete: () => {
-                        window.scrollTo({
-                            top: target.getBoundingClientRect().top + window.scrollY,
-                            behavior: "instant"
-                        });
+                        window.scrollTo({ top: top, behavior: "instant" });
+                        showOpened();
                         gsap.to(pageFade, { autoAlpha: 0, duration: 0.6, delay: 0.15, ease: "power1.inOut" });
                     }
                 });
                 return;
             }
 
-            window.scrollTo({
-                top: target.getBoundingClientRect().top + window.scrollY,
-                behavior: "smooth"
-            });
+            // на десктопе плавно, после остановки скролла экран уже открыт
+            let arrived = false;
+            const onArrive = () => {
+                if (arrived) return;
+                arrived = true;
+                window.removeEventListener("scrollend", onArrive);
+                showOpened();
+            };
+            window.addEventListener("scrollend", onArrive);
+            if (!("onscrollend" in window)) setTimeout(onArrive, 1500);
+
+            window.scrollTo({ top: top, behavior: "smooth" });
         });
     });
 
@@ -326,7 +352,7 @@ window.addEventListener("load", () => {
     // стоит и снова темнеет перед экраном самого кандидата
     const fadeInHoldOut = (screen) => {
         const fade = screen.querySelector(".screen-fade");
-        gsap.timeline({
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: screen,
                 start: "top top",
@@ -338,6 +364,7 @@ window.addEventListener("load", () => {
             .to(fade, { opacity: 0, duration: 0.4, ease: "none" })
             .to({}, { duration: 0.2 })
             .to(fade, { opacity: 1, duration: 0.4, ease: "none" });
+        candidateFades.set(screen, tl);
     };
 
     if (candidate1 && pavelScreen && candidate2) {
@@ -445,12 +472,15 @@ window.addEventListener("load", () => {
 
     // Смена плашек: первая плавно гаснет, вторая так же плавно проявляется на её месте
     function addSlideChange(timeline, cardSelector, at) {
-        // Вторая начинает проявляться, когда первая почти погасла, чтобы тексты не наслаивались
-        timeline.to(cardSelector + " .story-slide-1", {
-            autoAlpha: 0,
-            duration: 0.3,
-            ease: "power1.in"
-        }, at);
+        // на телефоне первая плашка остаётся, а вторая появляется под ней
+        if (!window.matchMedia("(max-width: 450px)").matches) {
+            // Вторая начинает проявляться, когда первая почти погасла, чтобы тексты не наслаивались
+            timeline.to(cardSelector + " .story-slide-1", {
+                autoAlpha: 0,
+                duration: 0.3,
+                ease: "power1.in"
+            }, at);
+        }
 
         timeline.fromTo(cardSelector + " .story-slide-2", {
             autoAlpha: 0

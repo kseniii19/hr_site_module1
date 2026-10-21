@@ -134,6 +134,13 @@
         top: 50%;
     }
 
+    /* Вторая плашка появляется под первой (её высота 86.28vw × 190/371 ≈ 44.2vw) */
+    .story-card-search .story-slide-2,
+    .story-card-offer .story-slide-2 {
+        top: 46.7vw;
+        left: 0;
+    }
+
 
     /* ЧЕТВЁРТЫЙ ЭКРАН (adaptive_4screen): плашка сверху, ноутбук на столе внизу, стены нет.
        После «прочитать переписку» стол и ноутбук исчезают, сверху «листай вниз»,
@@ -250,25 +257,11 @@
         width: 80%;
     }
 
+    /* «листай вниз!» вверху экрана (.chat-laptop на телефоне — на весь экран) */
     .chat-hint {
-        display: block;
-        position: absolute;
-        left: 0;
         top: 8%;
-        width: 100%;
-        font-family: "PT Root UI", Arial, sans-serif;
-        font-weight: 500;
         font-size: 5vw;
-        text-align: center;
-        color: #191919;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.5s ease, visibility 0.5s;
-    }
-
-    .fourth-screen.is-chat-open .chat-hint {
-        opacity: 1;
-        visibility: visible;
+        line-height: normal;
     }
 
     /* ЗАТЕМНЕНИЕ «НА СЛЕДУЮЩИЙ ДЕНЬ» после переписки: надпись по центру в две строки */
@@ -689,7 +682,7 @@
     /* numbers_doska 277×263 шириной 126 */
     .numbers-doska {
         left: 40.49%;
-        top: 8.48%;
+        top: 10.08%;
         width: 29.3%;
     }
 
@@ -697,9 +690,9 @@
         font-size: 1.9vw;
     }
 
-    .doska-text-1 { left: 40.67%; top: 10.64%; }
-    .doska-text-2 { left: 63.6%;  top: 17.94%; }
-    .doska-text-3 { left: 41.42%; top: 22.92%; }
+    .doska-text-1 { left: 40.67%; top: 12.24%; }
+    .doska-text-2 { left: 63.6%;  top: 19.54%; }
+    .doska-text-3 { left: 41.42%; top: 24.52%; }
 
     /* adaptive_podval 402×266; надписи на листах — в % от неё, наклонены под листы */
     .garbage {
@@ -723,14 +716,14 @@
     }
 
     .paper-text-author {
-        left: 13.8%;
-        top: 13.8%;
+        left: 12.9%;
+        top: 15.6%;
     }
 
     .paper-text-curator {
-        left: 37.3%;
-        top: 13.7%;
-        transform: rotate(14deg);
+        left: 37.6%;
+        top: 15.9%;
+        transform: rotate(21deg);
     }
 
     /* Бегущая строка крупно, чтобы читалась с телефона */
