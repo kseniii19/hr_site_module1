@@ -98,6 +98,17 @@
         width: 24.7%;
     }
 
+    /* Слёзы у глаз Марка на adaptive_boy3 (лицо мельче в 0.46 раза), дорожки те же */
+    .tear {
+        width: 0.65%;
+    }
+
+    .tear-1 { left: 56.83%; top: 71.48%; }
+    .tear-2 { left: 55.86%; top: 71.59%; }
+    .tear-3 { left: 63.16%; top: 70.81%; }
+    .tear-4 { left: 64.23%; top: 71.19%; }
+    .tear-5 { left: 61.86%; top: 71.02%; }
+
     .arrow-mobile {
         display: block;
         left: 22.7%;
@@ -120,7 +131,7 @@
 
     .story-card-search .story-text {
         left: 3.53%;
-        top: 24.5%;
+        top: 21.71%;
         width: 93%;
         font-size: 3.2vw;
         line-height: 1.35;
@@ -155,7 +166,7 @@
         aspect-ratio: auto;
     }
 
-    .room3 {
+    .united-comp-table {
         display: none;
     }
 
@@ -175,10 +186,6 @@
         width: 100%;
         height: 100%;
         aspect-ratio: auto;
-    }
-
-    .chat-laptop-img {
-        display: none;
     }
 
     .chat-laptop-mobile {
@@ -240,6 +247,7 @@
     }
 
     .story-card-offer .story-text {
+        left: 3.53%;
         font-size: 3.2vw;
         line-height: 1.35;
     }
@@ -253,7 +261,7 @@
     /* adaptive_button1 342×43 */
     .read-chat-btn {
         left: 10%;
-        top: 56%;
+        top: 62.15%;
         width: 80%;
     }
 
@@ -348,10 +356,10 @@
         height: 100%;
     }
 
+    /* По центру белой плашки adaptive_7screen (212, 371 из 430×850), чуть выше середины */
     .six-text {
-        left: 50%;
-        top: 44.2%;
-        transform: translate(-50%, -50%);
+        left: 49.3%;
+        top: 42.6%;
     }
 
     .six-title {
@@ -428,7 +436,7 @@
     .elena-card .story-text,
     .mark-card .story-text {
         left: 3.53%;
-        top: 24.5%;
+        top: 22.2%;
         width: 93%;
         font-size: 3.2vw;
         line-height: 1.35;
@@ -446,7 +454,7 @@
     .elena-btn,
     .mark-btn {
         left: 3.9%;
-        top: 70.3%;
+        top: 72.82%;
         width: 92.2%;
     }
 
@@ -461,24 +469,44 @@
     .stick-4 { left: 24.2%;  top: 78.1%;  width: 51.6%; }
 
 
+    /* Факт крупно почти на всю ширину экрана */
+    .fact-zoom-box {
+        width: min(88vw, 75vh);
+    }
+
+    .fact-zoom-close {
+        top: 4vw;
+        right: 4vw;
+        width: 7vw;
+    }
+
+    /* Кнопка «к списку кандидатов» — небольшая, но удобная для пальца */
+    .back-btn {
+        right: 4vw;
+        bottom: 4vw;
+        width: 16vw;
+    }
+
+
     /* ПОП-АП «ПРИНЯТЬ РЕШЕНИЕ» (choose_screen): белая плашка 400×142 как adaptive_choose_plashka,
        кнопки adaptive_yes / adaptive_no */
 
     .decision-box {
+        --pad: 4.5vw;
+        --row: 6.2vw;
+        --gap: 2.8vw;
+        --close: 5.2vw;
+        --icon-gap: 1.9vw;
+        --galka: 5vw;
+        --warn: 7vw;
+        --finger: 6.5vw;
         width: 93vw;
         min-height: 33vw;
         border-radius: 4.36vw;
     }
 
-    .decision-close {
-        top: 3vw;
-        right: 3.2vw;
-        width: 5.2vw;
-    }
-
     .decision-ask {
         gap: 4.6vw;
-        padding: 9vw 0 6vw;
     }
 
     .decision-question {
@@ -501,20 +529,15 @@
     .decision-yes { width: 27.67vw; }
     .decision-no { width: 26.74vw; }
 
-    .decision-result-yes,
-    .decision-result-no {
-        padding: 6vw 6vw 6vw;
-    }
-
     .decision-title {
         font-size: 5vw;
     }
 
     .decision-text {
-        margin-top: 2.5vw;
         font-size: 4vw;
         line-height: 1.3;
     }
+
 
     /* ЭКРАН ЕЛЕНЫ (adaptive_10screen): кадр 430×650, сверху плашка, под ней adaptive_room10 430×427 */
 
@@ -540,13 +563,9 @@
         width: 86.28%;
     }
 
-    /* Текст Елены в пять строк — чуть плотнее, кнопка ниже */
+    /* Текст Елены в пять строк — чуть плотнее */
     .elena-card .story-text {
         line-height: 1.25;
-    }
-
-    .elena-btn {
-        top: 74%;
     }
 
 
@@ -564,8 +583,17 @@
         height: 100%;
     }
 
-    .pazl-img {
+    /* Кусочки и тексты стоят в % от всего кадра, обёртка кусочка не создаёт своей рамки */
+    .pazl-img,
+    .pazl-fact-img {
         display: none;
+    }
+
+    .pazl-fact,
+    .pazl-fact:hover,
+    .pazl-fact:focus-visible {
+        display: contents;
+        transform: none;
     }
 
     .pazl-mobile {
@@ -595,6 +623,7 @@
     .pazl-text-1 { left: 28.5%; top: 45.26%; }  /* 64% */
     .pazl-text-3 { left: 28.5%; top: 63.08%; }  /* на 20–30% */
     .pazl-text-2 { left: 30.1%; top: 81.16%; }  /* 84% */
+
 
     /* ЭКРАН МАРКА (adaptive_boy_screen): кадр 430×810, сверху adaptive_last_plashka 371×201,
        внизу adaptive_last_room 430×345; диплом и лапша отдельными слоями с анимациями десктопа */
@@ -651,21 +680,22 @@
     }
 
     .mark-card .story-text {
-        top: 22%;
+        top: 21.7%;
         line-height: 1.25;
     }
 
+    /* adaptive_last_plashka выше (201), поэтому своя доля — отступ снизу тот же */
     .mark-btn {
-        top: 75%;
+        top: 74.29%;
     }
 
+
     /* ПОСЛЕДНИЙ ЭКРАН: кадр 430×870. Сверху big_doska 385×361 без Марка, цифры и подписи
-       поверх неё как на десктопе; ниже adaptive_podval (adaptive_podvval.png) и крупная бегущая строка */
+       поверх неё как на десктопе; ниже adaptive_podval (adaptive_podvval.png) */
 
     .boy-last-screen {
         aspect-ratio: 430 / 870;
     }
-
 
     .room-last-boy,
     .boys-hand {
@@ -724,16 +754,6 @@
         left: 37.6%;
         top: 15.9%;
         transform: rotate(21deg);
-    }
-
-    /* Бегущая строка крупно, чтобы читалась с телефона */
-    .footer-marquee {
-        bottom: 2vw;
-    }
-
-    .marquee-track span {
-        padding-right: 4vw;
-        font-size: 6.5vw;
     }
 }
 

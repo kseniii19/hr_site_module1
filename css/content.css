@@ -291,6 +291,24 @@ html, body {
     width: 32.94%;
 }
 
+/* СЛЁЗЫ: sleza.svg 6×9 появляется под глазом, скатывается по щеке и гаснет.
+   Дорожки по change_3screen.png: от левого глаза чуть влево, от правого — вправо и почти прямо.
+   Путь (--dx, --dy) в % от самой капли, поэтому на телефоне он масштабируется вместе с ней */
+.tear {
+    z-index: 1;
+    width: 0.42%;
+    opacity: 0;
+    pointer-events: none;
+    animation: tear-roll 3s ease-in infinite;
+}
+
+/* У каждой капли своя дорожка, чтобы они не слипались: 1–2 у левого глаза, 3–5 у правого */
+.tear-1 { left: 68.91%; top: 35.99%; --dx: -67%;  --dy: 289%; --r: 10deg;  animation-duration: 2.9s; animation-delay: -0.4s; }
+.tear-2 { left: 68.28%; top: 36.24%; --dx: -117%; --dy: 244%; --r: 18deg;  animation-duration: 3.7s; animation-delay: -2.3s; }
+.tear-3 { left: 72.99%; top: 34.58%; --dx: 83%;   --dy: 289%; --r: -12deg; animation-duration: 3.3s; animation-delay: -1.1s; }
+.tear-4 { left: 73.68%; top: 35.46%; --dx: 117%;  --dy: 267%; --r: -18deg; animation-duration: 4.1s; animation-delay: -3.2s; }
+.tear-5 { left: 72.15%; top: 35.08%; --dx: -33%;  --dy: 222%; --r: 4deg;   animation-duration: 3.5s; animation-delay: -1.9s; }
+
 /* Кисть «листает» тачпад: поворот вокруг запястья (правый край картинки) */
 .mark-hand {
     left: 61.1%;
@@ -379,10 +397,12 @@ html, body {
     width: 100%;
 }
 
+/* Отступ текста слева у всех плашек один — по левому краю нарисованных заголовков (25 из 564);
+   от низа заголовка до текста тоже везде одинаково, поэтому top у плашек с разными заголовками свой */
 .story-text {
     position: absolute;
-    left: 4.72%;
-    top: 21%;
+    left: 4.43%;
+    top: 20.4%;
     width: 88%;
     font-family: "PT Root UI", Arial, sans-serif;
     font-weight: 500;
@@ -394,6 +414,45 @@ html, body {
 .story-text-lines {
     white-space: nowrap;
 }
+
+/* ВЫДЕЛЕНИЯ В ТЕКСТЕ ПЛАШЕК (по new_line_text.png)
+   Полупрозрачный мазок line1–9 (красный 20%) на середине слов: по ширине — слово и одинаковый
+   запас с боков, по высоте — от верха заглавных до чуть ниже строки.
+   Слой: под текстом, но над плашкой — абзац становится отдельным слоем, мазок уходит на его дно */
+.story-text {
+    isolation: isolate;
+}
+
+.text-line {
+    position: relative;
+    white-space: nowrap;
+}
+
+.text-line::after {
+    content: "";
+    position: absolute;
+    left: -0.22em;
+    right: -0.22em;
+    top: 50%;
+    height: 0.95em;
+    z-index: -1;
+    translate: 0 -48%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    pointer-events: none;
+}
+
+/* Третий экран */
+.text-line-1::after { background-image: url("../img/line1.svg"); } /* «уволили 2 месяца» */
+.text-line-2::after { background-image: url("../img/line2.svg"); } /* «сотни откликов» */
+.text-line-3::after { background-image: url("../img/line3.svg"); } /* «отказы» */
+.text-line-4::after { background-image: url("../img/line4.svg"); } /* «долгожданное приглашение» */
+
+/* Четвёртый экран */
+.text-line-5::after { background-image: url("../img/line5.svg"); } /* «приглашение на очную встречу» */
+.text-line-6::after { background-image: url("../img/line6.svg"); } /* «половина успеха» */
+.text-line-8::after { background-image: url("../img/line8.svg"); } /* «у дверей» */
+.text-line-9::after { background-image: url("../img/line9.svg"); } /* «не он один.» */
 
 /* plashka_bg 564×163: текст по центру по вертикали */
 .story-card-search .story-slide-2 .story-text {
@@ -421,25 +480,28 @@ html, body {
     aspect-ratio: 1430 / 796;
 }
 
-.room3 {
+/* Сцена на весь кадр: по кнопке выдвигается вперёд целиком (js.js) */
+.chat-scene {
+    position: absolute;
+    inset: 0;
+}
+
+/* united_comp_table 1415×817: стена, стол и ноутбук; экран ноутбука совпадает с .chat-laptop */
+.united-comp-table {
     position: absolute;
     left: 1.958%;
     top: -0.377%;
-    width: 98.6%;
+    width: 98.95%;
     max-width: none;
 }
 
-/* Ноутбук 682×485; сообщения позиционируются в % от него */
+/* Область ноутбука 682×485; сообщения позиционируются в % от неё */
 .chat-laptop {
     position: absolute;
     left: 17.62%;
     top: 16.2%;
     width: 47.69%;
     aspect-ratio: 682 / 485;
-}
-
-.chat-laptop-img {
-    width: 100%;
 }
 
 /* Обрезка по экрану: слева с голубой панели (x 110), справа по краю экрана (x 569) */
@@ -454,7 +516,7 @@ html, body {
     opacity: 0;
 }
 
-/* «листай вниз!» над ноутбуком приглушённым серым: появляется по кнопке «прочитать переписку» */
+/* «листай вниз!» над ноутбуком приглушённым серым: появляется, когда сцена уже выдвинулась */
 .chat-hint {
     position: absolute;
     left: 0;
@@ -471,7 +533,7 @@ html, body {
     transition: opacity 0.5s ease, visibility 0.5s;
 }
 
-.fourth-screen.is-chat-open .chat-hint {
+.fourth-screen.is-hint-visible .chat-hint {
     opacity: 1;
     visibility: visible;
 }
@@ -488,8 +550,7 @@ html, body {
 }
 
 .story-card-offer .story-text {
-    left: 4.36%;
-    top: 20%;
+    top: 20.21%;
 }
 
 /* plashka2 564×195: текст сверху, «прочитать переписку» справа внизу */
@@ -497,9 +558,10 @@ html, body {
     top: 10.3%;
 }
 
+/* Кнопки на плашках: справа отступ как у текста слева, снизу у всех одинаковый (2.6% ширины) */
 .read-chat-btn {
-    left: 46.8%;
-    top: 65.6%;
+    left: 46.27%;
+    top: 66.85%;
 }
 
 /* Красные кнопки на плашках (278×47) */
@@ -650,11 +712,12 @@ html, body {
     width: 99.93%;
 }
 
+/* По центру белой плашки room5 (714, 385 из 1439×802), чуть выше середины */
 .six-text {
     position: absolute;
-    left: 51.53%;
-    top: 35.8%;
-    transform: translateX(-50%);
+    left: 49.58%;
+    top: 45.7%;
+    transform: translate(-50%, -50%);
     text-align: center;
     white-space: nowrap;
 }
@@ -674,6 +737,128 @@ html, body {
     font-size: 1.52vw;
     line-height: 1.2;
     color: #191919;
+}
+
+
+/* ФАКТ КРУПНО: пазл или стикер на затемнённом экране.
+   Размер текста в cqw — от ширины плашки, поэтому он растёт вместе с картинкой */
+.fact-zoom {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.fact-zoom.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.fact-zoom-close {
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    width: 2.2vw;
+    filter: invert(1);
+    transition: transform 0.2s ease;
+}
+
+.fact-zoom-close img {
+    width: 100%;
+}
+
+.fact-zoom-close:hover,
+.fact-zoom-close:focus-visible {
+    transform: scale(1.15);
+}
+
+.fact-zoom-box {
+    container-type: inline-size;
+    width: min(36vw, 70vh);
+    transform: scale(0.9);
+    transition: transform 0.35s ease;
+}
+
+.fact-zoom.is-open .fact-zoom-box {
+    transform: scale(1);
+}
+
+/* Стикер: копия со страницы, текст по-прежнему в % от стикера */
+.fact-zoom-box .stick {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    cursor: default;
+    transform: none;
+}
+
+/* 1.5vw от ширины стикера на странице */
+.fact-zoom-box .stick-1 .stick-text { font-size: 8.6cqw; }
+.fact-zoom-box .stick-2 .stick-text { font-size: 6.92cqw; }
+.fact-zoom-box .stick-3 .stick-text { font-size: 6.84cqw; }
+.fact-zoom-box .stick-4 .stick-text { font-size: 8.18cqw; }
+
+/* Пазл: кусочек adaptive_pazlN 332×312, текст как на телефоне */
+.zoom-pazl {
+    position: relative;
+}
+
+.zoom-pazl img {
+    display: block;
+    width: 100%;
+}
+
+.zoom-pazl-text {
+    position: absolute;
+    left: 18.38%;
+    width: 66.2%;
+    font-family: "PT Root UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 4.6cqw;
+    line-height: 1.25;
+    color: #191919;
+}
+
+.zoom-pazl-1 .zoom-pazl-text { top: 39.2%; }
+.zoom-pazl-2 .zoom-pazl-text { top: 38.7%; }
+.zoom-pazl-3 .zoom-pazl-text { top: 37.6%; }
+.zoom-pazl-4 .zoom-pazl-text { left: 20.7%; top: 38.1%; }
+
+
+/* КНОПКА «К СПИСКУ КАНДИДАТОВ»: круглая back_button 111×106, закреплена в правом нижнем углу окна.
+   Появляется на последнем экране каждого кандидата (js.js) */
+.back-btn {
+    position: fixed;
+    right: 1.6vw;
+    bottom: 1.6vw;
+    z-index: 90;
+    width: 4.5vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s, transform 0.2s ease;
+}
+
+.back-btn img {
+    width: 100%;
+}
+
+.back-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-btn:hover,
+.back-btn:focus-visible {
+    transform: scale(1.04);
 }
 
 
@@ -762,13 +947,12 @@ html, body {
 }
 
 .pavel-card .story-text {
-    left: 4.74%;
     top: 21.8%;
 }
 
 .pavel-btn {
-    left: 46.63%;
-    top: 78.9%;
+    left: 46.27%;
+    top: 78.96%;
 }
 
 
@@ -800,6 +984,16 @@ html, body {
 }
 
 .decision-box {
+    /* Сетка отступов: поле со всех сторон, высота строки заголовка (по ней же крестик),
+       отступ между блоками (заголовок — текст — палец), размеры значков */
+    --pad: 1.78vw;
+    --row: 2.2vw;
+    --gap: 1.1vw;
+    --close: 1.67vw;
+    --icon-gap: 0.76vw;
+    --galka: 2vw;
+    --warn: 2.9vw;
+    --finger: 2.6vw;
     position: relative;
     display: grid;
     width: 37.01vw;
@@ -807,19 +1001,21 @@ html, body {
     border-radius: 1.74vw;
     background: #fff;
     transform: scale(0.95);
-    transition: transform 0.35s ease;
+    transition: transform 0.35s ease, background-color 0.35s ease;
 }
 
 .decision-popup.is-open .decision-box {
     transform: scale(1);
 }
 
+/* Крестик по центру строки заголовка, от правого края — то же поле */
 .decision-close {
     position: absolute;
-    top: 1.05vw;
-    right: 1.26vw;
+    top: calc(var(--pad) + var(--row) / 2);
+    right: var(--pad);
     z-index: 1;
-    width: 1.67vw;
+    width: var(--close);
+    translate: 0 -50%;
     transition: transform 0.2s ease;
 }
 
@@ -865,7 +1061,8 @@ html, body {
     flex-direction: column;
     justify-content: center;
     gap: 2.33vw;
-    padding: 1.5vw 0;
+    /* сверху и снизу поровну, с запасом на строку крестика */
+    padding: calc(var(--pad) + var(--row)) var(--pad);
 }
 
 .decision-question {
@@ -900,7 +1097,7 @@ html, body {
 
 .decision-result-yes,
 .decision-result-no {
-    padding: 0.92vw 1.78vw 1.4vw;
+    padding: var(--pad);
 }
 
 .decision-title {
@@ -912,8 +1109,95 @@ html, body {
     color: #191919;
 }
 
+/* РЕЗУЛЬТАТ ВЫБОРА (plashka_yes.png / plashka_no.png): цвет плашки как plashka_green / red_plashka,
+   у заголовка значки с двух сторон, внизу палец. Тексты у каждого кандидата свои, не меняются */
+.decision-popup[data-state="yes"] .decision-box {
+    background: #F8FFF3;
+}
+
+.decision-popup[data-state="no"] .decision-box {
+    background: #FFF3F3;
+}
+
+/* Строка заголовка одной высоты у «да» и «нет» — текст под ней начинается на одном уровне */
+.decision-result-yes .decision-title,
+.decision-result-no .decision-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--icon-gap);
+    height: var(--row);
+}
+
+.decision-result-yes .decision-title::before,
+.decision-result-yes .decision-title::after,
+.decision-result-no .decision-title::before,
+.decision-result-no .decision-title::after {
+    content: "";
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* galka 31×31, рисунок на всю картинку */
+.decision-result-yes .decision-title::before,
+.decision-result-yes .decision-title::after {
+    width: var(--galka);
+    aspect-ratio: 1;
+    background-image: url("../img/galka.svg");
+}
+
+/* warning 42×43, рисунок только в (5.5, 4.5)–(37.5, 33.5): прозрачные поля убираем отрицательными
+   отступами и сдвигаем вниз, чтобы видимый треугольник был того же размера и на той же линии, что галочка */
+.decision-result-no .decision-title::before,
+.decision-result-no .decision-title::after {
+    width: var(--warn);
+    aspect-ratio: 42 / 43;
+    margin-left: calc(var(--warn) * -5.5 / 42);
+    margin-right: calc(var(--warn) * -4.5 / 42);
+    translate: 0 calc(var(--warn) * 2.5 / 42);
+    background-image: url("../img/warning.svg");
+}
+
+/* Палец прижат к низу плашки (её высота — по самому длинному ответу): «да» — справа, «нет» — слева */
+.decision-result-yes,
+.decision-result-no {
+    display: flex;
+    flex-direction: column;
+}
+
+.decision-result-yes .decision-text,
+.decision-result-no .decision-text {
+    margin-bottom: var(--gap);
+}
+
+.decision-result-yes::after,
+.decision-result-no::after {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    margin-top: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* finger_up 38×40 */
+.decision-result-yes::after {
+    width: var(--finger);
+    margin-left: auto;
+    aspect-ratio: 38 / 40;
+    background-image: url("../img/finger_up.svg");
+}
+
+/* finger_down 38×39 */
+.decision-result-no::after {
+    width: var(--finger);
+    aspect-ratio: 38 / 39;
+    background-image: url("../img/finger_down.svg");
+}
+
 .decision-text {
-    margin-top: 0.9vw;
+    margin-top: var(--gap);
     font-family: "PT Root UI", Arial, sans-serif;
     font-weight: 500;
     font-size: 1.35vw;
@@ -956,10 +1240,35 @@ html, body {
     color: #191919;
 }
 
-.pazl-text-1 { left: 23.54%; top: 9.98%; }   /* 64% */
-.pazl-text-2 { left: 23.7%;  top: 40.04%; }  /* 84% */
-.pazl-text-3 { left: 69.68%; top: 9.98%; }   /* на 20–30% */
-.pazl-text-4 { left: 78.25%; top: 73.97%; }  /* 4 из 10 */
+/* Кусочки с фактами — отдельные слои поверх pazl_base в своих координатах (из 1249×1018);
+   при наведении кусочек с текстом немного увеличивается, по нажатию открывается крупно (js.js) */
+.pazl-fact {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.pazl-fact:hover,
+.pazl-fact:focus-visible {
+    z-index: 1;
+    transform: scale(1.06);
+}
+
+.pazl-fact-img {
+    display: block;
+    width: 100%;
+}
+
+.pazl-fact-1 { left: 72.74%; top: 62.68%; width: 27.83%; }  /* 4 из 10 */
+.pazl-fact-2 { left: 19.3%;  top: 0.11%;  width: 27.65%; }  /* 64% */
+.pazl-fact-3 { left: 63.68%; top: -0.67%; width: 28.57%; }  /* на 20–30% */
+.pazl-fact-4 { left: 18.01%; top: 26.95%; width: 32.24%; }  /* 84% */
+
+/* Тексты — в % от своего кусочка */
+.pazl-text-1 { left: 15.34%; top: 30.13%; }  /* 64% */
+.pazl-text-2 { left: 17.66%; top: 35.12%; }  /* 84% */
+.pazl-text-3 { left: 20.99%; top: 31.78%; }  /* на 20–30% */
+.pazl-text-4 { left: 19.79%; top: 35.62%; }  /* 4 из 10 */
 
 
 /* ЭКРАН МАРКА
@@ -1012,17 +1321,16 @@ html, body {
 }
 
 .mark-card .story-text {
-    left: 4%;
-    top: 19.4%;
+    top: 20.22%;
 }
 
 .mark-btn {
-    left: 46.4%;
-    top: 78.7%;
+    left: 46.27%;
+    top: 78.96%;
 }
 
 
-/* ПОСЛЕДНИЙ ЭКРАН МАРКА И ФУТЕР
+/* ПОСЛЕДНИЙ ЭКРАН МАРКА И ПОДВАЛ
    Кадр 1440×1817: сверху room_lasst_boy.svg 1440×1584, ниже продолжается пол.
    footer.png начинается с y = 718 кадра (масштаб макета 1.043).
    Рука boys_hand.svg 253×173 стоит в точке (309.66, 220.87) — ровно на месте руки из исходного файла.
@@ -1129,38 +1437,21 @@ html, body {
     transform: rotate(24deg);
 }
 
-/* Бегущая строка внизу */
-.footer-marquee {
-    position: absolute;
-    left: 0;
-    bottom: 0.6vw;
-    width: 100%;
-    overflow: hidden;
-}
-
-.marquee-track {
-    display: flex;
-    width: max-content;
-    animation: marquee 24s linear infinite;
-}
-
-.marquee-track span {
-    padding-right: 1.6vw;
-    font-family: "PT Root UI", Arial, sans-serif;
-    font-weight: 500;
-    font-size: 2.4vw;
-    line-height: 1.2;
-    white-space: nowrap;
-    color: #191919;
-}
-
-
 /* СТИКЕРЫ СО СТАТИСТИКОЙ (низ экрана Павла)
    Позиция стикера — в % от кадра 1440×1816, текст — в % от стикера.
    Текст поворачивается от своего левого верхнего угла на угол верхнего края листка */
 
+/* Стикер при наведении немного увеличивается, по нажатию открывается крупно (js.js) */
 .stick {
     position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.stick:hover,
+.stick:focus-visible {
+    z-index: 1;
+    transform: scale(1.06);
 }
 
 .stick img {
@@ -1223,13 +1514,12 @@ html, body {
 }
 
 .elena-card .story-text {
-    left: 4.49%;
-    top: 20%;
+    top: 19.86%;
 }
 
 .elena-btn {
-    left: 47.1%;
-    top: 79.5%;
+    left: 46.27%;
+    top: 78.96%;
 }
 
 
@@ -1302,11 +1592,6 @@ html, body {
     50% { transform: rotate(2deg); }
 }
 
-/* Дорожка из 6 одинаковых строк: сдвиг на половину — бесшовный цикл */
-@keyframes marquee {
-    to { transform: translateX(-50%); }
-}
-
 @keyframes hand-point {
     0%, 100% { transform: rotate(0deg); }
     50% { transform: rotate(-1.5deg); }
@@ -1328,13 +1613,21 @@ html, body {
     to { transform: rotate(360deg); }
 }
 
+/* Капля набухает у глаза, катится вниз с ускорением и исчезает, затем пауза */
+@keyframes tear-roll {
+    0% { opacity: 0; transform: translate(0, 0) rotate(var(--r)) scale(0.5); }
+    12% { opacity: 1; transform: translate(0, 0) rotate(var(--r)) scale(1); }
+    70% { opacity: 1; }
+    85% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(0.9); }
+    100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(0.9); }
+}
+
 @keyframes arrow-pulse {
     0%, 100% { transform: translateY(0); opacity: 1; }
     50% { transform: translateY(35%); opacity: 0.5; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .marquee-track,
     .sock-steam,
     .boys-hand,
     .diplom,
@@ -1345,6 +1638,7 @@ html, body {
     .phone-dial,
     .person-arrow,
     .person-arrow-mobile,
+    .tear,
     .steam,
     .mark-hand,
     .mark-arrow,
