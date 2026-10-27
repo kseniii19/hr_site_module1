@@ -957,7 +957,7 @@ html, body {
 
 
 /* ПОП-АП «ПРИНЯТЬ РЕШЕНИЕ»
-   Белая плашка шириной 533 и минимальной высотой 189 (как plashka_yes_no.svg), скругление 25;
+   Белая плашка шириной 605 (шире макетных 533, чтобы ответы были ниже) и минимальной высотой 189 (как plashka_yes_no.svg), скругление 25;
    по центру окна. Высота растёт под текст. Размеры в vw: 1px макета = 100/1440 vw.
    Показывается набор текстов того кандидата, чей data-candidate у поп-апа (js.js) */
 
@@ -996,9 +996,11 @@ html, body {
     --finger: 2.6vw;
     position: relative;
     display: grid;
-    width: 37.01vw;
+    width: 42vw;
     min-height: 13.125vw;
     border-radius: 1.74vw;
+    /* уходящее состояние длиннее плашки не вылезает, пока гаснет */
+    overflow: hidden;
     background: #fff;
     transform: scale(0.95);
     transition: transform 0.35s ease, background-color 0.35s ease;
@@ -1028,8 +1030,8 @@ html, body {
     transform: scale(1.15);
 }
 
-/* Набор кандидата и его три состояния лежат в одной ячейке сетки:
-   высота плашки = самое высокое состояние, при смене ничего не прыгает */
+/* Набор кандидата и его три состояния лежат в одной ячейке сетки. Высоту плашки задаёт
+   только видимое состояние: скрытые вынуты из потока, поэтому короткий ответ — низкая плашка */
 .decision-set {
     display: none;
     grid-area: 1 / 1;
@@ -1042,7 +1044,10 @@ html, body {
 }
 
 .decision-view {
-    grid-area: 1 / 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.35s ease, visibility 0.35s;
@@ -1051,6 +1056,7 @@ html, body {
 .decision-popup[data-state="ask"] .decision-ask,
 .decision-popup[data-state="yes"] .decision-result-yes,
 .decision-popup[data-state="no"] .decision-result-no {
+    position: relative;
     opacity: 1;
     visibility: visible;
 }
@@ -1069,7 +1075,7 @@ html, body {
     text-align: center;
     font-family: "PT Root UI", Arial, sans-serif;
     font-weight: 500;
-    font-size: 1.39vw;
+    font-size: 1.8vw;
     line-height: 1.2;
     color: #191919;
 }
@@ -1159,7 +1165,7 @@ html, body {
     background-image: url("../img/warning.svg");
 }
 
-/* Палец прижат к низу плашки (её высота — по самому длинному ответу): «да» — справа, «нет» — слева */
+/* Палец внизу плашки сразу под текстом: «да» — справа, «нет» — слева */
 .decision-result-yes,
 .decision-result-no {
     display: flex;
